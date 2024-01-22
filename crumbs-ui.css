@@ -4,60 +4,60 @@
 /* #region ========== BUTTON SETTING ========== */
 :root {
     /* #region GLOBAL VARIABLE */
-    --sp-transition: all .25s ease;
+    --cr-transition: all .25s ease;
     /* #endregion */
 
     /* #region BUTTON VARIABLE */
-    --sp-btn-txt: #ffffff;
-    --sp-btn-txt-dark: #121212;
-    --sp-btn-txt-size: 1rem;
-    --sp-btn-txt-weight: 400;
-    --sp-btn-min-max-height: 38px;
-    --sp-btn-min-max-height-mini: 29px;
-    --sp-btn-min-max-height-big: 48px;
-    --sp-btn-txt-transform: capitalize;
-    --sp-btn-padding: .4rem .65rem;
-    --sp-btn-padding-mini: .3rem .55rem;
-    --sp-btn-padding-big: .5rem .75rem;
-    --sp-btn-icon-padding: .25rem;
-    --sp-btn-border: 1px solid;
-    --sp-btn-radius: .35rem;
+    --cr-btn-txt: #ffffff;
+    --cr-btn-txt-dark: #121212;
+    --cr-btn-txt-size: 1rem;
+    --cr-btn-txt-weight: 400;
+    --cr-btn-min-max-height: 38px;
+    --cr-btn-min-max-height-mini: 29px;
+    --cr-btn-min-max-height-big: 48px;
+    --cr-btn-txt-transform: capitalize;
+    --cr-btn-padding: .4rem .65rem;
+    --cr-btn-padding-mini: .3rem .55rem;
+    --cr-btn-padding-big: .5rem .75rem;
+    --cr-btn-icon-padding: .25rem;
+    --cr-btn-border: 1px solid;
+    --cr-btn-radius: .35rem;
     
-    --sp-btn-txt-default: var(--btn-custom-color);
-    --sp-btn-default: var(--btn-custom-bg-color);
-    --sp-btn-default-hover: var(--btn-custom-bg-color-hover);
-    --sp-btn-default-focus: var(--btn-custom-bg-color-focus);
+    --cr-btn-txt-default: var(--btn-custom-color);
+    --cr-btn-default: var(--btn-custom-bg-color);
+    --cr-btn-default-hover: var(--btn-custom-bg-color-hover);
+    --cr-btn-default-focus: var(--btn-custom-bg-color-focus);
     
-    --sp-btn-primary: #1C64F2;
-    --sp-btn-primary-hover: #0d56e5;
-    --sp-btn-primary-focus: #0d55e550;
+    --cr-btn-primary: #1C64F2;
+    --cr-btn-primary-hover: #0d56e5;
+    --cr-btn-primary-focus: #0d55e550;
 
-    --sp-btn-success: #4caf50;
-    --sp-btn-success-hover: #449d48;
-    --sp-btn-success-focus: #449d4850;
+    --cr-btn-success: #4caf50;
+    --cr-btn-success-hover: #449d48;
+    --cr-btn-success-focus: #449d4850;
 
-    --sp-btn-danger: #f44336;
-    --sp-btn-danger-hover: #f22819;
-    --sp-btn-danger-focus: #f2271950;
+    --cr-btn-danger: #f44336;
+    --cr-btn-danger-hover: #f22819;
+    --cr-btn-danger-focus: #f2271950;
 
-    --sp-btn-warning: #f4ae0e;
-    --sp-btn-warning-hover: #de9d0a;
-    --sp-btn-warning-focus: #de9e0a50;
+    --cr-btn-warning: #f4ae0e;
+    --cr-btn-warning-hover: #de9d0a;
+    --cr-btn-warning-focus: #de9e0a50;
     /* #endregion */
 }
 
 /* #region ========== DEFAULT CLASS BUTTON ========== */
-.sp-btn {
-    color: var(--sp-btn-txt);
-    font-size: var(--sp-btn-txt-size);
-    font-weight: var(--sp-btn-txt-weight);
-    text-transform: var(--sp-btn-txt-transform);
-    min-height: var(--sp-btn-min-max-height);
-    max-height: var(--sp-btn-min-max-height);
-    padding: var(--sp-btn-padding);
-    border: var(--sp-btn-border);
-    border-radius: var(--sp-btn-radius);
-    transition: var(--sp-transition);
+.cr-btn {
+    color: var(--cr-btn-txt);
+    font-size: var(--cr-btn-txt-size);
+    font-weight: var(--cr-btn-txt-weight);
+    text-transform: var(--cr-btn-txt-transform);
+    min-height: var(--cr-btn-min-max-height);
+    max-height: var(--cr-btn-min-max-height);
+    padding: var(--cr-btn-padding);
+    border: var(--cr-btn-border);
+    border-radius: var(--cr-btn-radius);
+    transition: var(--cr-transition);
 
     display: inline-block;
     line-height: 1.5;
@@ -69,37 +69,37 @@
     user-select: none;
 }
 
-.sp-btn.sp-mini {
-    min-height: var(--sp-btn-min-max-height-mini);
-    max-height: var(--sp-btn-min-max-height-mini);
+.cr-btn.cr-mini {
+    min-height: var(--cr-btn-min-max-height-mini);
+    max-height: var(--cr-btn-min-max-height-mini);
     font-size: .75rem;
-    padding: var(--sp-btn-padding-mini);
+    padding: var(--cr-btn-padding-mini);
 }
-.sp-btn.sp-big {
-    min-height: var(--sp-btn-min-max-height-big);
-    max-height: var(--sp-btn-min-max-height-big);
+.cr-btn.cr-big {
+    min-height: var(--cr-btn-min-max-height-big);
+    max-height: var(--cr-btn-min-max-height-big);
     font-size: 1.25rem;
-    padding: var(--sp-btn-padding-big);
+    padding: var(--cr-btn-padding-big);
 }
-.sp-btn.sp-full {
+.cr-btn.cr-full {
     width: 100%;
 }
 
-.sp-btn.sp-flex {
+.cr-btn.cr-flex {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: .5rem;
 }
-.sp-btn.sp-icon {
+.cr-btn.cr-icon {
     aspect-ratio: 1;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: var(--sp-btn-icon-padding);
+    padding: var(--cr-btn-icon-padding);
 }
 
-.sp-btn:disabled {
+.cr-btn:disabled {
     opacity: .75;
     filter: grayscale(.75);
     pointer-events: none;
@@ -108,119 +108,119 @@
 /* #endregion */
 
 /* #region ========== BUTTON DEFAULT (CUSTOM USER) ========== */
-.sp-default {
-    color: var(--sp-btn-txt-default);
-    background-color: var(--sp-btn-default);
-    border-color: var(--sp-btn-default);
+.cr-default {
+    color: var(--cr-btn-txt-default);
+    background-color: var(--cr-btn-default);
+    border-color: var(--cr-btn-default);
 }
-.sp-default:is(:hover, :focus) {
-    background-color: var(--sp-btn-default-hover);
-    border-color: var(--sp-btn-default-hover);
+.cr-default:is(:hover, :focus) {
+    background-color: var(--cr-btn-default-hover);
+    border-color: var(--cr-btn-default-hover);
 }
-.sp-outline-default {
-    color: var(--sp-btn-default);
-    border-color: var(--sp-btn-default);
+.cr-outline-default {
+    color: var(--cr-btn-default);
+    border-color: var(--cr-btn-default);
 }
-.sp-outline-default:is(:hover, :focus) {
-    color: var(--sp-btn-txt-default);
-    background-color: var(--sp-btn-default-hover);
-    border-color: var(--sp-btn-default-hover);
+.cr-outline-default:is(:hover, :focus) {
+    color: var(--cr-btn-txt-default);
+    background-color: var(--cr-btn-default-hover);
+    border-color: var(--cr-btn-default-hover);
 }
-:is(.sp-default, .sp-outline-default):focus {
-    box-shadow: 0 0 0 4px var(--sp-btn-default-focus);
+:is(.cr-default, .cr-outline-default):focus {
+    box-shadow: 0 0 0 4px var(--cr-btn-default-focus);
 }
 /* #endregion */
 
 /* #region ========== BUTTON PRIMARY ========== */
-.sp-primary {
-    background-color: var(--sp-btn-primary);
-    border-color: var(--sp-btn-primary);
+.cr-primary {
+    background-color: var(--cr-btn-primary);
+    border-color: var(--cr-btn-primary);
 }
-.sp-primary:is(:hover, :focus) {
-    background-color: var(--sp-btn-primary-hover);
-    border-color: var(--sp-btn-primary-hover);
+.cr-primary:is(:hover, :focus) {
+    background-color: var(--cr-btn-primary-hover);
+    border-color: var(--cr-btn-primary-hover);
 }
-.sp-outline-primary {
-    color: var(--sp-btn-primary);
-    border-color: var(--sp-btn-primary);
+.cr-outline-primary {
+    color: var(--cr-btn-primary);
+    border-color: var(--cr-btn-primary);
 }
-.sp-outline-primary:is(:hover, :focus) {
-    color: var(--sp-btn-txt);
-    background-color: var(--sp-btn-primary-hover);
-    border-color: var(--sp-btn-primary-hover);
+.cr-outline-primary:is(:hover, :focus) {
+    color: var(--cr-btn-txt);
+    background-color: var(--cr-btn-primary-hover);
+    border-color: var(--cr-btn-primary-hover);
 }
-:is(.sp-primary, .sp-outline-primary):focus {
-    box-shadow: 0 0 0 4px var(--sp-btn-primary-focus);
+:is(.cr-primary, .cr-outline-primary):focus {
+    box-shadow: 0 0 0 4px var(--cr-btn-primary-focus);
 }
 /* #endregion */
 
 /* #region ========== BUTTON SUCCESS ========== */
-.sp-success {
-    background-color: var(--sp-btn-success);
-    border-color: var(--sp-btn-success);
+.cr-success {
+    background-color: var(--cr-btn-success);
+    border-color: var(--cr-btn-success);
 }
-.sp-success:is(:hover, :focus) {
-    background-color: var(--sp-btn-success-hover);
-    border-color: var(--sp-btn-success-hover);
+.cr-success:is(:hover, :focus) {
+    background-color: var(--cr-btn-success-hover);
+    border-color: var(--cr-btn-success-hover);
 }
-.sp-outline-success {
-    color: var(--sp-btn-success);
-    border-color: var(--sp-btn-success);
+.cr-outline-success {
+    color: var(--cr-btn-success);
+    border-color: var(--cr-btn-success);
 }
-.sp-outline-success:is(:hover, :focus) {
-    color: var(--sp-btn-txt);
-    background-color: var(--sp-btn-success-hover);
-    border-color: var(--sp-btn-success-hover);
+.cr-outline-success:is(:hover, :focus) {
+    color: var(--cr-btn-txt);
+    background-color: var(--cr-btn-success-hover);
+    border-color: var(--cr-btn-success-hover);
 }
-:is(.sp-success, .sp-outline-success):focus {
-    box-shadow: 0 0 0 4px var(--sp-btn-success-focus);
+:is(.cr-success, .cr-outline-success):focus {
+    box-shadow: 0 0 0 4px var(--cr-btn-success-focus);
 }
 /* #endregion */
 
 /* #region ========== BUTTON DANGER ========== */
-.sp-danger {
-    background-color: var(--sp-btn-danger);
-    border-color: var(--sp-btn-danger);
+.cr-danger {
+    background-color: var(--cr-btn-danger);
+    border-color: var(--cr-btn-danger);
 }
-.sp-danger:is(:hover, :focus) {
-    background-color: var(--sp-btn-danger-hover);
-    border-color: var(--sp-btn-danger-hover);
+.cr-danger:is(:hover, :focus) {
+    background-color: var(--cr-btn-danger-hover);
+    border-color: var(--cr-btn-danger-hover);
 }
-.sp-outline-danger {
-    color: var(--sp-btn-danger);
-    border-color: var(--sp-btn-danger);
+.cr-outline-danger {
+    color: var(--cr-btn-danger);
+    border-color: var(--cr-btn-danger);
 }
-.sp-outline-danger:is(:hover, :focus) {
-    color: var(--sp-btn-txt);
-    background-color: var(--sp-btn-danger-hover);
-    border-color: var(--sp-btn-danger-hover);
+.cr-outline-danger:is(:hover, :focus) {
+    color: var(--cr-btn-txt);
+    background-color: var(--cr-btn-danger-hover);
+    border-color: var(--cr-btn-danger-hover);
 }
-:is(.sp-danger, .sp-outline-danger):focus {
-    box-shadow: 0 0 0 4px var(--sp-btn-danger-focus);
+:is(.cr-danger, .cr-outline-danger):focus {
+    box-shadow: 0 0 0 4px var(--cr-btn-danger-focus);
 }
 /* #endregion */
 
 /* #region ========== BUTTON WARNING ========== */
-.sp-warning {
-    color: var(--sp-btn-txt-dark);
-    background-color: var(--sp-btn-warning);
-    border-color: var(--sp-btn-warning);
+.cr-warning {
+    color: var(--cr-btn-txt-dark);
+    background-color: var(--cr-btn-warning);
+    border-color: var(--cr-btn-warning);
 }
-.sp-warning:is(:hover, :focus) {
-    background-color: var(--sp-btn-warning-hover);
-    border-color: var(--sp-btn-warning-hover);
+.cr-warning:is(:hover, :focus) {
+    background-color: var(--cr-btn-warning-hover);
+    border-color: var(--cr-btn-warning-hover);
 }
-.sp-outline-warning {
-    color: var(--sp-btn-warning);
-    border-color: var(--sp-btn-warning);
+.cr-outline-warning {
+    color: var(--cr-btn-warning);
+    border-color: var(--cr-btn-warning);
 }
-.sp-outline-warning:is(:hover, :focus) {
-    color: var(--sp-btn-txt-dark);
-    background-color: var(--sp-btn-warning-hover);
-    border-color: var(--sp-btn-warning-hover);
+.cr-outline-warning:is(:hover, :focus) {
+    color: var(--cr-btn-txt-dark);
+    background-color: var(--cr-btn-warning-hover);
+    border-color: var(--cr-btn-warning-hover);
 }
-:is(.sp-warning, .sp-outline-warning):focus {
-    box-shadow: 0 0 0 4px var(--sp-btn-warning-focus);
+:is(.cr-warning, .cr-outline-warning):focus {
+    box-shadow: 0 0 0 4px var(--cr-btn-warning-focus);
 }
 /* #endregion */
 
