@@ -1,9 +1,19 @@
 
-VERSI 1.0.0
-- Style awal button
-- Button default, primary, success, danger, warning
-- Button small and large
+############## VERSION 1.0.0 ##############
 
-VERSI 1.0.1
-- Style awal input
-- Add js function untuk dropdown
+- BUTTON
+  |_ Primary, Success, Danger, Warning, Disabled
+  |_ Size : Small, Regular, Large
+  |_ Button primary color can customize use variables
+
+- INPUTS
+  |_ Optional wrap for all input, cr-form-group 
+  |_ Type text, number, email, password textarea and select
+  |_ Size : Small, Regular, Large
+  |_ Prepend and Append option, wrap with cr-input-group, not available for textarea
+
+- CHECKBOX & RADIO
+  |_ Wrap with cr-check-group, add "inline" class for inline display
+  |_ Set a "name" for radios group
+
+

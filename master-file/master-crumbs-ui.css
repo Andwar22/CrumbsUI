@@ -1,368 +1,579 @@
-/* #region ##################################### GLOBAL SECTION */
 
-/* #region ====== GLOBAL VARIABLE */
-:root {
-    --cr-transition: all .25s ease;
-}
-/* #endregion */
+/* #region ################################## RESET SECTION ################################# */
+/* ########################################################################################### */
 
-/* #endregion ################################## GLOBAL SECTION END */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+    body {
+        font-size: 100%;
+        font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        min-height: 100vh;
+        line-height: 1.5;
+        margin: 0;
+    }
+    body, h1, h2, h3, h4, p,
+    figure, blockquote, dl, dd {
+        margin-block-end: 0;
+    }
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+    }
+    p {
+        font-weight: 400;
+        text-wrap: pretty;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    h1, h2,
+    h3, h4 {
+        text-wrap: balance;
+    }
+    a:not([class]) {
+        color: currentColor;
+        text-decoration-skip-ink: auto;
+    }
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+    input, button,
+    textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+    textarea:not([rows]) {
+        min-height: 5rem;
+    }
+    :target {
+        scroll-margin-block: 5rem;
+    }
 
+/* ####################################### END SECTION ###################################### */
+/* #endregion ############################################################################### */
 
-/* #region ##################################### BUTTON SECTION */
-
-/* #region ====== BUTTON VARIABLE */
-:root {
-    --cr-btn-txt: #ffffff;
-    --cr-btn-txt-dark: #121212;
-    --cr-btn-txt-size: 1rem;
-    --cr-btn-txt-weight: 400;
-    --cr-btn-min-max-height: 38px;
-    --cr-btn-min-max-height-mini: 29px;
-    --cr-btn-min-max-height-big: 48px;
-    --cr-btn-txt-transform: capitalize;
-    --cr-btn-padding: .4rem .75rem;
-    --cr-btn-padding-mini: .3rem .65rem;
-    --cr-btn-padding-big: .5rem .85rem;
-    --cr-btn-icon-padding: .25rem;
-    --cr-btn-border: 1px solid;
-    --cr-btn-radius: .5rem;
-    --cr-pill-radius: 3rem;
+/* #region ################################## GLOBAL SECTION ################################# */
+/* ########################################################################################### */
     
-    --cr-btn-txt-default: var(--btn-custom-color);
-    --cr-btn-default: var(--btn-custom-bg-color);
-    --cr-btn-default-hover: var(--btn-custom-bg-color-hover);
-    --cr-btn-default-focus: var(--btn-custom-bg-color-focus);
+    :root {
+        /* #region ====== GLOBAL */
+            --cr-transition: all .25s ease;
+        /* #endregion */
+
+        /* #region ====== COLOR */
+            --cr-white: #ffffff;
+            --cr-black: #202022;
+            --cr-grey: #7F7F7F;
+            --cr-border: #e1e1e1;
+
+            --cr-primary: #007bff;
+            --cr-primary-hover: #0056b3;
+            --cr-primary-active: #004085;
+            --cr-primary-disabled: #007bff99;
+            --cr-primary-disabled-text: #ffffff99;
+
+            --cr-success: #28a745;
+            --cr-success-hover: #218838;
+            --cr-success-active: #1e7e34;
+            --cr-success-disabled: #28a74599;
+            --cr-success-disabled-text: #ffffff99;
+
+            --cr-danger: #dc3545;
+            --cr-danger-hover: #c82333;
+            --cr-danger-active: #bd2130;
+            --cr-danger-disabled: #dc354599;
+            --cr-danger-disabled-text: #ffffff99;
+
+            --cr-warning: #ffc107;
+            --cr-warning-hover: #e0a800;
+            --cr-warning-active: #c69500;
+            --cr-warning-disabled: #ffc10799;
+            --cr-warning-disabled-text: #00000099;
+        /* #endregion */
+
+        /* #region ====== BUTTON PROPERTIES */
+            --cr-btn-txt-size: 1rem;
+            --cr-btn-txt-size-mini: .875rem;
+            --cr-btn-txt-size-big: 1.25rem;
+            --cr-btn-txt-weight: 400;
+            --cr-btn-padding: .375rem .75rem;
+            --cr-btn-padding-mini: .25rem .5rem;
+            --cr-btn-padding-big: .5rem 1rem;
+            --cr-btn-border: 1px solid;
+            --cr-btn-radius: .5rem;
+            --cr-btn-radius-mini: .4rem;
+            --cr-btn-radius-big: .6rem;
+            --cr-btn-radius-phill: 3rem;
+        /* #endregion */
+
+        /* #region ====== INPUT PROPERTIES */
+            --cr-form-group-margin-bottom: 1rem;
+            --cr-form-group-label-size: .85rem;
+            --cr-form-group-label-size-mini: .75rem;
+            --cr-form-group-label-size-big: 1rem;
+            --cr-form-group-label-weight: 600;
+            --cr-form-group-label-margin-bottom: .35rem;
+
+            --cr-input-txt-size: 1rem;
+            --cr-input-txt-size-mini: .875rem;
+            --cr-input-txt-size-big: 1.25rem;
+            --cr-input-txt-weight: 400;
+            --cr-input-padding: .375rem .75rem;
+            --cr-input-padding-mini: .25rem .5rem;
+            --cr-input-padding-big: .5rem 1rem;
+            --cr-input-border: 1px solid;
+            --cr-input-radius: .5rem;
+            --cr-input-radius-mini: .4rem;
+            --cr-input-radius-big: .6rem;
+            --cr-input-radius-phill: 3rem;
+        /* #endregion */
+    }
+
+/* ####################################### END SECTION ###################################### */
+/* #endregion ############################################################################### */
+
+/* #region ################################## BUTTON SECTION ################################# */
+/* ########################################################################################### */
+
+    /* #region ====== DEFAULT CLASS */
+        .cr-btn {
+            color: var(--cr-white);
+            font-size: var(--cr-btn-txt-size);
+            font-weight: var(--cr-btn-txt-weight);
+            padding: var(--cr-btn-padding);
+            border: var(--cr-btn-border);
+            border-radius: var(--cr-btn-radius);
+            transition: var(--cr-transition);
+            
+            display: inline-block;
+            text-transform: capitalize;
+            text-decoration: none;
+            line-height: 1.5;
+            vertical-align: middle;
+            background-clip: padding-box;
+            outline: none;
+            cursor: pointer;
+            user-select: none;
+
+            &.cr-mini {
+                font-size: var(--cr-btn-txt-size-mini);
+                padding: var(--cr-btn-padding-mini);
+                border-radius: var(--cr-btn-radius-mini);
+            }
+            &.cr-big {
+                font-size: var(--cr-btn-txt-size-big);
+                padding: var(--cr-btn-padding-big);
+                border-radius: var(--cr-btn-radius-big);
+            }
+            &.cr-full {
+                width: 100%;
+            }
+            &.cr-pill {
+                border-radius: var(--cr-btn-radius-phill);
+            }
+            &:disabled {
+                pointer-events: none;
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON PRIMARY */
+        .cr-primary {
+            background-color: var(--cr-primary-custom, var(--cr-primary));
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+
+            &:hover {
+                background-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+                border-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+            }
+            &:is(:focus, :active) {
+                background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+                border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+            }
+            &:disabled {
+                color: var(--cr-primary-custom-disabled-text, var(--cr-primary-disabled-text));
+                background-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+                border-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+            }
+        }
+        .cr-primary-outline {
+            color: var(--cr-primary-custom, var(--cr-primary));
+            background-color: transparent;
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+
+            &:hover {
+                color: var(--cr-white);
+                background-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+                border-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+            }
+            &:is(:focus, :active) {
+                color: var(--cr-white);
+                background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+                border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+            }
+            &:disabled {
+                color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+                border-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON SUCCESS */
+        .cr-success {
+            background-color: var(--cr-success);
+            border-color: var(--cr-success);
+
+            &:hover {
+                background-color: var(--cr-success-hover);
+                border-color: var(--cr-success-hover);
+            }
+            &:is(:focus, :active) {
+                background-color: var(--cr-success-active);
+                border-color: var(--cr-success-active);
+            }
+            &:disabled {
+                color: var(--cr-success-disabled-text);
+                background-color: var(--cr-success-disabled);
+                border-color: var(--cr-success-disabled);
+            }
+        }
+        .cr-success-outline {
+            color: var(--cr-success);
+            background-color: transparent;
+            border-color: var(--cr-success);
+
+            &:hover {
+                color: var(--cr-white);
+                background-color: var(--cr-success-hover);
+                border-color: var(--cr-success-hover);
+            }
+            &:is(:focus, :active) {
+                color: var(--cr-white);
+                background-color: var(--cr-success-active);
+                border-color: var(--cr-success-active);
+            }
+            &:disabled {
+                color: var(--cr-success-disabled);
+                border-color: var(--cr-success-disabled);
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON DANGER */
+        .cr-danger {
+            background-color: var(--cr-danger);
+            border-color: var(--cr-danger);
+
+            &:hover {
+                background-color: var(--cr-danger-hover);
+                border-color: var(--cr-danger-hover);
+            }
+            &:is(:focus, :active) {
+                background-color: var(--cr-danger-active);
+                border-color: var(--cr-danger-active);
+            }
+            &:disabled {
+                color: var(--cr-danger-disabled-text);
+                background-color: var(--cr-danger-disabled);
+                border-color: var(--cr-danger-disabled);
+            }
+        }
+        .cr-danger-outline {
+            color: var(--cr-danger);
+            background-color: transparent;
+            border-color: var(--cr-danger);
+
+            &:hover {
+                color: var(--cr-white);
+                background-color: var(--cr-danger-hover);
+                border-color: var(--cr-danger-hover);
+            }
+            &:is(:focus, :active) {
+                color: var(--cr-white);
+                background-color: var(--cr-danger-active);
+                border-color: var(--cr-danger-active);
+            }
+            &:disabled {
+                color: var(--cr-danger-disabled);
+                border-color: var(--cr-danger-disabled);
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON WARNING */
+        .cr-warning {
+            background-color: var(--cr-warning);
+            border-color: var(--cr-warning);
+
+            &:hover {
+                background-color: var(--cr-warning-hover);
+                border-color: var(--cr-warning-hover);
+            }
+            &:is(:focus, :active) {
+                background-color: var(--cr-warning-active);
+                border-color: var(--cr-warning-active);
+            }
+            &:disabled {
+                color: var(--cr-warning-disabled-text);
+                background-color: var(--cr-warning-disabled);
+                border-color: var(--cr-warning-disabled);
+            }
+        }
+        .cr-warning-outline {
+            color: var(--cr-warning);
+            background-color: transparent;
+            border-color: var(--cr-warning);
+
+            &:hover {
+                color: var(--cr-white);
+                background-color: var(--cr-warning-hover);
+                border-color: var(--cr-warning-hover);
+            }
+            &:is(:focus, :active) {
+                color: var(--cr-white);
+                background-color: var(--cr-warning-active);
+                border-color: var(--cr-warning-active);
+            }
+            &:disabled {
+                color: var(--cr-warning-disabled);
+                border-color: var(--cr-warning-disabled);
+            }
+        }
+    /* #endregion */
+
+/* ####################################### END SECTION ###################################### */
+/* #endregion ############################################################################### */
+
+/* #region ################################## INPUT SECTION ################################## */
+/* ########################################################################################### */
+
+    /* #region ====== FORM GROUP & LABEL */
+        .cr-form-group {
+            display: block;
+            width: 100%;
+            margin-bottom: var(--cr-form-group-margin-bottom);
+
+            &.inline {
+                display: inline-block;
+                width: fit-content;
+            }
+        }
+
+        .cr-label {
+            display: block;
+            color: var(--cr-black);
+            font-size: var(--cr-form-group-label-size);
+            font-weight: var(--cr-form-group-label-weight);
+            text-transform: capitalize;
+            margin-bottom: var(--cr-form-group-label-margin-bottom);
+
+            &.cr-mini {
+                font-size: var(--cr-form-group-label-size-mini);
+            }
+            &.cr-big {
+                font-size: var(--cr-form-group-label-size-big);
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== INPUT/TEXTAREA & SELECT & RADIO/CHECKBOX */
+        .cr-input {
+            display: block;
+            width: 100%;
+            font-size: var(--cr-input-txt-size);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--cr-black);
+            padding: var(--cr-input-padding);
+            margin: 0;
+            background-color: var(--cr-white);
+            border: 1px solid var(--cr-border);
+            border-radius: var(--cr-input-radius);
+            transition: var(--cr-transition);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            &.cr-mini {
+                font-size: var(--cr-input-txt-size-mini);
+                padding: var(--cr-input-padding-mini);
+                border-radius: var(--cr-input-radius-mini);
+            }
+            &.cr-big {
+                font-size: var(--cr-input-txt-size-big);
+                padding: var(--cr-input-padding-big);
+                border-radius: var(--cr-input-radius-big);
+            }
+
+            &::placeholder {
+                color: var(--cr-grey);
+                user-select: none;
+            }
+        }
+
+        .cr-select {
+            display: block;
+            width: 100%;
+            font-size: var(--cr-input-txt-size);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--cr-black);
+            padding: var(--cr-input-padding);
+            padding-right: 2rem;
+            margin: 0;
+            background-color: var(--cr-white);
+            border: 1px solid var(--cr-border);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right .5rem center;
+            background-size: 16px 12px;
+            border-radius: var(--cr-input-radius);
+            transition: var(--cr-transition);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+
+            &.cr-mini {
+                font-size: var(--cr-input-txt-size-mini);
+                padding: var(--cr-input-padding-mini);
+                padding-right: 1.75rem;
+                background-size: 14px 10px;
+                border-radius: var(--cr-input-radius-mini);
+            }
+            &.cr-big {
+                font-size: var(--cr-input-txt-size-big);
+                padding: var(--cr-input-padding-big);
+                padding-right: 2.25rem;
+                background-size: 18px 14px;
+                border-radius: var(--cr-input-radius-big);
+            }
+        }
+    /* #endregion */
+
+    /* #region ====== INPUT GROUP */
+        .cr-input-group {
+            display: flex;
+            align-items: stretch;
+            line-height: 1.5;
+            width: 100%;
+
+            & :is(.cr-prepend, .cr-append) {
+                color: var(--cr-black);
+                font-size: var(--cr-input-txt-size);
+                line-height: 1.5;
+                padding: var(--cr-input-padding);
+                background-color: var(--cr-border);
+                border: 1px solid var(--cr-border);
+            }
+            & .cr-prepend {
+                border-right: none;
+                border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius);
+            }
+            & .cr-append {
+                border-left: none;
+                border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0;
+            }
+
+            &:has(.cr-prepend) :is(.cr-input, .cr-select) {
+                border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0;
+            }
+            &:has(.cr-append) :is(.cr-input, .cr-select) {
+                border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius);
+            }
+            &:has(.cr-prepend, .cr-append) .cr-select {
+                padding-right: 2rem;
+            }
+
+            &.cr-mini {
+                & :is(.cr-prepend, .cr-append) {
+                    font-size: var(--cr-input-txt-size-mini);
+                    padding: var(--cr-input-padding-mini);
+                }
+                & .cr-prepend {
+                    border-radius: var(--cr-input-radius-mini) 0 0 var(--cr-input-radius-mini);
+                }
+                & .cr-append {
+                    border-radius: 0 var(--cr-input-radius-mini) var(--cr-input-radius-mini) 0;
+                }
     
-    --cr-btn-primary: #1C64F2;
-    --cr-btn-primary-hover: #0d56e5;
-    --cr-btn-primary-focus: #0d55e550;
+                &:has(.cr-prepend) :is(.cr-input, .cr-select) {
+                    font-size: var(--cr-input-txt-size-mini);
+                    padding: var(--cr-input-padding-mini);
+                    border-radius: 0 var(--cr-input-radius-mini) var(--cr-input-radius-mini) 0;
+                }
+                &:has(.cr-append) :is(.cr-input, .cr-select) {
+                    font-size: var(--cr-input-txt-size-mini);
+                    padding: var(--cr-input-padding-mini);
+                    border-radius: var(--cr-input-radius-mini) 0 0 var(--cr-input-radius-mini);
+                }
+                &:has(.cr-prepend, .cr-append) .cr-select {
+                    padding-right: 1.75rem;
+                    background-size: 14px 10px;
+                }
+            }
 
-    --cr-btn-success: #3d8840;
-    --cr-btn-success-hover: #367a39;
-    --cr-btn-success-focus: #367a3950;
+            &.cr-big {
+                & :is(.cr-prepend, .cr-append) {
+                    font-size: var(--cr-input-txt-size-big);
+                    padding: var(--cr-input-padding-big);
+                }
+                & .cr-prepend {
+                    border-radius: var(--cr-input-radius-big) 0 0 var(--cr-input-radius-big);
+                }
+                & .cr-append {
+                    border-radius: 0 var(--cr-input-radius-big) var(--cr-input-radius-big) 0;
+                }
+    
+                &:has(.cr-prepend) :is(.cr-input, .cr-select) {
+                    font-size: var(--cr-input-txt-size-big);
+                    padding: var(--cr-input-padding-big);
+                    border-radius: 0 var(--cr-input-radius-big) var(--cr-input-radius-big) 0;
+                }
+                &:has(.cr-append) :is(.cr-input, .cr-select) {
+                    font-size: var(--cr-input-txt-size-big);
+                    padding: var(--cr-input-padding-big);
+                    border-radius: var(--cr-input-radius-big) 0 0 var(--cr-input-radius-big);
+                }
+                &:has(.cr-prepend, .cr-append) .cr-select {
+                    padding-right: 2.25rem;
+                    background-size: 18px 14px;
+                }
+            }
+        }
 
-    --cr-btn-danger: #f44336;
-    --cr-btn-danger-hover: #f22819;
-    --cr-btn-danger-focus: #f2271950;
+        .cr-check-group {
+            display: block;
+            line-height: 1.5;
+            width: 100%;
 
-    --cr-btn-warning: #f4ae0e;
-    --cr-btn-warning-hover: #de9d0a;
-    --cr-btn-warning-focus: #de9e0a50;
-}
-/* #endregion */
+            &.inline {
+                display: inline-block;
+                width: fit-content;
+            }
+            &.inline:not(:first-of-type) {
+                margin-left: 1.5rem;
+            }
 
-/* #region ====== DEFAULT CLASS BUTTON */
-.cr-btn {
-    color: var(--cr-btn-txt);
-    font-size: var(--cr-btn-txt-size);
-    font-weight: var(--cr-btn-txt-weight);
-    text-transform: var(--cr-btn-txt-transform);
-    min-height: var(--cr-btn-min-max-height);
-    max-height: var(--cr-btn-min-max-height);
-    padding: var(--cr-btn-padding);
-    border: var(--cr-btn-border);
-    border-radius: var(--cr-btn-radius);
-    transition: var(--cr-transition);
+            & :is(input[type="checkbox"], input[type="radio"]) {
+                cursor: pointer;
+            }
+        }
+    /* #endregion */
 
-    display: inline-block;
-    line-height: 1.5;
-    text-decoration: none;
-    vertical-align: middle;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    user-select: none;
-}
-
-.cr-btn.cr-mini {
-    min-height: var(--cr-btn-min-max-height-mini);
-    max-height: var(--cr-btn-min-max-height-mini);
-    font-size: .75rem;
-    padding: var(--cr-btn-padding-mini);
-}
-.cr-btn.cr-big {
-    min-height: var(--cr-btn-min-max-height-big);
-    max-height: var(--cr-btn-min-max-height-big);
-    font-size: 1.25rem;
-    padding: var(--cr-btn-padding-big);
-}
-.cr-btn.cr-full {
-    width: 100%;
-}
-.cr-btn.cr-pill {
-    border-radius: var(--cr-pill-radius);
-}
-.cr-btn.cr-flex {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-}
-.cr-btn.cr-flex.cr-reverse {
-    flex-direction: row-reverse;
-}
-.cr-btn.cr-icon {
-    aspect-ratio: 1;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--cr-btn-icon-padding);
-}
-
-.cr-btn:disabled {
-    opacity: .75;
-    filter: grayscale(.75);
-    pointer-events: none;
-}
-/* #endregion */
-
-/* #region ====== BUTTON DEFAULT (CUSTOM USER) */
-.cr-default {
-    color: var(--cr-btn-txt-default);
-    background-color: var(--cr-btn-default);
-    border-color: var(--cr-btn-default);
-}
-.cr-default:is(:hover, :focus) {
-    background-color: var(--cr-btn-default-hover);
-    border-color: var(--cr-btn-default-hover);
-}
-.cr-outline-default {
-    color: var(--cr-btn-default);
-    border-color: var(--cr-btn-default);
-}
-.cr-outline-default:is(:hover, :focus) {
-    color: var(--cr-btn-txt-default);
-    background-color: var(--cr-btn-default-hover);
-    border-color: var(--cr-btn-default-hover);
-}
-:is(.cr-default, .cr-outline-default):focus {
-    box-shadow: 0 0 0 4px var(--cr-btn-default-focus);
-}
-/* #endregion */
-
-/* #region ====== BUTTON PRIMARY */
-.cr-primary {
-    background-color: var(--cr-btn-primary);
-    border-color: var(--cr-btn-primary);
-}
-.cr-primary:is(:hover, :focus) {
-    background-color: var(--cr-btn-primary-hover);
-    border-color: var(--cr-btn-primary-hover);
-}
-.cr-outline-primary {
-    color: var(--cr-btn-primary);
-    border-color: var(--cr-btn-primary);
-}
-.cr-outline-primary:is(:hover, :focus) {
-    color: var(--cr-btn-txt);
-    background-color: var(--cr-btn-primary-hover);
-    border-color: var(--cr-btn-primary-hover);
-}
-:is(.cr-primary, .cr-outline-primary):focus {
-    box-shadow: 0 0 0 4px var(--cr-btn-primary-focus);
-}
-/* #endregion */
-
-/* #region ====== BUTTON SUCCESS */
-.cr-success {
-    background-color: var(--cr-btn-success);
-    border-color: var(--cr-btn-success);
-}
-.cr-success:is(:hover, :focus) {
-    background-color: var(--cr-btn-success-hover);
-    border-color: var(--cr-btn-success-hover);
-}
-.cr-outline-success {
-    color: var(--cr-btn-success);
-    border-color: var(--cr-btn-success);
-}
-.cr-outline-success:is(:hover, :focus) {
-    color: var(--cr-btn-txt);
-    background-color: var(--cr-btn-success-hover);
-    border-color: var(--cr-btn-success-hover);
-}
-:is(.cr-success, .cr-outline-success):focus {
-    box-shadow: 0 0 0 4px var(--cr-btn-success-focus);
-}
-/* #endregion */
-
-/* #region ====== BUTTON DANGER */
-.cr-danger {
-    background-color: var(--cr-btn-danger);
-    border-color: var(--cr-btn-danger);
-}
-.cr-danger:is(:hover, :focus) {
-    background-color: var(--cr-btn-danger-hover);
-    border-color: var(--cr-btn-danger-hover);
-}
-.cr-outline-danger {
-    color: var(--cr-btn-danger);
-    border-color: var(--cr-btn-danger);
-}
-.cr-outline-danger:is(:hover, :focus) {
-    color: var(--cr-btn-txt);
-    background-color: var(--cr-btn-danger-hover);
-    border-color: var(--cr-btn-danger-hover);
-}
-:is(.cr-danger, .cr-outline-danger):focus {
-    box-shadow: 0 0 0 4px var(--cr-btn-danger-focus);
-}
-/* #endregion */
-
-/* #region ====== BUTTON WARNING */
-.cr-warning {
-    color: var(--cr-btn-txt-dark);
-    background-color: var(--cr-btn-warning);
-    border-color: var(--cr-btn-warning);
-}
-.cr-warning:is(:hover, :focus) {
-    background-color: var(--cr-btn-warning-hover);
-    border-color: var(--cr-btn-warning-hover);
-}
-.cr-outline-warning {
-    color: var(--cr-btn-warning);
-    border-color: var(--cr-btn-warning);
-}
-.cr-outline-warning:is(:hover, :focus) {
-    color: var(--cr-btn-txt-dark);
-    background-color: var(--cr-btn-warning-hover);
-    border-color: var(--cr-btn-warning-hover);
-}
-:is(.cr-warning, .cr-outline-warning):focus {
-    box-shadow: 0 0 0 4px var(--cr-btn-warning-focus);
-}
-/* #endregion */
-
-/* #endregion ################################## BUTTON SECTION END */
+/* ####################################### END SECTION ###################################### */
+/* #endregion ############################################################################### */
 
 
-/* #region ##################################### INPUT SECTION */
 
-/* #region ====== INPUT VARIABLE */
-:root {
-    --cr-form-group-label-size: .85rem;
-    --cr-form-group-label-weight: 600;
-    --cr-form-group-margin-bottom: 1rem;
-
-    --cr-input-txt: #000000;
-    --cr-input-txt-size: 1rem;
-    --cr-input-min-max-height: 38px;
-    --cr-input-background: #fff;
-    --cr-input-border-color: #e1e1e1;
-    --cr-input-radius: .5rem;
-    --cr-input-box: #0d55e550;
-}
-/* #endregion */
-
-/* #region ====== FORM GROUP, INPUT GROUP, LABEL */
-.cr-form-group {
-    margin-bottom: var(--cr-form-group-margin-bottom);
-}
-.cr-input-group {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    width: 100%;
-}
-.cr-input-group.cr-reverse {
-    flex-direction: row;
-}
-.cr-label {
-    display: block;
-    color: dimgrey;
-    font-size: var(--cr-form-group-label-size);
-    font-weight: var(--cr-form-group-label-weight);
-    text-transform: capitalize;
-    margin-bottom: .5rem;
-    user-select: none;
-}
-
-.cr-input-group .cr-icon-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: var(--cr-input-min-max-height);
-    max-height: var(--cr-input-min-max-height);
-    padding: 0 .5rem;
-    color: var(--cr-btn-txt-dark);
-    font-size: calc(var(--cr-input-txt-size) - .1rem);
-    background-color: #f1f1f1;
-    border: 1px solid var(--cr-input-border-color);
-    border-right: 0;
-    border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius);
-    transition: all .25s ease-in-out;
-    user-select: none;
-}
-.cr-input-group.cr-reverse .cr-icon-input {
-    border-left: 0;
-    border-right: 1px solid var(--cr-input-border-color) ;
-    border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0;
-}
-.cr-input-group .cr-input:is(:focus, :not(:placeholder-shown)) + .cr-icon-input,
-.cr-input-group .cr-select:focus + .cr-icon-input {
-    color: #fff;
-    background-color: var(--cr-btn-primary);
-    border-color: var(--cr-btn-primary);
-}
-.cr-input-group.cr-pill .cr-icon-input {
-    border-radius: var(--cr-pill-radius) 0 0 var(--cr-pill-radius);
-}
-.cr-input-group :is(.cr-input, .cr-select) {
-    flex: 1;
-    border-left: none;
-    border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0; 
-}
-.cr-input-group.cr-reverse :is(.cr-input, .cr-select) {
-    border-left: 1px solid var(--cr-input-border-color);
-    border-right: none;
-    border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius); 
-}
-.cr-input-group.cr-pill :is(.cr-input, .cr-select) {
-    border-top-right-radius: var(--cr-pill-radius);
-    border-bottom-right-radius: var(--cr-pill-radius);
-}
-/* #endregion */
-
-/* #region ====== INPUT, SELECT */
-.cr-input,
-.cr-select {
-    display: block;
-    width: 100%;
-    font-size: var(--cr-input-txt-size);
-    font-weight: 400;
-    line-height: 1.5;
-    min-height: var(--cr-input-min-max-height);
-    max-height: var(--cr-input-min-max-height);
-    margin: 0;
-    color: var(--cr-input-txt);
-    background-color: var(--cr-input-background);
-    border: 1px solid var(--cr-input-border-color);
-    border-radius: var(--cr-input-radius);
-    transition: all .25s ease-in-out;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-.cr-input {
-    padding: .4rem .6rem;
-}
-.cr-select {
-    padding: .4rem 2rem .4rem .75rem;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right .5rem center;
-    background-size: 16px 12px;
-    cursor: pointer;
-}
-:is(.cr-input, .cr-select):focus {
-    box-shadow: 0 0 0 4px var(--cr-input-box);
-}
-.cr-input::placeholder {
-    color: #A6A6A6;
-    user-select: none;
-}
-/* #endregion */
-
-/* #endregion ################################## INPUT SECTION END */
