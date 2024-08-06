@@ -1,5 +1,5 @@
 
-############## VERSION 1.0.0 ##############
+############## VERSION 1.0.0 (06/08/2024) ##############
 
 - BUTTON
   |_ Primary, Success, Danger, Warning, Disabled
@@ -17,3 +17,8 @@
   |_ Set a "name" for radios group
 
 
+############## VERSION 1.1.0 (06/08/2024) ##############
+
+- INPUTS
+  |_ Floating input label Small, Regular, Large
+  |_ Floating input label for, input, select and textarea

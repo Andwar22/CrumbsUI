@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crumbs UI</title>
-    <link rel="stylesheet" href="master-crumbs-ui.css">
+    <link rel="stylesheet" href="/dist/1.1.0/crumbs-ui.css">
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
@@ -256,9 +256,17 @@
 
         <!-- TEXTAREA -->
         <div class="group">
-            <div class="cr-form-group" style="margin-bottom: 0;">
+            <div class="cr-form-group">
+                <label class="cr-label cr-mini">This is label</label>
+                <textarea class="cr-input cr-mini" rows="3" placeholder="Ini adalah textarea..."></textarea>
+            </div>
+            <div class="cr-form-group">
                 <label class="cr-label">This is label</label>
                 <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: 0;">
+                <label class="cr-label cr-big">This is label</label>
+                <textarea class="cr-input cr-big" rows="3" placeholder="Ini adalah textarea..."></textarea>
             </div>
         </div>
     </div>
@@ -308,6 +316,97 @@
             <div class="cr-check-group inline">
                 <input type="radio" id="radio2a" name="radios2">
                 <label for="radio2a">Checkbox 2a</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING INPUT -->
+    <div class="group">
+        <div class="grid">
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group cr-mini">
+                    <label>This is label</label>
+                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group cr-mini">
+                    <label>This is label</label>
+                    <select class="cr-select">
+                        <option value="one">Option ne</option>
+                        <option value="two">Option Two</option>
+                        <option value="three">Option Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <button class="cr-btn cr-primary cr-mini">Normal Primary</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group">
+                    <label>This is label</label>
+                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group">
+                    <label>This is label</label>
+                    <select class="cr-select">
+                        <option value="one">Option ne</option>
+                        <option value="two">Option Two</option>
+                        <option value="three">Option Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <button class="cr-btn cr-primary">Normal Primary</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group cr-big">
+                    <label>This is label</label>
+                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <div class="cr-float-group cr-big">
+                    <label>This is label</label>
+                    <select class="cr-select">
+                        <option value="one">Option ne</option>
+                        <option value="two">Option Two</option>
+                        <option value="three">Option Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: .5rem;">
+                <button class="cr-btn cr-primary cr-big">Normal Primary</button>
+            </div>
+        </div>
+
+        <!-- TEXTAREA -->
+        <div class="group">
+            <div class="cr-form-group">
+                <div class="cr-float-group cr-mini">
+                    <label>This is label</label>
+                    <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
+            </div>
+            <div class="cr-form-group">
+                <div class="cr-float-group">
+                    <label>This is label</label>
+                    <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
+            </div>
+            <div class="cr-form-group" style="margin-bottom: 0;">
+                <div class="cr-float-group cr-big">
+                    <label>This is label</label>
+                    <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
             </div>
         </div>
     </div>
