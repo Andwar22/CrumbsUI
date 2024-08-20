@@ -22,3 +22,6 @@
 - INPUTS
   |_ Floating input label Small, Regular, Large
   |_ Floating input label for, input, select and textarea
+
+  - BUTTON
+  |_ Fix button variable color

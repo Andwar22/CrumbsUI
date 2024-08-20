@@ -74,30 +74,27 @@
             --cr-black: #202022;
             --cr-grey: #7F7F7F;
             --cr-border: #e1e1e1;
+            --cr-disabled-text: #f6f6f6;
 
             --cr-primary: #007bff;
-            --cr-primary-hover: #0056b3;
-            --cr-primary-active: #004085;
-            --cr-primary-disabled: #007bff99;
-            --cr-primary-disabled-text: #ffffff99;
+            --cr-primary-hover: #0068d8; /*dark +15*/
+            --cr-primary-active: #0056b2; /*dark +30*/
+            --cr-primary-disabled: #7fbdff; /*light +50*/
 
             --cr-success: #28a745;
-            --cr-success-hover: #218838;
-            --cr-success-active: #1e7e34;
-            --cr-success-disabled: #28a74599;
-            --cr-success-disabled-text: #ffffff99;
+            --cr-success-hover: #218d3a;
+            --cr-success-active: #1c7430;
+            --cr-success-disabled: #84e19a;
 
             --cr-danger: #dc3545;
-            --cr-danger-hover: #c82333;
-            --cr-danger-active: #bd2130;
-            --cr-danger-disabled: #dc354599;
-            --cr-danger-disabled-text: #ffffff99;
+            --cr-danger-hover: #c52231;
+            --cr-danger-active: #a21c29;
+            --cr-danger-disabled: #ed99a1;
 
             --cr-warning: #ffc107;
-            --cr-warning-hover: #e0a800;
-            --cr-warning-active: #c69500;
-            --cr-warning-disabled: #ffc10799;
-            --cr-warning-disabled-text: #00000099;
+            --cr-warning-hover: #dea700;
+            --cr-warning-active: #b78900;
+            --cr-warning-disabled: #ffe083;
         /* #endregion */
 
         /* #region ====== BUTTON PROPERTIES */
@@ -159,7 +156,6 @@
             text-decoration: none;
             line-height: 1.5;
             vertical-align: middle;
-            background-clip: padding-box;
             outline: none;
             cursor: pointer;
             user-select: none;
@@ -192,17 +188,17 @@
             border-color: var(--cr-primary-custom, var(--cr-primary));
 
             &:hover {
-                background-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
-                border-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+                background-color: var(--cr-primary-hover-custom, var(--cr-primary-hover));
+                border-color: var(--cr-primary-hover-custom, var(--cr-primary-hover));
             }
             &:is(:focus, :active) {
-                background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
-                border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+                background-color: var(--cr-primary-active-custom, var(--cr-primary-active));
+                border-color: var(--cr-primary-active-custom, var(--cr-primary-active));
             }
             &:disabled {
-                color: var(--cr-primary-custom-disabled-text, var(--cr-primary-disabled-text));
-                background-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
-                border-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+                color: var(--cr-disabled-text-custom, var(--cr-disabled-text));
+                background-color: var(--cr-primary-disabled-custom, var(--cr-primary-disabled));
+                border-color: var(--cr-primary-disabled-custom, var(--cr-primary-disabled));
             }
         }
         .cr-primary-outline {
@@ -241,7 +237,7 @@
                 border-color: var(--cr-success-active);
             }
             &:disabled {
-                color: var(--cr-success-disabled-text);
+                color: var(--cr-disabled-text);
                 background-color: var(--cr-success-disabled);
                 border-color: var(--cr-success-disabled);
             }
@@ -282,7 +278,7 @@
                 border-color: var(--cr-danger-active);
             }
             &:disabled {
-                color: var(--cr-danger-disabled-text);
+                color: var(--cr-disabled-text);
                 background-color: var(--cr-danger-disabled);
                 border-color: var(--cr-danger-disabled);
             }
@@ -323,7 +319,7 @@
                 border-color: var(--cr-warning-active);
             }
             &:disabled {
-                color: var(--cr-warning-disabled-text);
+                color: var(--cr-disabled-text);
                 background-color: var(--cr-warning-disabled);
                 border-color: var(--cr-warning-disabled);
             }
@@ -687,3 +683,6 @@
 
 /* ####################################### END SECTION ###################################### */
 /* #endregion ############################################################################### */
+
+
+
