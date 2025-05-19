@@ -113,7 +113,7 @@
         /* #endregion */
 
         /* #region ====== INPUT PROPERTIES */
-            --cr-form-group-margin-bottom: 1rem;
+            --cr-form-group-margin-bottom: .75rem;
             --cr-form-group-label-size: .85rem;
             --cr-form-group-label-size-mini: .75rem;
             --cr-form-group-label-size-big: 1rem;
@@ -160,6 +160,10 @@
             cursor: pointer;
             user-select: none;
 
+            &:focus:not(:focus-visible) {
+                box-shadow: none;
+            }
+
             &.cr-mini {
                 font-size: var(--cr-btn-txt-size-mini);
                 padding: var(--cr-btn-padding-mini);
@@ -194,6 +198,7 @@
             &:is(:focus, :active) {
                 background-color: var(--cr-primary-active-custom, var(--cr-primary-active));
                 border-color: var(--cr-primary-active-custom, var(--cr-primary-active));
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-disabled-text-custom, var(--cr-disabled-text));
@@ -215,6 +220,7 @@
                 color: var(--cr-white);
                 background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
                 border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
@@ -235,6 +241,7 @@
             &:is(:focus, :active) {
                 background-color: var(--cr-success-active);
                 border-color: var(--cr-success-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-success) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-disabled-text);
@@ -256,6 +263,7 @@
                 color: var(--cr-white);
                 background-color: var(--cr-success-active);
                 border-color: var(--cr-success-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-success) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-success-disabled);
@@ -276,6 +284,7 @@
             &:is(:focus, :active) {
                 background-color: var(--cr-danger-active);
                 border-color: var(--cr-danger-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-danger) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-disabled-text);
@@ -297,6 +306,7 @@
                 color: var(--cr-white);
                 background-color: var(--cr-danger-active);
                 border-color: var(--cr-danger-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-danger) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-danger-disabled);
@@ -317,6 +327,7 @@
             &:is(:focus, :active) {
                 background-color: var(--cr-warning-active);
                 border-color: var(--cr-warning-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-warning) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-disabled-text);
@@ -338,6 +349,7 @@
                 color: var(--cr-white);
                 background-color: var(--cr-warning-active);
                 border-color: var(--cr-warning-active);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-warning) h s l / .3);
             }
             &:disabled {
                 color: var(--cr-warning-disabled);
@@ -352,7 +364,7 @@
 /* #region ################################## INPUT SECTION ################################## */
 /* ########################################################################################### */
 
-    /* #region ====== FORM GROUP & LABEL */
+    /* #region ====== FORM GROUP, ROW, LABEL */
         .cr-form-group {
             display: block;
             width: 100%;
@@ -361,6 +373,60 @@
             &.inline {
                 display: inline-block;
                 width: fit-content;
+            }
+        }
+
+        .cr-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -0.75rem;
+            margin-right: -0.75rem;
+        }
+        [class^="col-"], [class*=" col-"] {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            box-sizing: border-box;
+        }
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%
+        }
+        .col-4 {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%
+        }
+
+        /* Responsive @ media */
+        @media (min-width: 768px) {
+            .col-md-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%
+            }
+            .col-md-4 {
+                flex: 0 0 33.3333%;
+                max-width: 33.3333%
+            }
+        }
+        @media (min-width: 992px) {
+            .col-lg-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .col-lg-6 {
+                flex: 0 0 50%;
+                max-width: 50%
+            }
+            .col-lg-4 {
+                flex: 0 0 33.3333%;
+                max-width: 33.3333%
             }
         }
 
@@ -400,6 +466,13 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
+            &:is(:focus, :active) {
+                border-color: var(--cr-primary-custom, var(--cr-primary));
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary-custom, var(--cr-primary)) h s l / .3);
+            }
+            &:focus:not(:focus-visible) {
+                box-shadow: none;
+            }
             &.cr-mini {
                 font-size: var(--cr-input-txt-size-mini);
                 padding: var(--cr-input-padding-mini);
@@ -410,10 +483,15 @@
                 padding: var(--cr-input-padding-big);
                 border-radius: var(--cr-input-radius-big);
             }
-
             &::placeholder {
                 color: var(--cr-grey);
                 user-select: none;
+            }
+            &:disabled {
+                background-color: #f7f7f7;
+                opacity: .7;
+                pointer-events: none;
+                cursor: not-allowed;
             }
         }
 
@@ -441,6 +519,10 @@
             -moz-appearance: none;
             cursor: pointer;
 
+            &:is(:focus, :active) {
+                border-color: var(--cr-primary);
+                box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
+            }
             &.cr-mini {
                 font-size: var(--cr-input-txt-size-mini);
                 padding: var(--cr-input-padding-mini);
@@ -454,6 +536,12 @@
                 padding-right: 2.25rem;
                 background-size: 18px 14px;
                 border-radius: var(--cr-input-radius-big);
+            }
+            &:disabled {
+                background-color: #f7f7f7;
+                opacity: .7;
+                pointer-events: none;
+                cursor: not-allowed;
             }
         }
     /* #endregion */
@@ -472,7 +560,9 @@
                 padding: var(--cr-input-padding);
                 background-color: var(--cr-border);
                 border: 1px solid var(--cr-border);
+                transition: var(--cr-transition);
                 user-select: none;
+                z-index: 3;
             }
             & .cr-prepend {
                 border-right: none;
@@ -548,6 +638,12 @@
                     background-size: 18px 14px;
                 }
             }
+        }
+        .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-prepend,
+        .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-append {
+            color: var(--cr-white);
+            background-color: var(--cr-primary-custom, var(--cr-primary));
+            border-color: var(--cr-primary-custom, var(--cr-primary));
         }
 
         .cr-check-group {

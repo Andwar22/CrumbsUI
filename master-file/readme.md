@@ -25,3 +25,13 @@
 
   - BUTTON
   |_ Fix button variable color
+
+
+  ############## VERSION 1.2.0 (19/05/2025) ##############
+
+- INPUTS
+  |_ Row, col 4, 6, 12
+  |_ Fix focus and active style
+
+  - BUTTON
+  |_ Fix focus and active style
