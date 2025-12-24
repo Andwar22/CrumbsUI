@@ -23,15 +23,23 @@
   |_ Floating input label Small, Regular, Large
   |_ Floating input label for, input, select and textarea
 
-  - BUTTON
+- BUTTON
   |_ Fix button variable color
 
 
   ############## VERSION 1.2.0 (19/05/2025) ##############
 
 - INPUTS
-  |_ Row, col 4, 6, 12
+  |_ Row, column 1 to 12
   |_ Fix focus and active style
 
-  - BUTTON
+- BUTTON
   |_ Fix focus and active style
+
+
+############## VERSION 1.3.0 (24/12/2025) ##############
+
+- INPUT
+  |_ Dropdown Menu
+  |_ Fix floating input and Row
+  |_ Rename css and js file to crumbs.css and crumbs.js
