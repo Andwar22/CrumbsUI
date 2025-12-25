@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crumbs UI</title>
+    <link rel="stylesheet" href="/master/master-crumbs.css">
+    <link rel="stylesheet" href="/asstes/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Andwar22/CrumbsIcon/dist/2.2/crumbsicon.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>Crumbs UI</h2>
+
+            <!-- TOGGLE DARK MODE -->
+            <label class="cr-darkmode">
+                <input type="checkbox" id="darkModeToggle" />
+            </label>
+        </div>
+
+        <div class="content">
+            <!-- BUTTON -->
+            <div class="group">
+                <div class="grid">
+                    <button class="cr-btn cr-primary cr-mini">Small Primary</button>
+                    <button class="cr-btn cr-success cr-mini">Small Success</button>
+                    <button class="cr-btn cr-danger cr-mini">Small Danger</button>
+                    <button class="cr-btn cr-warning cr-mini">Small Warning</button>
+                    <button class="cr-btn cr-primary cr-mini cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+                <div class="grid">
+                    <button class="cr-btn cr-primary-outline cr-mini">Small Outline Primary</button>
+                    <button class="cr-btn cr-success-outline cr-mini">Small Outline Success</button>
+                    <button class="cr-btn cr-danger-outline cr-mini">Small Outline Danger</button>
+                    <button class="cr-btn cr-warning-outline cr-mini">Small Outline Warning</button>
+                    <button class="cr-btn cr-primary-outline cr-mini cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="grid">
+                    <button class="cr-btn cr-primary">Normal Primary</button>
+                    <button class="cr-btn cr-success">Normal Success</button>
+                    <button class="cr-btn cr-danger">Normal Danger</button>
+                    <button class="cr-btn cr-warning">Normal Warning</button>
+                    <button class="cr-btn cr-primary cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+                <div class="grid">
+                    <button class="cr-btn cr-primary-outline">Normal Outline Primary</button>
+                    <button class="cr-btn cr-success-outline">Normal Outline Success</button>
+                    <button class="cr-btn cr-danger-outline">Normal Outline Danger</button>
+                    <button class="cr-btn cr-warning-outline">Normal Outline Warning</button>
+                    <button class="cr-btn cr-primary-outline cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="grid">
+                    <button class="cr-btn cr-primary cr-big">Large Primary</button>
+                    <button class="cr-btn cr-success cr-big">Large Success</button>
+                    <button class="cr-btn cr-danger cr-big">Large Danger</button>
+                    <button class="cr-btn cr-warning cr-big">Large Warning</button>
+                    <button class="cr-btn cr-primary cr-big cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+                <div class="grid">
+                    <button class="cr-btn cr-primary-outline cr-big">Large Outline Primary</button>
+                    <button class="cr-btn cr-success-outline cr-big">Large Outline Success</button>
+                    <button class="cr-btn cr-danger-outline cr-big">Large Outline Danger</button>
+                    <button class="cr-btn cr-warning-outline cr-big">Large Outline Warning</button>
+                    <button class="cr-btn cr-primary-outline cr-big cr-square">
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="grid">
+                    <button class="cr-btn cr-primary" disabled>Primary disabled</button>
+                    <button class="cr-btn cr-success" disabled>Success disabled</button>
+                    <button class="cr-btn cr-danger" disabled>Danger disabled</button>
+                    <button class="cr-btn cr-warning" disabled>Warning disabled</button>
+                    <button class="cr-btn cr-primary cr-square" disabled>
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+                <div class="grid">
+                    <button class="cr-btn cr-primary-outline" disabled>Primary Outline disabled</button>
+                    <button class="cr-btn cr-success-outline" disabled>Success Outline disabled</button>
+                    <button class="cr-btn cr-danger-outline" disabled>Danger Outline disabled</button>
+                    <button class="cr-btn cr-warning-outline" disabled>Warning Outline disabled</button>
+                    <button class="cr-btn cr-primary-outline cr-square" disabled>
+                        <i class="ci-delete-02"></i>
+                    </button>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- INPUT -->
+            <div class="group">
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">Small input</label>
+                        <input type="text" class="cr-input cr-mini" placeholder="Tulis disini...">
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">Small input prepend</label>
+                        <div class="cr-input-group cr-mini">
+                            <span class="cr-prepend">@</span>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">Small input append</label>
+                        <div class="cr-input-group cr-mini">
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-mini">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input</label>
+                        <input type="text" class="cr-input" placeholder="Tulis disini...">
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input prepend</label>
+                        <div class="cr-input-group">
+                            <span class="cr-prepend">@</span>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input append</label>
+                        <div class="cr-input-group">
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large input</label>
+                        <input type="text" class="cr-input cr-big" placeholder="Tulis disini...">
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large input prepend</label>
+                        <div class="cr-input-group cr-big">
+                            <span class="cr-prepend">@</span>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large input append</label>
+                        <div class="cr-input-group cr-big">
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-big">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input disabled</label>
+                        <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input prepend disabled</label>
+                        <div class="cr-input-group">
+                            <span class="cr-prepend">@</span>
+                            <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal input append disabled</label>
+                        <div class="cr-input-group">
+                            <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary" disabled>submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- SELECT -->
+            <div class="group">
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">small select</label>
+                        <select class="cr-select cr-mini">
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">small select prepend</label>
+                        <div class="cr-input-group cr-mini">
+                            <span class="cr-prepend">@</span>
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-mini">small select append</label>
+                        <div class="cr-input-group cr-mini">
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-mini">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal select</label>
+                        <select class="cr-select">
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal select append</label>
+                        <div class="cr-input-group">
+                            <span class="cr-prepend">@</span>
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label">normal select prepend</label>
+                        <div class="cr-input-group">
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large select</label>
+                        <select class="cr-select cr-big">
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large select prepend</label>
+                        <div class="cr-input-group cr-big">
+                            <span class="cr-prepend">@</span>
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <label class="cr-label cr-big">large select append</label>
+                        <div class="cr-input-group cr-big">
+                            <select class="cr-select">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-big">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group" style="margin-bottom: 0;">
+                        <label class="cr-label">normal select disabled</label>
+                        <select class="cr-select" disabled>
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                    </div>
+                    <div class="cr-form-group" style="margin-bottom: 0;">
+                        <label class="cr-label">normal select prepend disabled</label>
+                        <div class="cr-input-group">
+                            <span class="cr-prepend">@</span>
+                            <select class="cr-select" disabled>
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group" style="margin-bottom: 0;">
+                        <label class="cr-label">normal select append disabled</label>
+                        <div class="cr-input-group">
+                            <select class="cr-select" disabled>
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>
+                            </select>
+                            <span class="cr-append">.com</span>
+                        </div>
+                    </div>
+                    <div class="cr-form-group" style="margin-bottom: 0;">
+                        <button class="cr-btn cr-primary" disabled>submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- DROPDOWN & SWITCH -->
+            <div class="group">
+                <div class="grid">
+                    <div class="cr-dropdown">
+                        <button class="cr-btn cr-primary cr-drop-toggle" type="button">
+                            Dropdown
+                        </button>
+                        <div class="cr-drop-menu">
+                            <a class="cr-drop-item" href="#">Profile</a>
+                            <a class="cr-drop-item" href="#">Settings</a>
+                        </div>
+                    </div>
+
+                    <label class="cr-switch">
+                        <input type="checkbox" />
+                    </label>
+
+                    <label class="cr-switch">
+                        <input type="checkbox" />
+                        <span>Switch with label</span>
+                    </label>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- TEXTAREA -->
+            <div class="group">
+                <div class="cr-form-group">
+                    <label class="cr-label cr-mini">small textarea</label>
+                    <textarea class="cr-input cr-mini" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
+                <div class="cr-form-group">
+                    <label class="cr-label">normal textarea</label>
+                    <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
+                <div class="cr-form-group">
+                    <label class="cr-label cr-big">large textarea</label>
+                    <textarea class="cr-input cr-big" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- CHECKBOX & RADIO -->
+            <div class="group">
+                <div class="cr-form-group">
+                    <label class="cr-label">normal checkbox</label>
+                    <div class="cr-check-group">
+                        <input type="checkbox" id="check1" >
+                        <label for="check1">Checkbox 1</label>
+                    </div>
+                    <div class="cr-check-group">
+                        <input type="checkbox" id="check2" >
+                        <label for="check2">Checkbox 2</label>
+                    </div>
+                </div>
+                <div class="cr-form-group">
+                    <label class="cr-label">inline checkbox</label>
+                    <div class="cr-check-group inline">
+                        <input type="checkbox" id="check1a" >
+                        <label for="check1a">Checkbox 1a</label>
+                    </div>
+                    <div class="cr-check-group inline">
+                        <input type="checkbox" id="check2a" >
+                        <label for="check2a">Checkbox 2a</label>
+                    </div>
+                </div>
+
+                <div class="cr-form-group">
+                    <label class="cr-label">normal radio</label>
+                    <div class="cr-check-group">
+                        <input type="radio" id="radio1" name="radios1">
+                        <label for="radio1">Radio 1</label>
+                    </div>
+                    <div class="cr-check-group">
+                        <input type="radio" id="radio2" name="radios1">
+                        <label for="radio2">Radio 2</label>
+                    </div>
+                </div>
+                <div class="cr-form-group" style="margin-bottom: 0;">
+                    <label class="cr-label">inline radio</label>
+                    <div class="cr-check-group inline">
+                        <input type="radio" id="radio1a" name="radios2">
+                        <label for="radio1a">Radio 1a</label>
+                    </div>
+                    <div class="cr-check-group inline">
+                        <input type="radio" id="radio2a" name="radios2">
+                        <label for="radio2a">Radio 2a</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- FLOATING INPUT -->
+            <div class="group">
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <div class="cr-float-group cr-mini">
+                            <label>small float input</label>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <div class="cr-float-group cr-mini">
+                            <label>small float select</label>
+                            <select class="cr-select">
+                                <option value="one">Option One</option>
+                                <option value="two">Option Two</option>
+                                <option value="three">Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-mini">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <div class="cr-float-group">
+                            <label>normal float input</label>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <div class="cr-float-group">
+                            <label>normal float select</label>
+                            <select class="cr-select">
+                                <option value="one">Option One</option>
+                                <option value="two">Option Two</option>
+                                <option value="three">Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary">submit</button>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="cr-form-group">
+                        <div class="cr-float-group cr-big">
+                            <label>large float input</label>
+                            <input type="text" class="cr-input" placeholder="Tulis disini...">
+                        </div>
+                    </div>
+
+                    <div class="cr-form-group">
+                        <div class="cr-float-group cr-big">
+                            <label>large float select</label>
+                            <select class="cr-select">
+                                <option value="one">Option One</option>
+                                <option value="two">Option Two</option>
+                                <option value="three">Option Three</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cr-form-group">
+                        <button class="cr-btn cr-primary cr-big">submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- TEXTAREA -->
+            <div class="group">
+                <div class="cr-form-group">
+                    <div class="cr-float-group cr-mini">
+                        <label>small float textarea</label>
+                        <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                    </div>
+                </div>
+
+                <div class="cr-form-group">
+                    <div class="cr-float-group">
+                        <label>normal float textarea</label>
+                        <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                    </div>
+                </div>
+
+                <div class="cr-form-group">
+                    <div class="cr-float-group cr-big">
+                        <label>large float textarea</label>
+                        <textarea class="cr-input" rows="3" placeholder="Ini adalah textarea..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            
+            <!-- COLUMNS -->
+            <div class="group" style="text-align: center;">
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-12">
+                        <div style="padding: .5rem; border: 1px solid;">col-12</div>
+                    </div>
+                </div>
+                
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-8">
+                        <div style="padding: .5rem; border: 1px solid;">col-8</div>
+                    </div>
+                    <div class="col-4">
+                        <div style="padding: .5rem; border: 1px solid;">col-4</div>
+                    </div>
+                </div>
+                
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-6">
+                        <div style="padding: .5rem; border: 1px solid;">col-6</div>
+                    </div>
+                    <div class="col-6">
+                        <div style="padding: .5rem; border: 1px solid;">col-6</div>
+                    </div>
+                </div>
+
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-4">
+                        <div style="padding: .5rem; border: 1px solid;">col-4</div>
+                    </div>
+                    <div class="col-4">
+                        <div style="padding: .5rem; border: 1px solid;">col-4</div>
+                    </div>
+                    <div class="col-4">
+                        <div style="padding: .5rem; border: 1px solid;">col-4</div>
+                    </div>
+                </div>
+
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-3">
+                        <div style="padding: .5rem; border: 1px solid;">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div style="padding: .5rem; border: 1px solid;">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div style="padding: .5rem; border: 1px solid;">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div style="padding: .5rem; border: 1px solid;">col-3</div>
+                    </div>
+                </div>
+
+                <div class="cr-row" style="margin-bottom: 2rem;">
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div style="padding: .5rem; border: 1px solid;">col-2</div>
+                    </div>
+                </div>
+
+                <div class="cr-row">
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                    <div class="col-2 col-md-1">
+                        <div style="padding: .5rem; border: 1px solid;">col-1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/master/master-crumbs.js"></script>
+</body>
+</html>

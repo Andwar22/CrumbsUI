@@ -11,11 +11,13 @@
         text-size-adjust: none;
     }
     body {
+        color: var(--cr-black);
         font-size: 100%;
         font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         min-height: 100vh;
         line-height: 1.5;
         margin: 0;
+        background-color: var(--main-bg);
     }
     body, h1, h2, h3, h4, p,
     figure, blockquote, dl, dd {
@@ -60,7 +62,8 @@
 /* #region ########## GLOBAL SECTION */    
     :root {
         /* #region == GLOBAL */
-            --cr-transition: all .25s ease;
+            --cr-txt-size: 1rem;
+            --cr-transition: .15s ease;
         /* #endregion */
 
         /* #region == COLOR */
@@ -69,6 +72,10 @@
             --cr-grey: #7F7F7F;
             --cr-border: #e1e1e1;
             --cr-disabled-text: #f6f6f6;
+
+            --main-bg: var(--custom-main-bg, #fbfbfb);
+            --cr-static-white: #ffffff;
+            --cr-static-black: #202020;
 
             --cr-primary: #007bff;
             --cr-primary-hover: #0068d8; /*dark +15*/
@@ -93,7 +100,7 @@
         /* #endregion */
 
         /* #region == BUTTON PROPERTIES */
-            --cr-btn-txt-size: 1rem;
+            --cr-btn-txt-size: var(--cr-txt-size);
             --cr-btn-txt-weight: 400;
             --cr-btn-padding: .75rem;
             --cr-btn-border: 1px solid;
@@ -103,25 +110,34 @@
 
         /* #region == INPUT PROPERTIES */
             --cr-form-group-margin-bottom: .75rem;
-            --cr-form-group-label-size: .9rem;
+            --cr-form-group-label-size: calc(var(--cr-txt-size) - .1rem);
             --cr-form-group-label-weight: 600;
             --cr-form-group-label-margin-bottom: .35rem;
 
-            --cr-input-txt-size: 1rem;
+            --cr-input-txt-size: var(--cr-txt-size);
             --cr-input-txt-weight: 400;
             --cr-input-padding: .75rem;
             --cr-input-border: 1px solid;
             --cr-input-radius: .5rem;
             --cr-input-radius-pill: 5rem;
-            --cr-input-float-shadow: rgba(0,0,0,0.15);
+
+            --cr-soft-shadow: rgba(0,0,0,0.15);
         /* #endregion */
     }
+
+    /* #region == DARK MODE */
+        body.dark {
+            --cr-white: #202020;
+            --cr-black: #ffffff;
+            --main-bg: var(--custom-main-bg, #1F1F1F);
+        }
+    /* #endregion */
 /* #endregion ########## */
 
 /* #region ########## BUTTON SECTION */
     /* #region ====== DEFAULT CLASS */
         .cr-btn {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             font-size: var(--cr-btn-txt-size);
             font-weight: var(--cr-btn-txt-weight);
             padding: calc(var(--cr-btn-padding) * .5) var(--cr-btn-padding);
@@ -142,7 +158,7 @@
             box-shadow: none;
         }
         .cr-btn:active {
-            transform: scale(.95);
+            transform: scale(.98);
         }
 
         .cr-btn.cr-mini {
@@ -200,12 +216,12 @@
             border-color: var(--cr-primary-custom, var(--cr-primary));
         }
         .cr-primary-outline:hover {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
             border-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
         }
         .cr-primary-outline:is(:focus, :active) {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
             border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
             box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
@@ -242,12 +258,12 @@
             border-color: var(--cr-success);
         }
         .cr-success-outline:hover {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-success-hover);
             border-color: var(--cr-success-hover);
         }
         .cr-success-outline:is(:focus, :active) {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-success-active);
             border-color: var(--cr-success-active);
             box-shadow: 0 0 0 .3rem hsl(from var(--cr-success) h s l / .3);
@@ -284,12 +300,12 @@
             border-color: var(--cr-danger);
         }
         .cr-danger-outline:hover {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-danger-hover);
             border-color: var(--cr-danger-hover);
         }
         .cr-danger-outline:is(:focus, :active) {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-danger-active);
             border-color: var(--cr-danger-active);
             box-shadow: 0 0 0 .3rem hsl(from var(--cr-danger) h s l / .3);
@@ -326,12 +342,12 @@
             border-color: var(--cr-warning);
         }
         .cr-warning-outline:hover {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-warning-hover);
             border-color: var(--cr-warning-hover);
         }
         .cr-warning-outline:is(:focus, :active) {
-            color: var(--cr-white);
+            color: var(--cr-static-white);
             background-color: var(--cr-warning-active);
             border-color: var(--cr-warning-active);
             box-shadow: 0 0 0 .3rem hsl(from var(--cr-warning) h s l / .3);
@@ -532,7 +548,7 @@
         }
     /* #endregion */
 
-    /* #region ====== INPUT/TEXTAREA & SELECT & RADIO/CHECKBOX */
+    /* #region ====== INPUT, TEXTAREA, SELECT, RADIO, CHECKBOX */
         .cr-input {
             display: block;
             width: 100%;
@@ -661,7 +677,7 @@
         border: 1px solid var(--cr-border);
         border-radius: .5rem;
         z-index: 1000;
-        box-shadow: 0 .5rem 1rem var(--cr-input-float-shadow);
+        box-shadow: 0 .5rem 1rem var(--cr-soft-shadow);
     }
     .cr-drop-item {
         display: block;
@@ -686,6 +702,56 @@
         display: block;
     }
     /* #endregion */
+    
+    /* #region ====== SWITCH */
+        .cr-switch {
+            --switch-width: var(--cr-switch-width-custom, 50px);
+            --switch-gap: 8%;
+
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .cr-switch input {
+            appearance: none;
+            position: relative;
+            display: block;
+            width: var(--switch-width);
+            aspect-ratio: 15 / 9;
+            margin: 0;
+            background-color: var(--cr-border);
+            border-radius: 3rem;
+            box-shadow: 0 0 5px var(--cr-soft-shadow) inset;
+            transition: var(--cr-transition);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .cr-switch input:checked {
+            background-color: var(--cr-success);
+        }
+        .cr-switch input::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(var(--switch-gap) + 1px);
+            transform: translateY(-50%);
+            width: calc(var(--switch-width) / 2 - var(--switch-gap));
+            aspect-ratio: 1;
+            background-color: var(--cr-static-white);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cr-soft-shadow);
+            transition: var(--cr-transition);
+        }
+        .cr-switch input:checked::before {
+            left: calc(var(--switch-width) / 2 - calc(var(--switch-gap) * .2));
+        }
+        .cr-switch span {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+    /* #endregion */
 
     /* #region ====== INPUT GROUP */
         .cr-input-group {
@@ -695,7 +761,7 @@
             width: 100%;
         }
         .cr-input-group :is(.cr-prepend, .cr-append) {
-            color: var(--cr-black);
+            color: var(--cr-static-black);
             font-size: var(--cr-input-txt-size);
             line-height: 1.5;
             padding: calc(var(--cr-input-padding) * .5) var(--cr-input-padding);
@@ -842,7 +908,7 @@
             top: -.65rem;
         }
         .cr-float-group :is(.cr-input, .cr-select):focus {
-            box-shadow: 2px 4px 10px var(--cr-input-float-shadow);
+            box-shadow: 2px 4px 10px var(--cr-soft-shadow);
             border-color: var(--cr-primary);
         }
         .cr-float-group :is(.cr-input, .cr-select)::placeholder {
@@ -902,6 +968,41 @@
             padding-right: 2.25rem;
             background-size: 18px 14px;
         }
+    /* #endregion */
+
+    /* #region ====== TOGGLE DARK MODE */
+        .cr-darkmode {
+            --switch-width: var(--cr-darkmode-width-custom, 33px);
+        }
+        .cr-darkmode input {
+            appearance: none;
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-width: var(--switch-width);
+            width: var(--switch-width);
+            aspect-ratio: 1;
+            margin: 0;
+            color: var(--cr-white);
+            font-size: calc(var(--cr-txt-size) * 1.3);
+            background-color: var(--cr-darkmode-bg-custom, var(--cr-black));
+            border-radius: 100%;
+            transition: var(--cr-transition);
+            cursor: pointer;
+        }
+        .cr-darkmode input::before {
+            content: '\ec60';
+            font-family: crumbsicon;
+            position: absolute;
+            transition: var(--cr-transition);
+        }
+        .cr-darkmode input:checked::before {
+            content: '\ec4e';
+        }
+    /* #endregion */
+
+
+    /* #region ====== XXX */
     /* #endregion */
 /* #endregion ########## */
 

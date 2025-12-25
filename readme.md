@@ -43,3 +43,10 @@
   |_ Dropdown Menu
   |_ Fix floating input and Row
   |_ Rename css and js file to crumbs.css and crumbs.js
+  
+
+############## VERSION 1.4.0 (25/12/2025) ##############
+
+- INPUT
+  |_ Toggle switch
+  |_ Toggle dark mode

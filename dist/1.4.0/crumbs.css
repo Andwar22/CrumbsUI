@@ -1,0 +1,1006 @@
+
+/* #region ########## RESET */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+    body {
+        color: var(--cr-black);
+        font-size: 100%;
+        font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        min-height: 100vh;
+        line-height: 1.5;
+        margin: 0;
+        background-color: var(--main-bg);
+    }
+    body, h1, h2, h3, h4, p,
+    figure, blockquote, dl, dd {
+        margin-block-end: 0;
+    }
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+    }
+    p {
+        font-weight: 400;
+        text-wrap: pretty;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    h1, h2,
+    h3, h4 {
+        text-wrap: balance;
+    }
+    a:not([class]) {
+        color: currentColor;
+        text-decoration-skip-ink: auto;
+    }
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+    input, button,
+    textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+    textarea:not([rows]) {
+        min-height: 5rem;
+    }
+    :target {
+        scroll-margin-block: 0;
+    }
+/* #endregion ########## */
+
+/* #region ########## GLOBAL SECTION */    
+    :root {
+        /* #region == GLOBAL */
+            --cr-txt-size: 1rem;
+            --cr-transition: .15s ease;
+        /* #endregion */
+
+        /* #region == COLOR */
+            --cr-white: #ffffff;
+            --cr-black: #202020;
+            --cr-grey: #7F7F7F;
+            --cr-border: #e1e1e1;
+            --cr-disabled-text: #f6f6f6;
+
+            --main-bg: var(--custom-main-bg, #fbfbfb);
+            --cr-static-white: #ffffff;
+            --cr-static-black: #202020;
+
+            --cr-primary: #007bff;
+            --cr-primary-hover: #0068d8; /*dark +15*/
+            --cr-primary-active: #0056b2; /*dark +30*/
+            --cr-primary-disabled: #7fbdff; /*light +50*/
+            --cr-primary-trans: #007bff1d;
+
+            --cr-success: #28a745;
+            --cr-success-hover: #218d3a;
+            --cr-success-active: #1c7430;
+            --cr-success-disabled: #84e19a;
+
+            --cr-danger: #dc3545;
+            --cr-danger-hover: #c52231;
+            --cr-danger-active: #a21c29;
+            --cr-danger-disabled: #ed99a1;
+
+            --cr-warning: #ffc107;
+            --cr-warning-hover: #dea700;
+            --cr-warning-active: #b78900;
+            --cr-warning-disabled: #ffe083;
+        /* #endregion */
+
+        /* #region == BUTTON PROPERTIES */
+            --cr-btn-txt-size: var(--cr-txt-size);
+            --cr-btn-txt-weight: 400;
+            --cr-btn-padding: .75rem;
+            --cr-btn-border: 1px solid;
+            --cr-btn-radius: .5rem;
+            --cr-btn-radius-pill: 5rem;
+        /* #endregion */
+
+        /* #region == INPUT PROPERTIES */
+            --cr-form-group-margin-bottom: .75rem;
+            --cr-form-group-label-size: calc(var(--cr-txt-size) - .1rem);
+            --cr-form-group-label-weight: 600;
+            --cr-form-group-label-margin-bottom: .35rem;
+
+            --cr-input-txt-size: var(--cr-txt-size);
+            --cr-input-txt-weight: 400;
+            --cr-input-padding: .75rem;
+            --cr-input-border: 1px solid;
+            --cr-input-radius: .5rem;
+            --cr-input-radius-pill: 5rem;
+
+            --cr-soft-shadow: rgba(0,0,0,0.15);
+        /* #endregion */
+    }
+
+    /* #region == DARK MODE */
+        body.dark {
+            --cr-white: #202020;
+            --cr-black: #ffffff;
+            --main-bg: var(--custom-main-bg, #1F1F1F);
+        }
+    /* #endregion */
+/* #endregion ########## */
+
+/* #region ########## BUTTON SECTION */
+    /* #region ====== DEFAULT CLASS */
+        .cr-btn {
+            color: var(--cr-static-white);
+            font-size: var(--cr-btn-txt-size);
+            font-weight: var(--cr-btn-txt-weight);
+            padding: calc(var(--cr-btn-padding) * .5) var(--cr-btn-padding);
+            border: var(--cr-btn-border);
+            border-radius: var(--cr-btn-radius);
+            transition: var(--cr-transition);
+            
+            display: inline-block;
+            text-transform: capitalize;
+            text-decoration: none;
+            line-height: 1.5;
+            vertical-align: middle;
+            outline: none;
+            cursor: pointer;
+            user-select: none;
+        }
+        .cr-btn:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+        .cr-btn:active {
+            transform: scale(.98);
+        }
+
+        .cr-btn.cr-mini {
+            font-size: calc(var(--cr-btn-txt-size) * .75);
+            padding: calc(var(--cr-btn-padding) * .5) calc(var(--cr-btn-padding) * .75);
+            border-radius: calc(var(--cr-btn-radius) * .75);
+        }
+        .cr-btn.cr-big {
+            font-size: calc(var(--cr-btn-txt-size) * 1.25);
+            padding: calc(var(--cr-btn-padding) * .75) calc(var(--cr-btn-padding) * 1.25);
+            border-radius: calc(var(--cr-btn-radius) * 1.25);
+        }
+        .cr-btn.cr-full {
+            width: 100%;
+        }
+        .cr-btn.cr-pill {
+            padding: calc(var(--cr-btn-padding) * .5) calc(var(--cr-btn-padding) * 1.25);
+            border-radius: var(--cr-btn-radius-pill);
+        }
+
+        .cr-btn.cr-square {
+            height: 100%;
+            aspect-ratio: 1;
+            padding: 0;
+        }
+        
+        .cr-btn:disabled {
+            pointer-events: none;
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON PRIMARY */
+        .cr-primary {
+            background-color: var(--cr-primary-custom, var(--cr-primary));
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+        }
+        .cr-primary:hover {
+            background-color: var(--cr-primary-hover-custom, var(--cr-primary-hover));
+            border-color: var(--cr-primary-hover-custom, var(--cr-primary-hover));
+        }
+        .cr-primary:is(:focus, :active) {
+            background-color: var(--cr-primary-active-custom, var(--cr-primary-active));
+            border-color: var(--cr-primary-active-custom, var(--cr-primary-active));
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
+        }
+        .cr-primary:disabled {
+            color: var(--cr-disabled-text-custom, var(--cr-disabled-text));
+            background-color: var(--cr-primary-disabled-custom, var(--cr-primary-disabled));
+            border-color: var(--cr-primary-disabled-custom, var(--cr-primary-disabled));
+        }
+
+        .cr-primary-outline {
+            color: var(--cr-primary-custom, var(--cr-primary));
+            background-color: transparent;
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+        }
+        .cr-primary-outline:hover {
+            color: var(--cr-static-white);
+            background-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+            border-color: var(--cr-primary-custom-hover, var(--cr-primary-hover));
+        }
+        .cr-primary-outline:is(:focus, :active) {
+            color: var(--cr-static-white);
+            background-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+            border-color: var(--cr-primary-custom-active, var(--cr-primary-active));
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
+        }
+        .cr-primary-outline:disabled {
+            color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+            border-color: var(--cr-primary-custom-disabled, var(--cr-primary-disabled));
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON SUCCESS */
+        .cr-success {
+            background-color: var(--cr-success);
+            border-color: var(--cr-success);
+        }
+        .cr-success:hover {
+            background-color: var(--cr-success-hover);
+            border-color: var(--cr-success-hover);
+        }
+        .cr-success:is(:focus, :active) {
+            background-color: var(--cr-success-active);
+            border-color: var(--cr-success-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-success) h s l / .3);
+        }
+        .cr-success:disabled {
+            color: var(--cr-disabled-text);
+            background-color: var(--cr-success-disabled);
+            border-color: var(--cr-success-disabled);
+        }
+
+        .cr-success-outline {
+            color: var(--cr-success);
+            background-color: transparent;
+            border-color: var(--cr-success);
+        }
+        .cr-success-outline:hover {
+            color: var(--cr-static-white);
+            background-color: var(--cr-success-hover);
+            border-color: var(--cr-success-hover);
+        }
+        .cr-success-outline:is(:focus, :active) {
+            color: var(--cr-static-white);
+            background-color: var(--cr-success-active);
+            border-color: var(--cr-success-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-success) h s l / .3);
+        }
+        .cr-success-outline:disabled {
+            color: var(--cr-success-disabled);
+            border-color: var(--cr-success-disabled);
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON DANGER */
+        .cr-danger {
+            background-color: var(--cr-danger);
+            border-color: var(--cr-danger);
+        }
+        .cr-danger:hover {
+            background-color: var(--cr-danger-hover);
+            border-color: var(--cr-danger-hover);
+        }
+        .cr-danger:is(:focus, :active) {
+            background-color: var(--cr-danger-active);
+            border-color: var(--cr-danger-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-danger) h s l / .3);
+        }
+        .cr-danger:disabled {
+            color: var(--cr-disabled-text);
+            background-color: var(--cr-danger-disabled);
+            border-color: var(--cr-danger-disabled);
+        }
+
+        .cr-danger-outline {
+            color: var(--cr-danger);
+            background-color: transparent;
+            border-color: var(--cr-danger);
+        }
+        .cr-danger-outline:hover {
+            color: var(--cr-static-white);
+            background-color: var(--cr-danger-hover);
+            border-color: var(--cr-danger-hover);
+        }
+        .cr-danger-outline:is(:focus, :active) {
+            color: var(--cr-static-white);
+            background-color: var(--cr-danger-active);
+            border-color: var(--cr-danger-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-danger) h s l / .3);
+        }
+        .cr-danger-outline:disabled {
+            color: var(--cr-danger-disabled);
+            border-color: var(--cr-danger-disabled);
+        }
+    /* #endregion */
+
+    /* #region ====== BUTTON WARNING */
+        .cr-warning {
+            background-color: var(--cr-warning);
+            border-color: var(--cr-warning);
+        }
+        .cr-warning:hover {
+            background-color: var(--cr-warning-hover);
+            border-color: var(--cr-warning-hover);
+        }
+        .cr-warning:is(:focus, :active) {
+            background-color: var(--cr-warning-active);
+            border-color: var(--cr-warning-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-warning) h s l / .3);
+        }
+        .cr-warning:disabled {
+            color: var(--cr-disabled-text);
+            background-color: var(--cr-warning-disabled);
+            border-color: var(--cr-warning-disabled);
+        }
+
+        .cr-warning-outline {
+            color: var(--cr-warning);
+            background-color: transparent;
+            border-color: var(--cr-warning);
+        }
+        .cr-warning-outline:hover {
+            color: var(--cr-static-white);
+            background-color: var(--cr-warning-hover);
+            border-color: var(--cr-warning-hover);
+        }
+        .cr-warning-outline:is(:focus, :active) {
+            color: var(--cr-static-white);
+            background-color: var(--cr-warning-active);
+            border-color: var(--cr-warning-active);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-warning) h s l / .3);
+        }
+        .cr-warning-outline:disabled {
+            color: var(--cr-warning-disabled);
+            border-color: var(--cr-warning-disabled);
+        }
+    /* #endregion */
+/* #endregion ########## */
+
+/* #region ########## INPUT SECTION */
+    /* #region ====== FORM GROUP, ROW, LABEL */
+        .cr-form-group {
+            display: block;
+            width: 100%;
+            margin-bottom: var(--cr-form-group-margin-bottom);
+        }
+
+        .cr-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -0.75rem;
+            margin-right: -0.75rem;
+        }
+        [class^="col-"], [class*=" col-"] {
+            position: relative;
+            width: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .col-1 {
+            flex: 0 0 8.333333%;
+            max-width: 8.333333%;
+        }
+        .col-2 {
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+        .col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        .col-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+        .col-5 {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+        }
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .col-7 {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+        .col-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+        .col-9 {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+        .col-10 {
+            flex: 0 0 83.333333%;
+            max-width: 83.333333%;
+        }
+        .col-11 {
+            flex: 0 0 91.666667%;
+            max-width: 91.666667%;
+        }
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        /* medium */
+        @media (min-width: 768px) {
+            .col-md-1 {
+                flex: 0 0 8.333333%;
+                max-width: 8.333333%;
+            }
+            .col-md-2 {
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+            }
+            .col-md-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            .col-md-5 {
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+            .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .col-md-7 {
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
+            .col-md-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            .col-md-9 {
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+            .col-md-10 {
+                flex: 0 0 83.333333%;
+                max-width: 83.333333%;
+            }
+            .col-md-11 {
+                flex: 0 0 91.666667%;
+                max-width: 91.666667%;
+            }
+            .col-md-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* large */
+        @media (min-width: 992px) {
+            .col-lg-1 {
+                flex: 0 0 8.333333%;
+                max-width: 8.333333%;
+            }
+            .col-lg-2 {
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+            }
+            .col-lg-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            .col-lg-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+            .col-lg-5 {
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+            .col-lg-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .col-lg-7 {
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
+            .col-lg-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+            .col-lg-9 {
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+            .col-lg-10 {
+                flex: 0 0 83.333333%;
+                max-width: 83.333333%;
+            }
+            .col-lg-11 {
+                flex: 0 0 91.666667%;
+                max-width: 91.666667%;
+            }
+            .col-lg-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .cr-label {
+            display: block;
+            color: var(--cr-black);
+            font-size: var(--cr-form-group-label-size);
+            font-weight: var(--cr-form-group-label-weight);
+            text-transform: capitalize;
+            margin-bottom: var(--cr-form-group-label-margin-bottom);
+        }
+        .cr-label.cr-mini {
+            font-size: calc(var(--cr-btn-txt-size) * .75);
+        }
+        .cr-label.cr-big {
+            font-size: calc(var(--cr-btn-txt-size) * 1.1);
+        }
+    /* #endregion */
+
+    /* #region ====== INPUT, TEXTAREA, SELECT, RADIO, CHECKBOX */
+        .cr-input {
+            display: block;
+            width: 100%;
+            font-size: var(--cr-input-txt-size);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--cr-black);
+            padding: calc(var(--cr-input-padding) * .5) var(--cr-input-padding);
+            margin: 0;
+            background-color: var(--cr-white);
+            border: 1px solid var(--cr-border);
+            border-radius: var(--cr-input-radius);
+            transition: var(--cr-transition);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        .cr-input:is(:focus, :active) {
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary-custom, var(--cr-primary)) h s l / .3);
+        }
+        .cr-input:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+        .cr-input.cr-mini {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+            border-radius: calc(var(--cr-input-radius) * .75);
+        }
+        .cr-input.cr-big {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+            border-radius: calc(var(--cr-input-radius) * 1.25);
+        }
+        .cr-input::placeholder {
+            color: var(--cr-grey);
+            user-select: none;
+        }
+        .cr-input:disabled {
+            background-color: #f7f7f7;
+            opacity: .7;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .cr-select {
+            display: block;
+            width: 100%;
+            font-size: var(--cr-input-txt-size);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--cr-black);
+            padding: calc(var(--cr-input-padding) * .5) var(--cr-input-padding);
+            padding-right: 2rem;
+            margin: 0;
+            background-color: var(--cr-white);
+            border: 1px solid var(--cr-border);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right .5rem center;
+            background-size: 16px 12px;
+            border-radius: var(--cr-input-radius);
+            transition: var(--cr-transition);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+        }
+        .cr-select:is(:focus, :active) {
+            border-color: var(--cr-primary);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
+        }
+        .cr-select.cr-mini {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+            padding-right: 1.75rem;
+            background-size: 14px 10px;
+            border-radius: calc(var(--cr-input-radius) * .75);
+        }
+        .cr-select.cr-big {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+            padding-right: 2.25rem;
+            background-size: 18px 14px;
+            border-radius: calc(var(--cr-input-radius) * 1.25);
+        }
+        .cr-select:disabled {
+            background-color: #f7f7f7;
+            opacity: .7;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+    /* #endregion */
+
+    /* #region ====== DROPDOWN */
+    .cr-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .cr-drop-toggle::after {
+        content: "";
+        display: inline-block;
+        margin-left: .25em;
+        vertical-align: .25em;
+        border-top: .3rem solid;
+        border-right: .3rem solid transparent;
+        border-left: .3rem solid transparent;
+        transition: var(--cr-transition);
+    }
+    .cr-dropdown:has(.cr-drop-menu.show) .cr-drop-toggle::after {
+        transform: rotate(180deg);
+    }
+    .cr-drop-menu {
+        display: none;
+        position: absolute;
+        min-width: 8rem;
+        font-size: 1rem;
+        text-align: left;
+        list-style: none;
+        padding: .5rem 0;
+        margin: .125rem 0 0;
+        background-color: var(--cr-white);
+        background-clip: padding-box;
+        border: 1px solid var(--cr-border);
+        border-radius: .5rem;
+        z-index: 1000;
+        box-shadow: 0 .5rem 1rem var(--cr-soft-shadow);
+    }
+    .cr-drop-item {
+        display: block;
+        width: 100%;
+        clear: both;
+        color: var(--cr-black);
+        font-weight: 400;
+        text-align: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: .25rem 1.5rem;
+        background-color: transparent;
+        border: 0;
+    }
+    .cr-drop-item:hover,
+    .cr-drop-item:focus {
+        color: var(--cr-primary);
+        text-decoration: none;
+        background-color: var(--cr-primary-trans);
+    }
+    .cr-drop-menu.show {
+        display: block;
+    }
+    /* #endregion */
+    
+    /* #region ====== SWITCH */
+        .cr-switch {
+            --switch-width: var(--cr-switch-width-custom, 50px);
+            --switch-gap: 8%;
+
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .cr-switch input {
+            appearance: none;
+            position: relative;
+            display: block;
+            width: var(--switch-width);
+            aspect-ratio: 15 / 9;
+            margin: 0;
+            background-color: var(--cr-border);
+            border-radius: 3rem;
+            box-shadow: 0 0 5px var(--cr-soft-shadow) inset;
+            transition: var(--cr-transition);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .cr-switch input:checked {
+            background-color: var(--cr-success);
+        }
+        .cr-switch input::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(var(--switch-gap) + 1px);
+            transform: translateY(-50%);
+            width: calc(var(--switch-width) / 2 - var(--switch-gap));
+            aspect-ratio: 1;
+            background-color: var(--cr-static-white);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cr-soft-shadow);
+            transition: var(--cr-transition);
+        }
+        .cr-switch input:checked::before {
+            left: calc(var(--switch-width) / 2 - calc(var(--switch-gap) * .2));
+        }
+        .cr-switch span {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+    /* #endregion */
+
+    /* #region ====== INPUT GROUP */
+        .cr-input-group {
+            display: flex;
+            align-items: stretch;
+            line-height: 1.5;
+            width: 100%;
+        }
+        .cr-input-group :is(.cr-prepend, .cr-append) {
+            color: var(--cr-static-black);
+            font-size: var(--cr-input-txt-size);
+            line-height: 1.5;
+            padding: calc(var(--cr-input-padding) * .5) var(--cr-input-padding);
+            background-color: var(--cr-border);
+            border: 1px solid var(--cr-border);
+            transition: var(--cr-transition);
+            user-select: none;
+            z-index: 3;
+        }
+        .cr-input-group .cr-prepend {
+            border-right: none;
+            border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius);
+        }
+        .cr-input-group .cr-append {
+            border-left: none;
+            border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0;
+        }
+        .cr-input-group:has(.cr-prepend) :is(.cr-input, .cr-select) {
+            border-radius: 0 var(--cr-input-radius) var(--cr-input-radius) 0;
+        }
+        .cr-input-group:has(.cr-append) :is(.cr-input, .cr-select) {
+            border-radius: var(--cr-input-radius) 0 0 var(--cr-input-radius);
+        }
+        .cr-input-group:has(.cr-prepend, .cr-append) .cr-select {
+            padding-right: 2rem;
+        }
+
+        .cr-input-group.cr-mini :is(.cr-prepend, .cr-append) {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+        }
+        .cr-input-group.cr-mini .cr-prepend {
+            border-radius: calc(var(--cr-input-radius) * .75) 0 0 calc(var(--cr-input-radius) * .75);
+        }
+        .cr-input-group.cr-mini .cr-append {
+            border-radius: 0 calc(var(--cr-input-radius) * .75) calc(var(--cr-input-radius) * .75) 0;
+        }
+        .cr-input-group.cr-mini:has(.cr-prepend) :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+            border-radius: 0 calc(var(--cr-input-radius) * .75) calc(var(--cr-input-radius) * .75) 0;
+        }
+        .cr-input-group.cr-mini:has(.cr-append) :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+            border-radius: calc(var(--cr-input-radius) * .75) 0 0 calc(var(--cr-input-radius) * .75);
+        }
+        .cr-input-group.cr-mini:has(.cr-prepend, .cr-append) .cr-select {
+            padding-right: 1.75rem;
+            background-size: 14px 10px;
+        }
+
+        .cr-input-group.cr-big :is(.cr-prepend, .cr-append) {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+        }
+        .cr-input-group.cr-big .cr-prepend {
+            border-radius: calc(var(--cr-input-radius) * 1.25) 0 0 calc(var(--cr-input-radius) * 1.25);
+        }
+        .cr-input-group.cr-big .cr-append {
+            border-radius: 0 calc(var(--cr-input-radius) * 1.25) calc(var(--cr-input-radius) * 1.25) 0;
+        }
+        .cr-input-group.cr-big:has(.cr-prepend) :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+            border-radius: 0 calc(var(--cr-input-radius) * 1.25) calc(var(--cr-input-radius) * 1.25) 0;
+        }
+        .cr-input-group.cr-big:has(.cr-append) :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+            border-radius: calc(var(--cr-input-radius) * 1.25) 0 0 calc(var(--cr-input-radius) * 1.25);
+        }
+        .cr-input-group.cr-big:has(.cr-prepend, .cr-append) .cr-select {
+            padding-right: 2.25rem;
+            background-size: 18px 14px;
+        }
+        
+        .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-prepend,
+        .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-append {
+            color: var(--cr-white);
+            background-color: var(--cr-primary-custom, var(--cr-primary));
+            border-color: var(--cr-primary-custom, var(--cr-primary));
+        }
+
+        .cr-check-group {
+            display: block;
+            line-height: 1.5;
+            width: 100%;
+        }
+        .cr-check-group.inline {
+            display: inline-block;
+            width: fit-content;
+        }
+        .cr-check-group.inline:not(:first-of-type) {
+            margin-left: 1.5rem;
+        }
+
+        .cr-check-group :is(input[type="checkbox"], input[type="radio"]) {
+            accent-color: var(--cr-primary);
+            cursor: pointer;
+        }
+    /* #endregion */
+
+    /* #region ====== FLOAT GROUP */
+        .cr-float-group {
+            position: relative;
+            display: block;
+        }
+        .cr-float-group label {
+            position: absolute;
+            top: 50%;
+            left: .75rem;
+            transform: translateY(-50%);
+            color: var(--cr-grey);
+            font-size: var(--cr-form-group-label-size);
+            font-weight: 400;
+            text-transform: capitalize;
+            transition: var(--cr-transition);
+            pointer-events: none;
+        }
+        .cr-float-group label::after {
+            content: ' . . .'
+        }     
+        .cr-float-group:has(input:focus, input:not(:placeholder-shown)) label,
+        .cr-float-group:has(textarea:focus, textarea:not(:placeholder-shown)) label,
+        .cr-float-group:has(select) label {
+            top: 0;
+            left: .5rem;
+            color: var(--cr-primary);
+            font-size: calc(var(--cr-form-group-label-size) * .75);
+            padding: 0 .25rem;
+            background-color: var(--cr-white); 
+        }
+        .cr-float-group:has(input:focus, input:not(:placeholder-shown)) label::after,
+        .cr-float-group:has(textarea:focus, textarea:not(:placeholder-shown)) label::after,
+        .cr-float-group:has(select) label::after {
+            content: ''
+        }
+        .cr-float-group:has(textarea) label {
+            top: .6rem;
+            transform: unset;
+        }
+        .cr-float-group:has(textarea:focus, textarea:not(:placeholder-shown)) label {
+            top: -.65rem;
+        }
+        .cr-float-group :is(.cr-input, .cr-select):focus {
+            box-shadow: 2px 4px 10px var(--cr-soft-shadow);
+            border-color: var(--cr-primary);
+        }
+        .cr-float-group :is(.cr-input, .cr-select)::placeholder {
+            color: transparent;
+        }
+
+        .cr-float-group.cr-mini label {
+            left: .5rem;
+            font-size: calc(var(--cr-btn-txt-size) * .75);
+        }
+        .cr-float-group.cr-mini:has(input:focus, input:not(:placeholder-shown)) label,
+        .cr-float-group.cr-mini:has(textarea:focus, textarea:not(:placeholder-shown)) label,
+        .cr-float-group.cr-mini:has(select) label {
+            left: .25rem;
+            font-size: calc(var(--cr-btn-txt-size) * .65);
+        }
+        .cr-float-group.cr-mini:has(textarea) label {
+            top: .55rem;
+            transform: unset;
+        }
+        .cr-float-group.cr-mini:has(textarea:focus, textarea:not(:placeholder-shown)) label {
+            top: -.55rem;
+        }
+        .cr-float-group.cr-mini :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * .75);
+            padding: calc(var(--cr-input-padding) * .5) calc(var(--cr-input-padding) * .75);
+            border-radius: calc(var(--cr-input-radius) * .75);
+        }
+        .cr-float-group.cr-mini .cr-select {
+            padding-right: 1.75rem;
+            background-size: 14px 10px;
+        }
+
+        .cr-float-group.cr-big label {
+            left: 1rem;
+            font-size: calc(var(--cr-btn-txt-size) * 1.1);
+        }
+        .cr-float-group.cr-big:has(input:focus, input:not(:placeholder-shown)) label,
+        .cr-float-group.cr-big:has(textarea:focus, textarea:not(:placeholder-shown)) label,
+        .cr-float-group.cr-big:has(select) label {
+            left: .75rem;
+            font-size: calc(var(--cr-btn-txt-size) * .85);
+        }
+        .cr-float-group.cr-big:has(textarea) label {
+            top: .75rem;
+            transform: unset;
+        }
+        .cr-float-group.cr-big:has(textarea:focus, textarea:not(:placeholder-shown)) label {
+            top: -.6rem;
+        }
+        .cr-float-group.cr-big :is(.cr-input, .cr-select) {
+            font-size: calc(var(--cr-input-txt-size) * 1.25);
+            padding: calc(var(--cr-input-padding) * .75) calc(var(--cr-input-padding) * 1.25);
+            border-radius: calc(var(--cr-input-radius) * 1.25);
+        }
+        .cr-float-group.cr-big .cr-select {
+            padding-right: 2.25rem;
+            background-size: 18px 14px;
+        }
+    /* #endregion */
+
+    /* #region ====== TOGGLE DARK MODE */
+        .cr-darkmode {
+            --switch-width: var(--cr-darkmode-width-custom, 33px);
+        }
+        .cr-darkmode input {
+            appearance: none;
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-width: var(--switch-width);
+            width: var(--switch-width);
+            aspect-ratio: 1;
+            margin: 0;
+            color: var(--cr-white);
+            font-size: calc(var(--cr-txt-size) * 1.3);
+            background-color: var(--cr-darkmode-bg-custom, var(--cr-black));
+            border-radius: 100%;
+            transition: var(--cr-transition);
+            cursor: pointer;
+        }
+        .cr-darkmode input::before {
+            content: '\ec60';
+            font-family: crumbsicon;
+            position: absolute;
+            transition: var(--cr-transition);
+        }
+        .cr-darkmode input:checked::before {
+            content: '\ec4e';
+        }
+    /* #endregion */
+/* #endregion ########## */
+
+
+
