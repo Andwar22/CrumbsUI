@@ -50,3 +50,9 @@
 - INPUT
   |_ Toggle switch
   |_ Toggle dark mode
+
+
+############## VERSION 1.4.1 (15/01/2026) ##############
+
+- INPUT
+  |_ Fix toggle dark mode
