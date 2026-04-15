@@ -56,3 +56,13 @@
 
 - INPUT
   |_ Fix toggle dark mode
+
+
+############## VERSION 1.5.0 (16/04/2026) ##############
+
+- INPUT
+  |_ Fix buttons and inputs size
+  |_ Fix input group and check group
+  |_ Fix variables for light and dark mode
+  |_ Change class mini to sm, big to lg
+  |_ Remove floating input

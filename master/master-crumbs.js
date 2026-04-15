@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1. Ambil semua elemen dengan class .dropdown-toggle
     const dropdownToggles = document.querySelectorAll('.cr-drop-toggle');
 
+    if (!dropdownToggles) return;
+
     dropdownToggles.forEach((toggle) => {
         toggle.addEventListener('click', function (e) {
             e.preventDefault(); // Mencegah perilaku default (misal jika tag <a>)
@@ -45,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function() {
     const toggleSwitch = document.querySelector('#darkModeToggle');
     const body = document.body;
+
+    if (!toggleSwitch) return;
 
     // 1. Cek Local Storage saat halaman dimuat
     const currentTheme = localStorage.getItem('theme');
