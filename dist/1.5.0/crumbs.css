@@ -118,15 +118,17 @@
             --cr-btn-size-lg: 3rem;
             --cr-btn-icon-size: 1.25rem;
             --cr-btn-icon-size-sm: 1rem;
-            --cr-btn-icon-size-lg: 1.4rem;
-            --cr-btn-padding-y: 0.5rem;
+            --cr-btn-icon-size-lg: 1.5rem;
             --cr-btn-padding-y-sm: 0.25rem;
-            --cr-btn-padding-y-lg: 0.75rem;
-            --cr-btn-padding-x: 1rem;
+            --cr-btn-padding-y: 0.375rem;
+            --cr-btn-padding-y-lg: 0.5rem;
             --cr-btn-padding-x-sm: 0.5rem;
-            --cr-btn-padding-x-lg: 1.5rem;
+            --cr-btn-padding-x: .75rem;
+            --cr-btn-padding-x-lg: 1rem;
             --cr-btn-border-width: 1px;
-            --cr-btn-radius: 0.5rem;
+            --cr-btn-radius-sm: 0.35rem;
+            --cr-btn-radius: 0.475rem;
+            --cr-btn-radius-lg: 0.6rem;
 
             color: var(--cr-btn-font-color);
             font-size: var(--cr-font-size-md);
@@ -196,13 +198,13 @@
             font-size: var(--cr-font-size-sm);
             min-height: var(--cr-btn-size-sm);
             padding: var(--cr-btn-padding-y-sm) var(--cr-btn-padding-x-sm);
-            border-radius: calc(var(--cr-btn-radius) * .75);
+            border-radius: var(--cr-btn-radius-sm);
         }
         .cr-btn.cr-lg {
             font-size: var(--cr-font-size-lg);
             min-height: var(--cr-btn-size-lg);
             padding: var(--cr-btn-padding-y-lg) var(--cr-btn-padding-x-lg);
-            border-radius: calc(var(--cr-btn-radius) * 1.25);
+            border-radius: var(--cr-btn-radius-lg);
         }
 
         .cr-btn.cr-full {
@@ -494,16 +496,18 @@
             --cr-input-size: 2.5rem;
             --cr-input-size-lg: 3rem;
             --cr-input-padding-y-sm: 0.25rem;
-            --cr-input-padding-y: 0.5rem;
-            --cr-input-padding-y-lg: 0.75rem;
+            --cr-input-padding-y: 0.375rem;
+            --cr-input-padding-y-lg: 0.5rem;
             --cr-input-padding-x-sm: 0.5rem;
-            --cr-input-padding-x: 1rem;
-            --cr-input-padding-x-lg: 1.5rem;
+            --cr-input-padding-x: .75rem;
+            --cr-input-padding-x-lg: 1rem;            
             --cr-input-border-width: 1px;
-            --cr-input-radius: 0.5rem;
+            --cr-input-radius-sm: 0.35rem;
+            --cr-input-radius: 0.475rem;
+            --cr-input-radius-lg: 0.6rem;
 
             font-size: var(--cr-font-size-md);
-            padding: calc(var(--cr-input-padding-y) * .7) calc(var(--cr-input-padding-x) * .75);
+            padding: var(--cr-input-padding-y) var(--cr-input-padding-x);
             border: var(--cr-input-border-width) solid var(--cr-border);
             background-color: var(--cr-white);
             border-radius: var(--cr-input-radius);            
@@ -544,8 +548,8 @@
         :is(.cr-input, .cr-select).cr-sm {
             font-size: var(--cr-font-size-sm);
             min-height: var(--cr-input-size-sm);
-            padding: calc(var(--cr-input-padding-y-sm) * .7) calc(var(--cr-input-padding-x-sm) * .75);
-            border-radius: calc(var(--cr-input-radius) * .75);
+            padding: var(--cr-input-padding-y-sm) var(--cr-input-padding-x-sm);
+            border-radius: var(--cr-input-radius-sm);
         }
         .cr-select.cr-sm {
             padding-right: 1.75rem;
@@ -554,8 +558,8 @@
         :is(.cr-input, .cr-select).cr-lg {
             font-size: var(--cr-font-size-lg);
             min-height: var(--cr-input-size-lg);
-            padding: calc(var(--cr-input-padding-y-lg) * .7) calc(var(--cr-input-padding-x-lg) * .75);
-            border-radius: calc(var(--cr-input-radius) * 1.25);
+            padding: var(--cr-input-padding-y-lg) var(--cr-input-padding-x-lg);
+            border-radius: var(--cr-input-radius-lg);
         }
         .cr-select.cr-lg {
             padding-right: 2.25rem;
@@ -582,8 +586,12 @@
             user-select: none;
         }
         :is(.cr-input, .cr-select):disabled {
+            background-color: hsl(from var(--cr-grey) h s l / .075);
             opacity: .75;
             pointer-events: none;
+        }
+        body.dark :is(.cr-input, .cr-select):disabled {
+            background-color: hsl(from var(--cr-grey) h s l / .25);
         }
     /* #endregion */
 
@@ -598,11 +606,13 @@
             --cr-input-size: 2.5rem;
             --cr-input-size-sm: 2rem;
             --cr-input-size-lg: 3rem;
+            --cr-input-padding-x-sm: 0.5rem;
             --cr-input-padding-x: .75rem;
-            --cr-input-padding-x-sm: .5rem;
-            --cr-input-padding-x-lg: 1rem;
+            --cr-input-padding-x-lg: 1rem;            
             --cr-input-border-width: 1px;
-            --cr-input-radius: 0.5rem;
+            --cr-input-radius-sm: 0.35rem;
+            --cr-input-radius: 0.475rem;
+            --cr-input-radius-lg: 0.6rem;
 
             color: var(--cr-black);
             font-size: var(--cr-font-size-md);
@@ -624,13 +634,13 @@
             font-size: var(--cr-font-size-sm);
             min-height: var(--cr-input-size-sm);
             padding: 0 calc(var(--cr-input-padding-x-sm) * .5);
-            border-radius: calc(var(--cr-input-radius) * .75);
+            border-radius: var(--cr-input-radius-sm);
         }
         :is(.cr-prepend, .cr-append).cr-lg {
             font-size: var(--cr-font-size-lg);
             min-height: var(--cr-input-size-lg);
             padding: 0 calc(var(--cr-input-padding-x-lg) * .75);
-            border-radius: calc(var(--cr-input-radius) * 1.25);
+            border-radius: var(--cr-input-radius-lg);
         }
 
         .cr-input-group .cr-prepend {
@@ -700,6 +710,14 @@
         :is(.cr-check, .cr-radio).cr-lg {
             width: 16px;
             height: 16px;
+        }
+
+        :is(.cr-check, .cr-radio):disabled {
+            opacity: .75;
+            cursor: not-allowed;
+        }
+        :is(.cr-check, .cr-radio):disabled + .cr-label {
+            opacity: .75;
         }
     /* #endregion */
 
@@ -802,6 +820,12 @@
         }
         .cr-switch input:checked {
             background-color: var(--cr-success);
+        }
+        .cr-switch:has(input:disabled) {
+            opacity: .5;
+        }
+        .cr-switch:has(input:disabled) input {
+            cursor: not-allowed;
         }
         .cr-switch input::before {
             content: '';
