@@ -1,4 +1,90 @@
 
+/* #region ########## VARIABLE SECTION */    
+    :root {
+        /* #region == GLOBAL */
+            --cr-font-size-sm: 0.875rem;
+            --cr-font-size: 1rem;
+            --cr-font-size-lg: 1.125rem;
+            
+            --cr-soft-shadow: rgba(0,0,0,0.15);
+            --cr-transition: .25s ease;
+        /* #endregion */
+
+        /* #region == COLOR */
+            --cr-white: #ffffff;
+            --cr-black: #212529;
+            --cr-grey: #6A6A6A;
+            --cr-border: #e1e1e1;
+            --cr-main-bg: #F8FAFC;
+
+            --cr-static-white: #ffffff;
+            --cr-static-black: #212529;
+
+            --cr-primary: #673ab7;
+            --cr-secondary: #607d8b;
+            --cr-info: #2196f3;
+            --cr-success: #4caf50;      
+            --cr-danger: #dc3545;
+            --cr-warning: #ffc107;
+        /* #endregion */
+        
+        /* #region == BUTTON & INPUT */
+            --cr-btn-inp-size-sm: 2rem;
+            --cr-btn-inp-size: 2.5rem;
+            --cr-btn-inp-size-lg: 3rem;            
+
+            --cr-btn-inp-padding-y-sm: 0.25rem;
+            --cr-btn-inp-padding-y: 0.375rem;
+            --cr-btn-inp-padding-y-lg: 0.5rem;
+
+            --cr-btn-inp-padding-x-sm: 0.5rem;
+            --cr-btn-inp-padding-x: .75rem;
+            --cr-btn-inp-padding-x-lg: 1rem;
+
+            --cr-btn-inp-radius-sm: 0.35rem;
+            --cr-btn-inp-radius: 0.475rem;
+            --cr-btn-inp-radius-lg: 0.6rem;
+
+            --cr-btn-inp-border-width: 1px;
+        /* #endregion */
+
+        /* #region == BUTTON */
+            --cr-btn-icon-size-sm: 1rem;
+            --cr-btn-icon-size: 1.25rem;
+            --cr-btn-icon-size-lg: 1.5rem;
+
+            --cr-btn-shadow-opacity: 0.25;
+
+            --cr-btn-hover-lightness: 40;
+            --cr-btn-active-lightness: 32;
+            --cr-btn-disabled-lightness: 70;
+        /* #endregion */
+
+        /* #region == SWITCH */
+            --cr-switch-width: 50px;
+            --cr-switch-gap: 8%;
+            --cr-switch-active-clr: var(--cr-success);
+
+            --cr-switch-dark-width: 33px;
+            --cr-switch-dark-txt: var(--cr-white);
+            --cr-switch-dark-bg: var(--cr-black);
+        /* #endregion */
+    }
+
+    /* #region == DARK MODE */
+        body.dark {
+            --cr-white: #212529;
+            --cr-black: #ffffff;
+            --cr-grey: #aaaaaa;
+            --cr-border: #5a5a5a;
+            --cr-main-bg: #1a1e26;
+
+            --cr-switch-dark-txt: var(--cr-white);
+            --cr-switch-dark-bg: var(--cr-black);
+        }
+    /* #endregion */
+/* #endregion ########## */
+
 /* #region ########## RESET */
     *,
     *::before,
@@ -12,14 +98,14 @@
     }
     body {
         color: var(--cr-black);
-        font-size: 100%;
+        font-size: var(--cr-font-size);
         font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         min-height: 100vh;
         line-height: 1.5;
         margin: 0;
-        background-color: var(--main-bg);
+        background-color: var(--cr-main-bg);
     }
-    body, h1, h2, h3, h4, p,
+    body, h1, h2, h3, h4, h5, h6, p,
     figure, blockquote, dl, dd {
         margin-block-end: 0;
     }
@@ -35,6 +121,7 @@
     }
     h1, h2, h3, h4, h5, h6 {
         text-wrap: balance;
+        margin-top: 0;
         margin-bottom: .5rem;
     }
     a:not([class]) {
@@ -56,88 +143,25 @@
     }
 /* #endregion ########## */
 
-/* #region ########## GLOBAL SECTION */    
-    :root {
-        /* #region == GLOBAL */
-            --cr-font-size-sm: 0.875rem;
-            --cr-font-size-md: 1rem;
-            --cr-font-size-lg: 1.125rem;
-
-            --cr-soft-shadow: rgba(0,0,0,0.15);
-            --cr-transition: .25s ease;
-        /* #endregion */
-
-        /* #region == COLOR */
-            --cr-white: #ffffff;
-            --cr-black: #212529;
-            --cr-grey: #6A6A6A;
-            --cr-border: #e1e1e1;
-            --main-bg: var(--custom-main-bg, #F8FAFC);
-
-            --cr-static-white: #ffffff;
-            --cr-static-black: #212529;
-
-            --cr-primary-fallback: #673ab7;
-            --cr-secondary-fallback: #607d8b;
-            --cr-info: #2196f3;
-            --cr-success: #4caf50;      
-            --cr-danger: #dc3545;
-            --cr-warning: #ffc107;
-        /* #endregion */
-    }
-
-    /* #region == DARK MODE */
-        body.dark {
-            --cr-white: #212529;
-            --cr-black: #ffffff;
-            --cr-grey: #aaaaaa;
-            --cr-border: #5a5a5a;
-            --main-bg: var(--custom-main-bg, #1a1e26);
-        }
-    /* #endregion */
-/* #endregion ########## */
-
 /* #region ########## BUTTON SECTION */
     /* #region ====== DEFAULT VALUE */
         .cr-btn {
-            --cr-btn-shadow-opacity: 0.25;
-            --cr-btn-hover-lightness: 40;
-            --cr-btn-active-lightness: 33;
-            --cr-btn-disabled-lightness: 70;
+            --cr-btn-base-txt-clr: var(--cr-static-white);
+            --cr-btn-base-bg-clr: var(--cr-primary);
 
-            --cr-btn-font-color: var(--cr-static-white);
-            --cr-btn-background: var(--cr-primary, var(--cr-primary-fallback));
-            --cr-btn-border-color: var(--cr-primary, var(--cr-primary-fallback));
-            --cr-btn-shadow: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-shadow: hsl(from var(--cr-btn-base-bg-clr) h s l / var(--cr-btn-shadow-opacity));
+            --cr-btn-hover: hsl(from var(--cr-btn-base-bg-clr) h s var(--cr-btn-hover-lightness));
+            --cr-btn-active: hsl(from var(--cr-btn-base-bg-clr) h s var(--cr-btn-active-lightness));
+            --cr-btn-disabled: hsl(from var(--cr-btn-base-bg-clr) h s var(--cr-btn-disabled-lightness));            
 
-            --cr-btn-size: 2.5rem;
-            --cr-btn-size-sm: 2rem;
-            --cr-btn-size-lg: 3rem;
-            --cr-btn-icon-size: 1.25rem;
-            --cr-btn-icon-size-sm: 1rem;
-            --cr-btn-icon-size-lg: 1.5rem;
-            --cr-btn-padding-y-sm: 0.25rem;
-            --cr-btn-padding-y: 0.375rem;
-            --cr-btn-padding-y-lg: 0.5rem;
-            --cr-btn-padding-x-sm: 0.5rem;
-            --cr-btn-padding-x: .75rem;
-            --cr-btn-padding-x-lg: 1rem;
-            --cr-btn-border-width: 1px;
-            --cr-btn-radius-sm: 0.35rem;
-            --cr-btn-radius: 0.475rem;
-            --cr-btn-radius-lg: 0.6rem;
-
-            color: var(--cr-btn-font-color);
-            font-size: var(--cr-font-size-md);
-            min-height: var(--cr-btn-size);
-            padding: var(--cr-btn-padding-y) var(--cr-btn-padding-x);
-            background-color: var(--cr-btn-background);
-            border: var(--cr-btn-border-width) solid;
-            border-color: var(--cr-btn-border-color);
-            border-radius: var(--cr-btn-radius);
+            color: var(--cr-btn-base-txt-clr);
+            font-size: var(--cr-font-size);
+            min-height: var(--cr-btn-inp-size);
+            padding: var(--cr-btn-inp-padding-y) var(--cr-btn-inp-padding-x);
+            background-color: var(--cr-btn-base-bg-clr);
+            border: var(--cr-btn-inp-border-width) solid;
+            border-color: var(--cr-btn-base-bg-clr);
+            border-radius: var(--cr-btn-inp-radius);
             transition: var(--cr-transition);
             
             display: inline-flex;
@@ -168,15 +192,15 @@
         }
 
         .cr-btn[class*="-outline"] {
-            color: var(--cr-btn-border-color);
+            color: var(--cr-btn-base-bg-clr);
             background-color: transparent;
         }
         .cr-btn[class*="-outline"]:hover {
-            color: var(--cr-btn-font-color);
+            color: var(--cr-btn-base-txt-clr);
             background-color: var(--cr-btn-hover);
         }
         .cr-btn[class*="-outline"]:is(:focus, :active) {
-            color: var(--cr-btn-font-color);
+            color: var(--cr-btn-base-txt-clr);
             background-color: var(--cr-btn-active);
             border-color: var(--cr-btn-active);
         }
@@ -196,15 +220,15 @@
     /* #region ====== VARIANT */
         .cr-btn.cr-sm {
             font-size: var(--cr-font-size-sm);
-            min-height: var(--cr-btn-size-sm);
-            padding: var(--cr-btn-padding-y-sm) var(--cr-btn-padding-x-sm);
-            border-radius: var(--cr-btn-radius-sm);
+            min-height: var(--cr-btn-inp-size-sm);
+            padding: var(--cr-btn-inp-padding-y-sm) var(--cr-btn-inp-padding-x-sm);
+            border-radius: var(--cr-btn-inp-radius-sm);
         }
         .cr-btn.cr-lg {
             font-size: var(--cr-font-size-lg);
-            min-height: var(--cr-btn-size-lg);
-            padding: var(--cr-btn-padding-y-lg) var(--cr-btn-padding-x-lg);
-            border-radius: var(--cr-btn-radius-lg);
+            min-height: var(--cr-btn-inp-size-lg);
+            padding: var(--cr-btn-inp-padding-y-lg) var(--cr-btn-inp-padding-x-lg);
+            border-radius: var(--cr-btn-inp-radius-lg);
         }
 
         .cr-btn.cr-full {
@@ -213,18 +237,18 @@
 
         .cr-btn.cr-icon {
             padding: 0; 
-            width: var(--cr-btn-size);
-            height: var(--cr-btn-size);
+            width: var(--cr-btn-inp-size);
+            height: var(--cr-btn-inp-size);
             font-size: var(--cr-btn-icon-size);
         }
         .cr-btn.cr-sm.cr-icon {
-            width: var(--cr-btn-size-sm);
-            height: var(--cr-btn-size-sm);
+            width: var(--cr-btn-inp-size-sm);
+            height: var(--cr-btn-inp-size-sm);
             font-size: var(--cr-btn-icon-size-sm);
         }
         .cr-btn.cr-lg.cr-icon {
-            width: var(--cr-btn-size-lg);
-            height: var(--cr-btn-size-lg);
+            width: var(--cr-btn-inp-size-lg);
+            height: var(--cr-btn-inp-size-lg);
             font-size: var(--cr-btn-icon-size-lg);
         }
         .cr-btn:not(.cr-icon) > i {
@@ -242,61 +266,36 @@
     /* #region ====== BUTTON SECONDARY */
         .cr-btn.cr-secondary,
         .cr-btn.cr-secondary-outline {
-            --cr-btn-background: var(--cr-secondary, var(--cr-secondary-fallback));
-            --cr-btn-border-color: var(--cr-secondary, var(--cr-secondary-fallback));
-            --cr-btn-shadow: hsl(from var(--cr-secondary, var(--cr-secondary-fallback)) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-secondary, var(--cr-secondary-fallback)) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-secondary, var(--cr-secondary-fallback)) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-secondary, var(--cr-secondary-fallback)) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-base-bg-clr: var(--cr-secondary);
         }
     /* #endregion */
     
     /* #region ====== BUTTON INFO */
         .cr-btn.cr-info,
         .cr-btn.cr-info-outline {
-            --cr-btn-background: var(--cr-info);
-            --cr-btn-border-color: var(--cr-info);
-            --cr-btn-shadow: hsl(from var(--cr-info) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-info) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-info) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-info) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-base-bg-clr: var(--cr-info);
         }
     /* #endregion */
 
     /* #region ====== BUTTON SUCCESS */
         .cr-btn.cr-success,
         .cr-btn.cr-success-outline {
-            --cr-btn-background: var(--cr-success);
-            --cr-btn-border-color: var(--cr-success);
-            --cr-btn-shadow: hsl(from var(--cr-success) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-success) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-success) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-success) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-base-bg-clr: var(--cr-success);
         }
     /* #endregion */
 
     /* #region ====== BUTTON DANGER */
         .cr-btn.cr-danger,
         .cr-btn.cr-danger-outline {
-            --cr-btn-background: var(--cr-danger);
-            --cr-btn-border-color: var(--cr-danger);
-            --cr-btn-shadow: hsl(from var(--cr-danger) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-danger) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-danger) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-danger) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-base-bg-clr: var(--cr-danger);
         }
     /* #endregion */
 
     /* #region ====== BUTTON WARNING */
         .cr-btn.cr-warning,
         .cr-btn.cr-warning-outline {
-            --cr-btn-font-color: var(--cr-static-black);
-            --cr-btn-background: var(--cr-warning);
-            --cr-btn-border-color: var(--cr-warning);
-            --cr-btn-shadow: hsl(from var(--cr-warning) h s l / var(--cr-btn-shadow-opacity));
-            --cr-btn-hover: hsl(from var(--cr-warning) h s var(--cr-btn-hover-lightness));
-            --cr-btn-active: hsl(from var(--cr-warning) h s var(--cr-btn-active-lightness));
-            --cr-btn-disabled: hsl(from var(--cr-warning) h s var(--cr-btn-disabled-lightness));
+            --cr-btn-base-txt-clr: var(--cr-static-black);
+            --cr-btn-base-bg-clr: var(--cr-warning);
         }
     /* #endregion */
 /* #endregion ########## */
@@ -479,7 +478,7 @@
         .cr-label {
             display: block;
             color: var(--cr-black);
-            font-size: calc(var(--cr-font-size-md) - .1rem);
+            font-size: calc(var(--cr-font-size) - .1rem);
             font-weight: 600;
             text-transform: capitalize;
             margin-bottom: .5rem;
@@ -492,29 +491,15 @@
         }
 
         :is(.cr-input, .cr-select) {
-            --cr-input-size-sm: 2rem;
-            --cr-input-size: 2.5rem;
-            --cr-input-size-lg: 3rem;
-            --cr-input-padding-y-sm: 0.25rem;
-            --cr-input-padding-y: 0.375rem;
-            --cr-input-padding-y-lg: 0.5rem;
-            --cr-input-padding-x-sm: 0.5rem;
-            --cr-input-padding-x: .75rem;
-            --cr-input-padding-x-lg: 1rem;            
-            --cr-input-border-width: 1px;
-            --cr-input-radius-sm: 0.35rem;
-            --cr-input-radius: 0.475rem;
-            --cr-input-radius-lg: 0.6rem;
-
-            font-size: var(--cr-font-size-md);
-            padding: var(--cr-input-padding-y) var(--cr-input-padding-x);
-            border: var(--cr-input-border-width) solid var(--cr-border);
+            font-size: var(--cr-font-size);
+            padding: var(--cr-btn-inp-padding-y) var(--cr-btn-inp-padding-x);
+            border: var(--cr-btn-inp-border-width) solid var(--cr-border);
             background-color: var(--cr-white);
-            border-radius: var(--cr-input-radius);            
+            border-radius: var(--cr-btn-inp-radius);            
             
             display: inline-block;
             width: 100%;
-            min-height: var(--cr-input-size);
+            min-height: var(--cr-btn-inp-size);
             color: var(--cr-black);
             font-weight: 400;
             line-height: 1.5;
@@ -538,8 +523,8 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
         }
         :is(.cr-input, .cr-select):is(:focus, :active) {
-            border-color: var(--cr-primary, var(--cr-primary-fallback));
-            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s l / .3);
+            border-color: var(--cr-primary);
+            box-shadow: 0 0 0 .3rem hsl(from var(--cr-primary) h s l / .3);
         }
         :is(.cr-input, .cr-select):focus:not(:focus-visible) {
             box-shadow: none;
@@ -547,9 +532,9 @@
 
         :is(.cr-input, .cr-select).cr-sm {
             font-size: var(--cr-font-size-sm);
-            min-height: var(--cr-input-size-sm);
-            padding: var(--cr-input-padding-y-sm) var(--cr-input-padding-x-sm);
-            border-radius: var(--cr-input-radius-sm);
+            min-height: var(--cr-btn-inp-size-sm);
+            padding: var(--cr-btn-inp-padding-y-sm) var(--cr-btn-inp-padding-x-sm);
+            border-radius: var(--cr-btn-inp-radius-sm);
         }
         .cr-select.cr-sm {
             padding-right: 1.75rem;
@@ -557,9 +542,9 @@
         }
         :is(.cr-input, .cr-select).cr-lg {
             font-size: var(--cr-font-size-lg);
-            min-height: var(--cr-input-size-lg);
-            padding: var(--cr-input-padding-y-lg) var(--cr-input-padding-x-lg);
-            border-radius: var(--cr-input-radius-lg);
+            min-height: var(--cr-btn-inp-size-lg);
+            padding: var(--cr-btn-inp-padding-y-lg) var(--cr-btn-inp-padding-x-lg);
+            border-radius: var(--cr-btn-inp-radius-lg);
         }
         .cr-select.cr-lg {
             padding-right: 2.25rem;
@@ -603,24 +588,13 @@
             width: 100%;
         }
         .cr-input-group :is(.cr-prepend, .cr-append) {
-            --cr-input-size: 2.5rem;
-            --cr-input-size-sm: 2rem;
-            --cr-input-size-lg: 3rem;
-            --cr-input-padding-x-sm: 0.5rem;
-            --cr-input-padding-x: .75rem;
-            --cr-input-padding-x-lg: 1rem;            
-            --cr-input-border-width: 1px;
-            --cr-input-radius-sm: 0.35rem;
-            --cr-input-radius: 0.475rem;
-            --cr-input-radius-lg: 0.6rem;
-
             color: var(--cr-black);
-            font-size: var(--cr-font-size-md);
-            min-height: var(--cr-input-size);
-            padding: 0 calc(var(--cr-input-padding-x) * .5);
-            border: var(--cr-input-border-width) solid var(--cr-border);
+            font-size: var(--cr-font-size);
+            min-height: var(--cr-btn-inp-size);
+            padding: 0 calc(var(--cr-btn-inp-padding-x) * .5);
+            border: var(--cr-btn-inp-border-width) solid var(--cr-border);
             background-color: var(--cr-border);
-            border-radius: var(--cr-input-radius);
+            border-radius: var(--cr-btn-inp-radius);
             transition: var(--cr-transition);
 
             display: grid;
@@ -632,15 +606,15 @@
 
         :is(.cr-prepend, .cr-append).cr-sm {
             font-size: var(--cr-font-size-sm);
-            min-height: var(--cr-input-size-sm);
-            padding: 0 calc(var(--cr-input-padding-x-sm) * .5);
-            border-radius: var(--cr-input-radius-sm);
+            min-height: var(--cr-btn-inp-size-sm);
+            padding: 0 calc(var(--cr-btn-inp-padding-x-sm) * .5);
+            border-radius: var(--cr-btn-inp-radius-sm);
         }
         :is(.cr-prepend, .cr-append).cr-lg {
             font-size: var(--cr-font-size-lg);
-            min-height: var(--cr-input-size-lg);
-            padding: 0 calc(var(--cr-input-padding-x-lg) * .75);
-            border-radius: var(--cr-input-radius-lg);
+            min-height: var(--cr-btn-inp-size-lg);
+            padding: 0 calc(var(--cr-btn-inp-padding-x-lg) * .75);
+            border-radius: var(--cr-btn-inp-radius-lg);
         }
 
         .cr-input-group .cr-prepend {
@@ -665,8 +639,8 @@
         .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-prepend,
         .cr-input-group:has(:is(.cr-input, .cr-select):is(:focus, :active)) .cr-append {
             color: var(--cr-static-white);
-            background-color: var(--cr-primary, var(--cr-primary-fallback));
-            border-color: var(--cr-primary, var(--cr-primary-fallback));
+            background-color: var(--cr-primary);
+            border-color: var(--cr-primary);
         }
 
         .cr-input-group:has(.cr-input:disabled, .cr-select:disabled) :is(.cr-prepend, .cr-append) {
@@ -699,7 +673,7 @@
             height: 14px;
             margin: 0 4px;
             vertical-align: -1.75px;
-            accent-color: var(--cr-primary, var(--cr-primary-fallback));
+            accent-color: var(--cr-primary);
             cursor: pointer;
         }
         :is(.cr-check, .cr-radio).cr-sm {
@@ -764,7 +738,7 @@
             width: 100%;
             clear: both;
             color: var(--cr-black);
-            font-size: var(--cr-font-size-md);
+            font-size: var(--cr-font-size);
             font-weight: 400;
             text-align: left;
             text-decoration: none;
@@ -784,9 +758,9 @@
         }
         .cr-drop-item:hover,
         .cr-drop-item:focus {
-            color: var(--cr-primary, var(--cr-primary-fallback));
+            color: var(--cr-primary);
             text-decoration: none;
-            background-color: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s l / .15);
+            background-color: hsl(from var(--cr-primary) h s l / .15);
         }
         .cr-drop-item.delete:hover,
         .cr-drop-item.delete:focus {
@@ -797,9 +771,6 @@
     
     /* #region ====== SWITCH */
         .cr-switch {
-            --switch-width: var(--cr-switch-width-custom, 50px);
-            --switch-gap: 8%;
-
             display: flex;
             align-items: center;
             gap: .75rem;
@@ -808,7 +779,7 @@
             appearance: none;
             position: relative;
             display: block;
-            width: var(--switch-width);
+            width: var(--cr-switch-width);
             aspect-ratio: 15 / 9;
             margin: 0;
             background-color: var(--cr-border);
@@ -819,7 +790,7 @@
             cursor: pointer;
         }
         .cr-switch input:checked {
-            background-color: var(--cr-success);
+            background-color: var(--cr-switch-active-clr);
         }
         .cr-switch:has(input:disabled) {
             opacity: .5;
@@ -831,9 +802,9 @@
             content: '';
             position: absolute;
             top: 50%;
-            left: calc(var(--switch-gap) + 1px);
+            left: calc(var(--cr-switch-gap) + 1px);
             transform: translateY(-50%);
-            width: calc(var(--switch-width) / 2 - var(--switch-gap));
+            width: calc(var(--cr-switch-width) / 2 - var(--cr-switch-gap));
             aspect-ratio: 1;
             background-color: var(--cr-static-white);
             border-radius: 50%;
@@ -841,7 +812,7 @@
             transition: var(--cr-transition);
         }
         .cr-switch input:checked::before {
-            left: calc(var(--switch-width) / 2 - calc(var(--switch-gap) * .2));
+            left: calc(var(--cr-switch-width) / 2 - calc(var(--cr-switch-gap) * .2));
         }
         .cr-switch span {
             display: inline-block;
@@ -850,23 +821,21 @@
             white-space: nowrap;
         }
     /* #endregion */
+/* #endregion ########## */
 
+/* #region ########## OTHER SECTION */
     /* #region ====== TOGGLE DARK MODE */
-        .cr-darkmode {
-            --switch-width: var(--cr-darkmode-width-custom, 33px);
-        }
         .cr-darkmode input {
             appearance: none;
             position: relative;
             display: grid;
             place-items: center;
-            min-width: var(--switch-width);
-            width: var(--switch-width);
+            min-width: var(--cr-switch-dark-width);
+            width: var(--cr-switch-dark-width);
             aspect-ratio: 1;
             margin: 0;
-            color: var(--cr-white);
-            font-size: calc(var(--cr-txt-size) * 1.3);
-            background-color: var(--cr-darkmode-bg-custom, var(--cr-black));
+            color: var(--cr-switch-dark-txt);
+            background-color: var(--cr-switch-dark-bg);
             border-radius: 100%;
             outline: 1px solid transparent;
             outline-offset: 2px;
@@ -875,26 +844,31 @@
             overflow: hidden;
         }
         .cr-darkmode:hover input {
-            outline-color: var(--cr-darkmode-bg-custom, var(--cr-black));
+            outline-color: var(--cr-switch-dark-bg);
         }
+        body.dark .cr-darkmode:hover input {
+            outline-color: var(--cr-switch-dark-bg);
+        }
+
         .cr-darkmode input::before,
         .cr-darkmode input::after {
-            content: '';
+            font-family: crumbsicon;
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M13 6V3M18.5 12V7M14.5 4.5H11.5M21 9.5H16M15.5548 16.8151C16.7829 16.8151 17.9493 16.5506 19 16.0754C17.6867 18.9794 14.7642 21 11.3698 21C6.74731 21 3 17.2527 3 12.6302C3 9.23576 5.02061 6.31331 7.92462 5C7.44944 6.05072 7.18492 7.21708 7.18492 8.44523C7.18492 13.0678 10.9322 16.8151 15.5548 16.8151Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>');
-            background-size: 75%;
-            background-repeat: no-repeat;
-            background-position: center;
+            display: grid;
+            place-items: center;
+            font-size: 1.25rem;
             transition: var(--cr-transition);
         }
         .cr-darkmode input::before {
+            content: '\ec60';
             top: 0;
         }
         .cr-darkmode input::after {
+            content: '\ec4e';
             top: 100%;
-            background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>');
+            font-weight: 600;
         }
         .cr-darkmode input:checked::before {
             top: -100%;

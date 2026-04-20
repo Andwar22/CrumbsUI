@@ -1,26 +1,105 @@
 
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid var(--cr-border);
-
-    h2 {
-        margin: 0;
+/* #region ########## GENERAL */
+    :root {
+        --my-pr: #f7b638;
     }
-}
-.content {
-    flex: 1;
-    padding: 2rem;
-    overflow: hidden auto;
-}
+    :target {
+        scroll-margin-block: 3ex;
+    }
+
+    .cr-btn.cr-custom,
+    .cr-btn.cr-custom-outline {
+        --cr-btn-base-txt-clr: var(--cr-static-black);
+        --cr-btn-base-bg-clr: var(--my-pr);
+    }
+
+    body.dark {
+        --cr-switch-dark-bg: var(--my-pr);
+    }
+/* #endregion ########## */
+
+/* #region ########## LAYOUT */ 
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }   
+    .wrapper {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 250px auto;
+        overflow: hidden auto;
+    }
+/* #endregion ########## */
+
+/* #region ########## TITLE */
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--cr-border);
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        img {
+            width: 40px;
+            height: auto;
+        }
+        h2 {
+            margin: 0;
+        }
+    } 
+/* #endregion ########## */
+
+/* #region ########## NAVIGATION */
+    .navigation {
+        padding: 1.5rem;
+        border-right: 1px solid var(--cr-border);
+
+        .wrap-items {
+            display: flex;
+            flex-direction: column;
+            scroll-target-group: auto;
+        }
+        .nav-item {
+            display: flex;
+            color: inherit;
+            padding: .5rem;
+            text-decoration: none;
+        }
+        .nav-item:target-current {
+            color: var(--my-pr);
+        }
+    }
+/* #endregion ########## */
+    
+/* #region ########## CONTENT */ 
+    .content {
+        padding: 1.5rem;
+        scroll-behavior: smooth;
+        overflow: hidden auto;
+    }
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    .section-title h2 {
+        color: var(--my-pr);
+    }
+/* #endregion ########## */
+
+
+
+
+
+/* #region ########## XXX */ 
+/* #endregion ########## */
+
+
 
 .group {
     margin-bottom: 2rem;
