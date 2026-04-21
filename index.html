@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./master/master-crumbs.css">
     <link rel="stylesheet" href="./asstes/style/main.css">
     <link rel="stylesheet" href="./asstes/icons/crumbsicon.css">
+    <!-- prism js -->
+    <link href="./asstes/style/prism.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -53,100 +55,168 @@
             <div class="content">
                 <div class="section-area" id="buttonsArea">
                     <div class="section-title">
-                        <h2># Buttons</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Buttons</h1>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Kumpulan tombol dengan pilihan semantik warna untuk kebutuhan website. Cukup tambahkan class <span>"cr-btn"</span> untuk menerapkan style kemudian diikuti dengan class warna, misal tambahkan class <span>"cr-primary"</span> untuk menampilkan tombol dengan style primary.
+                        </p>
+                        <p>Beberapa pilihan style warna yang bisa digunakan :</p>
                     </div>
                     <div class="section-content">
-                        <div class="group">
-                            <div class="grid">
-                                <button class="cr-btn cr-primary cr-sm"><i class="ci-star"></i>Primary</button>
-                                <button class="cr-btn cr-secondary cr-sm">secondary</button>
-                                <button class="cr-btn cr-info cr-sm">info</button>
-                                <button class="cr-btn cr-success cr-sm">Success</button>
-                                <button class="cr-btn cr-danger cr-sm">Danger</button>
-                                <button class="cr-btn cr-warning cr-sm">Warning</button>
-                                <button class="cr-btn cr-primary cr-sm cr-icon"><i class="ci-star"></i></button>
-                            </div>
-                            <div class="grid">
-                                <button class="cr-btn cr-primary-outline cr-sm"><i class="ci-star"></i>Outline</button>
-                                <button class="cr-btn cr-secondary-outline cr-sm">Outline</button>
-                                <button class="cr-btn cr-info-outline cr-sm">Outline</button>
-                                <button class="cr-btn cr-success-outline cr-sm">Outline</button>
-                                <button class="cr-btn cr-danger-outline cr-sm">Outline</button>
-                                <button class="cr-btn cr-warning-outline cr-sm">Outline</button>
-                                <button class="cr-btn cr-primary-outline cr-sm cr-icon"><i class="ci-star"></i></button>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary">secondary</button>
+                                <button type="button" class="cr-btn cr-info">Info</button>
+                                <button type="button" class="cr-btn cr-success">Success</button>
+                                <button type="button" class="cr-btn cr-danger">Danger</button>
+                                <button type="button" class="cr-btn cr-warning">Warning</button>
+                                <button type="button" class="cr-btn cr-link">Link</button>
                             </div>
                         </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary">secondary</button>
+                            <button type="button" class="cr-btn cr-info">Info</button>
+                            <button type="button" class="cr-btn cr-success">Success</button>
+                            <button type="button" class="cr-btn cr-danger">Danger</button>
+                            <button type="button" class="cr-btn cr-warning">Warning</button>
+                            <button type="button" class="cr-btn cr-link">Link</button>
+                        </script>
 
-                        <div class="group">
-                            <div class="grid">
-                                <button class="cr-btn cr-primary"><i class="ci-star"></i>Primary</button>
-                                <button class="cr-btn cr-secondary">secondary</button>
-                                <button class="cr-btn cr-info">Info</button>
-                                <button class="cr-btn cr-success">Success</button>
-                                <button class="cr-btn cr-danger">Danger</button>
-                                <button class="cr-btn cr-warning">Warning</button>
-                                <button class="cr-btn cr-primary cr-icon"><i class="ci-star"></i></button>
-                            </div>
-                            <div class="grid">
-                                <button class="cr-btn cr-primary-outline"><i class="ci-star"></i>Outline</button>
-                                <button class="cr-btn cr-secondary-outline">Outline</button>
-                                <button class="cr-btn cr-info-outline">Outline</button>
-                                <button class="cr-btn cr-success-outline">Outline</button>
-                                <button class="cr-btn cr-danger-outline">Outline</button>
-                                <button class="cr-btn cr-warning-outline">Outline</button>
-                                <button class="cr-btn cr-primary-outline cr-icon"><i class="ci-star"></i></button>
+                        <div class="desc">
+                            <p>
+                                Terdapat juga style outline untuk yang tidak suka warna latar belakang tombol yang terlalu mencolok. Cukup tambahkan <span>"-outline"</span> di akhir class warna.
+                            </p>
+                            <p>Style outline ini tidak tersedia untuk <span>"cr-link"</span> karena tombol link secara default sudah tanpa border.</p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary-outline">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline">secondary</button>
+                                <button type="button" class="cr-btn cr-info-outline">Info</button>
+                                <button type="button" class="cr-btn cr-success-outline">Success</button>
+                                <button type="button" class="cr-btn cr-danger-outline">Danger</button>
+                                <button type="button" class="cr-btn cr-warning-outline">Warning</button>
                             </div>
                         </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary-outline">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline">secondary</button>
+                            <button type="button" class="cr-btn cr-info-outline">Info</button>
+                            <button type="button" class="cr-btn cr-success-outline">Success</button>
+                            <button type="button" class="cr-btn cr-danger-outline">Danger</button>
+                            <button type="button" class="cr-btn cr-warning-outline">Warning</button>
+                        </script>
 
-                        <div class="group">
-                            <div class="grid">
-                                <button class="cr-btn cr-primary cr-lg"><i class="ci-star"></i>Primary</button>
-                                <button class="cr-btn cr-secondary cr-lg">secondary</button>
-                                <button class="cr-btn cr-info cr-lg">info</button>
-                                <button class="cr-btn cr-success cr-lg">Success</button>
-                                <button class="cr-btn cr-danger cr-lg">Danger</button>
-                                <button class="cr-btn cr-warning cr-lg">Warning</button>
-                                <button class="cr-btn cr-primary cr-lg cr-icon"><i class="ci-star"></i></button>
-                            </div>
-                            <div class="grid">
-                                <button class="cr-btn cr-primary-outline cr-lg"><i class="ci-star"></i>Outline</button>
-                                <button class="cr-btn cr-secondary-outline cr-lg">Outline</button>
-                                <button class="cr-btn cr-info-outline cr-lg">Outline</button>
-                                <button class="cr-btn cr-success-outline cr-lg">Outline</button>
-                                <button class="cr-btn cr-danger-outline cr-lg">Outline</button>
-                                <button class="cr-btn cr-warning-outline cr-lg">Outline</button>
-                                <button class="cr-btn cr-primary-outline cr-lg cr-icon"><i class="ci-star"></i></button>
+                        <div class="desc">
+                            <p>
+                                Style class diatas ditujukan untuk tag <span>&#60;button&#62;</span>, namun bisa juga dipakai untuk tag <span>&#60;a&#62;</span> ataupun <span>&#60;input&#62;</span> seperti berikut :
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <a class="cr-btn cr-primary" href="#" role="button">href</a>
+                                <button class="cr-btn cr-primary" type="submit">Button submit</button>
+                                <input class="cr-btn cr-primary" type="button" value="Input button">
+                                <input class="cr-btn cr-primary" type="submit" value="input Submit">
+                                <input class="cr-btn cr-primary" type="reset" value="input Reset">
                             </div>
                         </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <a class="cr-btn cr-primary" href="#" role="button">href</a>
+                            <button class="cr-btn cr-primary" type="submit">Button submit</button>
+                            <input class="cr-btn cr-primary" type="button" value="Input button">
+                            <input class="cr-btn cr-primary" type="submit" value="input Submit">
+                            <input class="cr-btn cr-primary" type="reset" value="input Reset">
+                        </script>
 
-                        <div class="group">
-                            <div class="grid">
-                                <button class="cr-btn cr-primary" disabled><i class="ci-star"></i>Primary</button>
-                                <button class="cr-btn cr-secondary" disabled>secondary</button>
-                                <button class="cr-btn cr-info" disabled>info</button>
-                                <button class="cr-btn cr-success" disabled>Success</button>
-                                <button class="cr-btn cr-danger" disabled>Danger</button>
-                                <button class="cr-btn cr-warning" disabled>Warning</button>
-                                <button class="cr-btn cr-primary cr-icon" disabled><i class="ci-star"></i></button>
+                        <div class="subtitle">
+                            <h2>Ukuran</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Suka ukuran tombol yang lebih kecil? atau yang lebih besar? Cukup tambahkan class <span>"cr-sm"</span> atau <span>"cr-lg"</span> untuk merubah ukuran tombol.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-sm">Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-sm">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary cr-sm">secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-sm">secondary</button>
                             </div>
-                            <div class="grid">
-                                <button class="cr-btn cr-primary-outline" disabled><i class="ci-star"></i>Outline</button>
-                                <button class="cr-btn cr-secondary-outline" disabled>Outline</button>
-                                <button class="cr-btn cr-info-outline" disabled>Outline</button>
-                                <button class="cr-btn cr-success-outline" disabled>Outline</button>
-                                <button class="cr-btn cr-danger-outline" disabled>Outline</button>
-                                <button class="cr-btn cr-warning-outline" disabled>Outline</button>
-                                <button class="cr-btn cr-primary-outline cr-icon" disabled><i class="ci-star"></i></button>
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-lg">Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-lg">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary cr-lg">secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-lg">secondary</button>
                             </div>
                         </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary cr-sm">Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-sm">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary cr-sm">secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-sm">secondary</button>
+
+                            <button type="button" class="cr-btn cr-primary cr-lg">Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-lg">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary cr-lg">secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-lg">secondary</button>
+                        </script>
+                        
+                        <div class="subtitle">
+                            <h2>tombol ikon</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Style tombol ini dibuat agar tetap konsisten saat di sisipkan icon. Cukup masukkan font icon sebelum atau sesudah teks tombol.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary"><i class="ci-star"></i>Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline"><i class="ci-star"></i>Primary</button>
+                                <button type="button" class="cr-btn cr-secondary">Primary<i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary-outline">Primary<i class="ci-star"></i></button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary"><i class="ci-star"></i>Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline"><i class="ci-star"></i>Primary</button>
+                            <button type="button" class="cr-btn cr-secondary">Primary<i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary-outline">Primary<i class="ci-star"></i></button>
+                        </script>
+
+                        <div class="desc">
+                            <p>
+                                Jika ingin tombol dengan icon saja, tambahkan class <span>"cr-icon"</span> untuk membuat tombol ikon dengan ukuran 1:1.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-icon"><i class="ci-star"></i></button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-icon"><i class="ci-star"></i></button>
+                        </script>
                     </div>
                 </div>
                 
                 <div class="section-area" id="inputTextArea">
                     <div class="section-title">
-                        <h2># Input Text</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Input Text</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -267,8 +337,10 @@
 
                 <div class="section-area" id="selectArea">
                     <div class="section-title">
-                        <h2># Select</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Select</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -421,8 +493,10 @@
                 
                 <div class="section-area" id="dropdownArea">
                     <div class="section-title">
-                        <h2># Dropdown</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Dropdown</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -453,8 +527,10 @@
                 
                 <div class="section-area" id="switchArea">
                     <div class="section-title">
-                        <h2># Switch</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Switch</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -474,8 +550,10 @@
                 
                 <div class="section-area" id="checkRadioArea">
                     <div class="section-title">
-                        <h2># Checkbox & Radio</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Checkbox & Radio</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -548,8 +626,10 @@
                 
                 <div class="section-area" id="columnArea">
                     <div class="section-title">
-                        <h2># Column</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quaerat dolore dignissimos? Ad, tempore? Ex omnis distinctio magnam architecto ut. Cum ratione aspernatur repellat voluptatem.</p>
+                        <h1>Column</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
                     </div>
                     <div class="section-content">
                         <div class="group">
@@ -671,5 +751,7 @@
     </div>
     
     <script src="./master/master-crumbs.js"></script>
+    <!-- prism js -->
+    <script src="./asstes/script/prism.js"></script>
 </body>
 </html>

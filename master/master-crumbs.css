@@ -251,9 +251,12 @@
             height: var(--cr-btn-inp-size-lg);
             font-size: var(--cr-btn-icon-size-lg);
         }
+
+        .cr-btn:not(.cr-icon):has(i) {
+            gap: .5rem;
+        }
         .cr-btn:not(.cr-icon) > i {
             font-size: var(--cr-btn-icon-size);
-            margin-right: .5rem;
         }
         .cr-btn.cr-sm:not(.cr-icon) > i {
             font-size: var(--cr-btn-icon-size-sm);
@@ -296,6 +299,15 @@
         .cr-btn.cr-warning-outline {
             --cr-btn-base-txt-clr: var(--cr-static-black);
             --cr-btn-base-bg-clr: var(--cr-warning);
+        }
+    /* #endregion */
+    
+    /* #region ====== BUTTON LINK */
+        .cr-btn.cr-link {
+            --cr-btn-base-txt-clr: var(--cr-info);
+            --cr-btn-base-bg-clr: transparent;
+
+            text-decoration: underline;
         }
     /* #endregion */
 /* #endregion ########## */

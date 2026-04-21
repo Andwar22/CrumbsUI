@@ -1,20 +1,48 @@
 
-/* #region ########## GENERAL */
+/* #region ########## MY COLOR */
     :root {
-        --my-pr: #f7b638;
-    }
-    :target {
-        scroll-margin-block: 3ex;
+        --pr-50: #fef6e7;
+        --pr-100: #fdedce;
+        --pr-200: #fbdc9d;
+        --pr-300: #f9ca6c;
+        --pr-400: #f7b83b; /* base */
+        --pr-500: #f5a70a;
+        --pr-600: #c48508;
+        --pr-700: #936406;
+        --pr-800: #624304;
+        --pr-900: #312102;
+        --pr-950: #221701;
+
+        --cr-main-bg: var(--pr-50);
+        --cr-switch-dark-txt: var(--pr-400);
+        --cr-switch-dark-bg: var(--pr-900);
+    }    
+
+    body.dark {
+        --cr-main-bg: var(--pr-950);
+        --cr-switch-dark-bg: var(--pr-400);
     }
 
     .cr-btn.cr-custom,
     .cr-btn.cr-custom-outline {
         --cr-btn-base-txt-clr: var(--cr-static-black);
-        --cr-btn-base-bg-clr: var(--my-pr);
+        --cr-btn-base-bg-clr: var(--pr-500);
+    }
+    body.dark .cr-btn.cr-custom,
+    body.dark .cr-btn.cr-custom-outline {
+        --cr-btn-base-bg-clr: var(--pr-400);
+    }    
+/* #endregion ########## */
+
+/* #region ########## GENERAL */ 
+    :target {
+        scroll-margin-block: 3ex;
     }
 
-    body.dark {
-        --cr-switch-dark-bg: var(--my-pr);
+    pre[class*=language-] {
+        margin-top: 0 !important;
+        margin-bottom: 1.5rem !important;
+        border-radius: 0 0 1rem 1rem !important;
     }
 /* #endregion ########## */
 
@@ -69,12 +97,19 @@
         .nav-item {
             display: flex;
             color: inherit;
-            padding: .5rem;
             text-decoration: none;
+            padding: .5rem .75rem;
+            border-radius: .5rem;
+            transition: var(--cr-transition);
         }
         .nav-item:target-current {
-            color: var(--my-pr);
+            color: var(--cr-static-black);
+            font-weight: 600;
+            background-color: var(--pr-500);
         }
+    }
+    body.dark .navigation .nav-item:target-current {
+        background-color: var(--pr-400);
     }
 /* #endregion ########## */
     
@@ -84,13 +119,85 @@
         scroll-behavior: smooth;
         overflow: hidden auto;
     }
+
     .section-title {
-        margin-bottom: 2rem;
+        margin-bottom: .5rem;
+
+        h1 {
+            position: relative;
+            text-transform: capitalize;
+            margin-bottom: 0;
+
+            &::before {
+                content: '#';
+                display: inline-block;
+                color: var(--pr-500);
+                margin-right: .5rem;
+            }
+        }
     }
-    .section-title h2 {
-        color: var(--my-pr);
+    :target .section-title h1 {
+        color: var(--pr-500);
+    }
+
+    .subtitle {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+
+        h2 {
+            position: relative;
+            text-transform: capitalize;
+            margin-bottom: 0;
+        }
+    }
+
+    .desc {
+        margin-bottom: 1.5rem;
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+
+            span {
+                color: var(--pr-500);
+                font-weight: 600;
+            }
+        }
+        p:not(:first-of-type) {
+            margin-top: .75rem;
+        }
+    }
+
+    .component-view {
+        padding: 1.25rem;
+        border-bottom: 1px dashed var(--cr-border);
+        background-color: #272822;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    body.dark :target .section-title h1 {
+        color: var(--pr-400);
     }
 /* #endregion ########## */
+
+/* #region ########## BUTTON */ 
+    .wrap-btn-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+
+        &:not(:first-of-type) {
+            margin-top: 1rem;
+        }
+    }
+/* #endregion ########## */
+
+
+
+
+
 
 
 
@@ -111,12 +218,7 @@
     gap: 1.5rem;
     margin-bottom: .75rem;
 }
-hr {
-    margin-top: 1.75rem;
-    margin-bottom: 2.5rem;
-    border: none;
-    border-top: 1px dashed;
-}
+
 
 .dummy-col {
     color: var(--cr-static-white);
@@ -124,3 +226,6 @@ hr {
     padding: 1rem .5rem;
     background-color: hsl(from var(--cr-primary, var(--cr-primary-fallback)) h s l / .75);
 }
+
+
+
