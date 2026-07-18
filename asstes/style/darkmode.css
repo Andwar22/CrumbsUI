@@ -1,0 +1,81 @@
+
+body.dark {
+    --cr-white: #212529;
+    --cr-black: #ffffff;
+    --cr-grey: #aaaaaa;
+    --cr-border: #5a5a5a;
+    --cr-main-bg: var(--pr-950);
+}
+body.dark {
+    --cr-switch-dark-bg: var(--pr-400);
+}
+body.dark .navigation .nav-item:target-current {
+    color: var(--pr-900);
+    background-color: var(--pr-400);
+}
+body.dark :target .section-title h1 {
+    color: var(--pr-400);
+}
+body.dark .cr-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+}
+body.dark :is(.cr-input, .cr-select):disabled {
+    background-color: hsl(from var(--cr-grey) h s l / .25);
+}
+
+.cr-darkmode input {
+    appearance: none;
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 33px;
+    width: 33px;
+    aspect-ratio: 1;
+    margin: 0;
+    color: var(--pr-400);
+    background-color: var(--pr-900);
+    border-radius: 100%;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    transition: var(--cr-transition);
+    cursor: pointer;
+    overflow: hidden;
+}
+body.dark .cr-darkmode input {
+    color: var(--pr-900);
+    background-color: var(--pr-400);
+}
+.cr-darkmode:hover input {
+    outline-color: var(--pr-900);
+}
+body.dark .cr-darkmode:hover input {
+    outline-color: var(--pr-400);
+}
+.cr-darkmode input::before,
+.cr-darkmode input::after {
+    font-family: crumbsicon;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+    transition: var(--cr-transition);
+}
+.cr-darkmode input::before {
+    content: '\ec60';
+    top: 0;
+}
+.cr-darkmode input::after {
+    content: '\ec4e';
+    top: 100%;
+    font-weight: 600;
+}
+.cr-darkmode input:checked::before {
+    top: -100%;
+}
+.cr-darkmode input:checked::after {
+    top: 0;
+}
+
+

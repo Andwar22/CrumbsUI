@@ -1,73 +1,135 @@
 
 // ############### DROPDOWN ###############
-document.addEventListener('DOMContentLoaded', function () {
-    
-    // 1. Ambil semua elemen dengan class .dropdown-toggle
-    const dropdownToggles = document.querySelectorAll('.cr-drop-toggle');
+function initCrumbsDropdowns() {
+    const dropdownSelector = '.cr-dropdown';
+    let generatedId = 0;
 
-    if (!dropdownToggles) return;
+    function getDropdownPart(dropdown, selector) {
+        return Array.from(dropdown.children).find((element) => element.matches(selector))
+            || dropdown.querySelector(selector);
+    }
 
-    dropdownToggles.forEach((toggle) => {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault(); // Mencegah perilaku default (misal jika tag <a>)
-            e.stopPropagation(); // Mencegah event bubbling ke window (agar tidak langsung tertutup)
+    function createUniqueId(prefix) {
+        let id;
 
-            // Cari elemen menu (dropdown-menu) yang bersaudara dengan tombol ini
-            // Kita cari parent terdekat (.dropdown), lalu cari .dropdown-menu di dalamnya
-            const parent = this.closest('.cr-dropdown'); 
-            const menu = parent.querySelector('.cr-drop-menu');
+        do {
+            generatedId += 1;
+            id = `cr-${prefix}-${generatedId}`;
+        } while (document.getElementById(id));
 
-            // Opsional: Tutup semua dropdown LAIN yang sedang terbuka (perilaku asli Bootstrap)
-            closeAllDropdowns(menu);
+        return id;
+    }
 
-            // Toggle class 'show' pada menu milik tombol ini saja
-            menu.classList.toggle('show');
-        });
-    });
+    function ensureUniqueId(element, prefix) {
+        if (!element.id || document.getElementById(element.id) !== element) {
+            element.id = createUniqueId(prefix);
+        }
 
-    // 2. Event Listener pada Window untuk menutup dropdown saat klik di luar
-    window.addEventListener('click', function () {
-        closeAllDropdowns(null);
-    });
+        return element.id;
+    }
 
-    // Helper function untuk menutup dropdown
-    function closeAllDropdowns(exceptMenu) {
-        const allMenus = document.querySelectorAll('.cr-drop-menu');
-        allMenus.forEach((menu) => {
-            // Jika menu ini bukan menu yang sedang kita klik, maka tutup
-            if (menu !== exceptMenu) {
-                menu.classList.remove('show');
+    function prepareDropdown(dropdown) {
+        const toggle = getDropdownPart(dropdown, '.cr-drop-toggle');
+        const menu = getDropdownPart(dropdown, '.cr-drop-menu');
+
+        if (!toggle || !menu) return null;
+
+        const toggleId = ensureUniqueId(toggle, 'dropdown-toggle');
+        const menuId = ensureUniqueId(menu, 'dropdown-menu');
+        const isOpen = menu.classList.contains('show');
+
+        toggle.setAttribute('aria-haspopup', 'true');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-controls', menuId);
+        menu.setAttribute('aria-labelledby', toggleId);
+        menu.setAttribute('aria-hidden', String(!isOpen));
+
+        return { toggle, menu };
+    }
+
+    function setDropdownState(dropdown, isOpen) {
+        const parts = prepareDropdown(dropdown);
+
+        if (!parts) return;
+
+        parts.menu.classList.toggle('show', isOpen);
+        parts.toggle.setAttribute('aria-expanded', String(isOpen));
+        parts.menu.setAttribute('aria-hidden', String(!isOpen));
+    }
+
+    function closeAllDropdowns(exceptDropdown) {
+        document.querySelectorAll(dropdownSelector).forEach((dropdown) => {
+            if (dropdown !== exceptDropdown) {
+                setDropdownState(dropdown, false);
             }
         });
     }
-});
 
+    document.querySelectorAll(dropdownSelector).forEach(prepareDropdown);
 
-// ############### DARK MODE SWITCH ###############
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleSwitch = document.querySelector('#darkModeToggle');
-    const body = document.body;
+    // Event delegation membuat dropdown tetap bekerja jika markup ditambahkan setelah halaman dimuat.
+    document.addEventListener('click', function (event) {
+        const toggle = event.target.closest('.cr-drop-toggle');
 
-    if (!toggleSwitch) return;
+        if (toggle) {
+            const dropdown = toggle.closest(dropdownSelector);
+            const parts = dropdown && prepareDropdown(dropdown);
 
-    // 1. Cek Local Storage saat halaman dimuat
-    const currentTheme = localStorage.getItem('theme');
+            if (!parts) return;
 
-    if (currentTheme === 'dark') {
-        body.classList.add('dark');
-        toggleSwitch.checked = true; // Pastikan posisi switch sesuai
-    }
+            event.preventDefault();
+            event.stopPropagation();
 
-    // 2. Event Listener saat switch diklik
-    toggleSwitch.addEventListener('change', function(e) {
-        if (e.target.checked) {
-            // Aktifkan Dark Mode
-            body.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            // Matikan Dark Mode
-            body.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
+            const willOpen = !parts.menu.classList.contains('show');
+            closeAllDropdowns(dropdown);
+            setDropdownState(dropdown, willOpen);
+            return;
+        }
+
+        if (event.target.closest('.cr-drop-item') || !event.target.closest(dropdownSelector)) {
+            closeAllDropdowns(null);
         }
     });
-});
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') return;
+
+        const openDropdown = Array.from(document.querySelectorAll(dropdownSelector)).find((dropdown) => {
+            const parts = prepareDropdown(dropdown);
+            return parts && parts.menu.classList.contains('show');
+        });
+
+        if (!openDropdown) return;
+
+        const parts = prepareDropdown(openDropdown);
+        closeAllDropdowns(null);
+        parts.toggle.focus();
+        event.preventDefault();
+    });
+
+    // Sinkronkan atribut ARIA pada dropdown yang dibuat secara dinamis.
+    if (window.MutationObserver) {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType !== 1) return;
+
+                    if (node.matches(dropdownSelector)) {
+                        prepareDropdown(node);
+                    }
+
+                    node.querySelectorAll(dropdownSelector).forEach(prepareDropdown);
+                });
+            });
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCrumbsDropdowns);
+} else {
+    initCrumbsDropdowns();
+}
+

@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="https://cdn.andwar22.my.id/Workspace/crumbslogo.png">
     <link rel="stylesheet" href="./master/master-crumbs.css">
     <link rel="stylesheet" href="./asstes/style/main.css">
+    <link rel="stylesheet" href="./asstes/style/darkmode.css">
     <link rel="stylesheet" href="./asstes/icons/crumbsicon.css">
     <!-- prism js -->
     <link href="./asstes/style/prism.css" rel="stylesheet">
@@ -21,7 +22,7 @@
 
             <!-- TOGGLE DARK MODE -->
             <label class="cr-darkmode">
-                <input type="checkbox" id="darkModeToggle" />
+                <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode" />
             </label>
         </div>
 
@@ -164,6 +165,29 @@
                             <button type="button" class="cr-btn cr-primary-outline cr-lg">Primary</button>
                             <button type="button" class="cr-btn cr-secondary cr-lg">secondary</button>
                             <button type="button" class="cr-btn cr-secondary-outline cr-lg">secondary</button>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2>tombol disabled</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Ubah tombol menjadi seperti inactive dengan menambahkan atribut <span>disabled</span> ke dalam tombol. Tombol yang memiliki atribut <span>disabled</span> tidak bisa di klik, hover atau tindakan lainnya.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary" disabled>Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline" disabled>Primary</button>
+                                <button type="button" class="cr-btn cr-secondary" disabled>secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline" disabled>secondary</button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary" disabled>Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline" disabled>Primary</button>
+                            <button type="button" class="cr-btn cr-secondary" disabled>secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline" disabled>secondary</button>
                         </script>
                         
                         <div class="subtitle">
@@ -502,23 +526,23 @@
                         <div class="group">
                             <div class="grid">
                                 <div class="cr-dropdown">
-                                    <button class="cr-btn cr-primary cr-drop-toggle" type="button">
+                                    <button id="crDropdownProfileToggle" class="cr-btn cr-primary cr-drop-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownProfileMenu">
                                         Dropdown
                                     </button>
-                                    <div class="cr-drop-menu">
-                                        <a class="cr-drop-item" href="#">Profile</a>
-                                        <a class="cr-drop-item" href="#">Settings</a>
-                                    </div>
+                                    <ul id="crDropdownProfileMenu" class="cr-drop-menu" aria-labelledby="crDropdownProfileToggle" aria-hidden="true">
+                                        <li><a class="cr-drop-item" href="#">Profile</a></li>
+                                        <li><a class="cr-drop-item" href="#">Settings</a></li>
+                                    </ul>
                                 </div>
                                 
                                 <div class="cr-dropdown">
-                                    <button class="cr-btn cr-primary cr-drop-toggle cr-icon" type="button">
-                                        <i class="ci-more-horizontal-square-02-1"></i>
+                                    <button id="crDropdownActionsToggle" class="cr-btn cr-primary cr-drop-toggle cr-icon" type="button" aria-label="More options" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownActionsMenu">
+                                        <i class="ci-more-horizontal-square-02-1" aria-hidden="true"></i>
                                     </button>
-                                    <div class="cr-drop-menu">
-                                        <a class="cr-drop-item" href="#"><i class="ci-edit-02"></i>Edit</a>
-                                        <a class="cr-drop-item delete" href="#"><i class="ci-delete-03"></i>Delete</a>
-                                    </div>
+                                    <ul id="crDropdownActionsMenu" class="cr-drop-menu" aria-labelledby="crDropdownActionsToggle" aria-hidden="true">
+                                        <li><a class="cr-drop-item" href="#"><i class="ci-edit-02" aria-hidden="true"></i>Edit</a></li>
+                                        <li><a class="cr-drop-item delete" href="#"><i class="ci-delete-03" aria-hidden="true"></i>Delete</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -750,6 +774,7 @@
         </div>
     </div>
     
+    <script src="./asstes/script/darkmode.js"></script>
     <script src="./master/master-crumbs.js"></script>
     <!-- prism js -->
     <script src="./asstes/script/prism.js"></script>
