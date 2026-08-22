@@ -1,20 +1,12 @@
 
 body.dark {
-    --cr-white: #212529;
-    --cr-black: #ffffff;
-    --cr-grey: #aaaaaa;
-    --cr-border: #5a5a5a;
-    --cr-main-bg: var(--pr-950);
+    --white-custom: #212529;
+    --black-custom: #ffffff;
+    --border-custom: #5a5a5a;
+    --main-bg: var(--pr-950);
 }
 body.dark {
     --cr-switch-dark-bg: var(--pr-400);
-}
-body.dark .navigation .nav-item:target-current {
-    color: var(--pr-900);
-    background-color: var(--pr-400);
-}
-body.dark :target .section-title h1 {
-    color: var(--pr-400);
 }
 body.dark .cr-select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");

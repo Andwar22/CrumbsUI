@@ -1,0 +1,31 @@
+   
+.wrap-btn-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    &:not(:first-of-type) {
+        margin-top: 1rem;
+    }
+}
+
+.wrap-input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 1rem;
+
+    &:not(:first-of-type) {
+        margin-top: 1rem;
+    }
+}
+
+.your-class {
+    color: var(--cr-static-white);
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem .5rem;
+    background-color: var(--pr-600);
+}

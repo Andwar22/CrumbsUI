@@ -1,0 +1,29 @@
+
+.main-wrapper {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    overflow: hidden auto;
+}
+.main-menus {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 1.5rem;
+}
+.main-menus a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: hsl(from var(--pr-500) h s l / .035);
+    border: 1px solid hsl(from var(--pr-500) h s l / .25);
+}
+.main-menus a:hover {
+    color: var(--pr-500);
+    background-color: hsl(from var(--pr-500) h s l / .1);
+}

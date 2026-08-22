@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Icons</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.andwar22.my.id/Workspace/crumbslogo.png">
+    <link rel="stylesheet" href="/master/master-crumbs.css">
+    <link rel="stylesheet" href="/asstes/style/main.css">
+    <link rel="stylesheet" href="/asstes/style/svg-icons.css">
+    <link rel="stylesheet" href="/asstes/style/darkmode.css">
+    <link rel="stylesheet" href="/asstes/icons/crumbsicon.css">
+    <!-- prism js -->
+    <link href="/asstes/style/prism.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="logo">
+                <img src="https://cdn.andwar22.my.id/Workspace/crumbslogo.png" alt="logo">
+                <h2>Crumbs UI</h2>
+            </div>
+
+            <!-- TOGGLE DARK MODE -->
+            <label class="cr-darkmode">
+                <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode" />
+            </label>
+        </div>
+
+        <div class="side-page-wrapper">
+            <div class="navigation">
+                <div class="home">
+                    <a href="/"><i class="ci-home-01"></i> Back to Home</a>
+                </div>
+
+                <div class="wrap-items">
+                    <div class="nav-btn">
+                        <a href="#htmlArea" class="nav-item">HTML Template</a>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#cssArea" class="nav-item">CSS Template</a>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#iconsArea" class="nav-item">Icons sprites</a>
+                        <ul>
+                            <li><a href="#lucideIcon">Lucide icon</a></li>
+                            <!-- <li><a href="#tablerIcon">tabler icon</a></li>
+                            <li><a href="#hugeIcon">huge icon</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section-area" id="htmlArea">
+                    <div class="section-title">
+                        <h1>HTML Template</h1>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Ini adalah template SVG sprites HTML, svg sprites adala kumpulan icon dalam satu file svg dan bisa digunakan satu persatu hanya dengan memanggil nama id nya.
+                        </p>
+                        <ul>
+                            <li>Copy dan paste code dibawah di notepad kemudian save dengan format <span>.svg</span></li>
+                            <li>Kemudian include-kan file svg tersebut ke dalam project</li>
+                            <li>Pastikan setiap sprites menggunakan id yang berbeda</li>
+                        </ul>
+                    </div>
+                    <script type="text/plain" class="language-html line-numbers">
+                        <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- ini adalah icon sprites code -->
+                                <symbol id="plus" viewBox="0 0 298 298">
+                                    <rect fill="transparent" width="298" height="298"/>
+                                    <path d="M62 158c-5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9l78 0 0 -78c0,-5 4,-9 9,-9 5,0 9,4 9,9l0 78 77 0c6,0 10,4 10,9 0,5 -4,9 -10,9l-77 0 0 77c0,6 -4,10 -9,10 -5,0 -9,-4 -9,-10l0 -77 -78 0z"></path>
+                                </symbol>
+
+                                <!-- taruh icon sprites lain dibawah sini dan seterusnya-->
+                            </defs>
+                        </svg>
+                    </script>
+                    <div class="desc">
+                        <p>Untuk menggunakan icon di HTML, gunakan code ini dan masukkan id icon yang akan dipakai. Tambahkan sedikit CSS agar warna icon mengikuti warna teks di sekitarnya. Untuk mempermudah mengatur ukuran icon, bisa menambahkan CSS untuk ukuran.</p>
+                    </div>
+                    <script type="text/plain" class="language-html line-numbers">
+                        <svg class="cr-icon">
+                            <use href="[direktori-file-svg]#[id-icon]"></use>
+                        </svg>
+                    </script>                    
+                    <script type="text/plain" class="language-css line-numbers">
+                        /* style dasar */
+                        .cr-icon {
+                            display: inline-block;
+                            fill: currentColor;
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        /* style ukuran */
+                        .icon-xs {
+                            width: 12px;
+                            height: 12px;
+                        }
+                        .icon-sm {
+                            width: 16px;
+                            height: 16px;
+                        }
+                        .icon-lg {
+                            width: 32px;
+                            height: 32px;
+                        }
+                        .icon-xl {
+                            width: 48px;
+                            height: 48px;
+                        }
+                    </script>
+                </div>
+
+                <div class="section-area" id="cssArea">
+                    <div class="section-title">
+                        <h1>CSS Template</h1>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Ini adalah template SVG sprites versi CSS, versi ini bisa dipakai pada atribut pseudo <span>::before</span> dan <span>::after</span> dalam css. Gunakan pada <span>div</span> atau element lain dengan <span>position: relative;</span> sebagai container.
+                        </p>
+                        <ul>
+                            <li>Buat file CSS dan copy susunan berikut lalu save</li>
+                            <li>Kemudian include-kan file CSS tersebut ke dalam project</li>
+                            <li>Pastikan setiap sprites menggunakan nama variable yang berbeda</li>
+                            <li>Path yang dipakai disini sama dengan yang ada di versi HTML, jadi tinggal di copy saja dan taruh di dalam <span>d</span></li>
+                        </ul>
+                    </div>
+                    <script type="text/plain" class="language-html line-numbers">
+                        :root {
+                            --plusIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cg%3E%3Cpath d='M11.695 4.057a1.04 1.04 0 0 0-.567.459l-.108.184-.011 3.15-.011 3.15H7.945c-3.312 0-3.27-.003-3.563.221-.08.061-.195.194-.254.295-.091.156-.108.23-.108.484 0 .256.016.328.111.489.125.213.318.375.539.454.12.043.763.054 3.239.055l3.089.002.011 3.153.011 3.153.121.197a.998.998 0 0 0 1.718 0l.121-.197.011-3.153.011-3.153 3.089-.002c2.476-.001 3.119-.012 3.239-.055.221-.079.414-.241.539-.454.095-.161.111-.233.111-.489 0-.254-.017-.328-.108-.484a1.209 1.209 0 0 0-.254-.295c-.293-.224-.251-.221-3.563-.221h-3.053l-.011-3.15-.011-3.15-.108-.184a1.005 1.005 0 0 0-1.177-.459' %3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+
+                            /* taruh icon sprites lain dibawah sini dan seterusnya */
+                        }
+                    </script>
+                    <div class="desc">
+                        <p>Untuk menggunakan icon di CSS, gunakan code ini dan masukkan nama variable icon yang akan dipakai. Tambahkan CSS untuk pseudo seperti dibawah.</p>
+                    </div>
+                    <script type="text/plain" class="language-html line-numbers">
+                        <!-- contoh container -->
+                        <div class="cr-icon-css"></div>
+                    </script>                    
+                    <script type="text/plain" class="language-css line-numbers">
+                        /* style container */
+                        .cr-icon-css {
+                            position: relative;
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        /* style icon css */
+                        .cr-icon-css::before {
+                            content: "";
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            background-color: currentColor;
+                            mask-image: var(--plusIcon);
+                            -webkit-mask-image: var(--plusIcon);
+                        }
+                    </script>
+                </div>
+
+                <div class="section-area" id="iconsArea">
+                    <div class="section-title">
+                        <h1>Icons sprites</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur a cumque commodi. Temporibus accusantium nulla reprehenderit quisquam? Illo eaque nam, nobis debitis fuga impedit. Perferendis consectetur magnam, in laudantium fugit dolorem eos rerum quasi ipsa molestiae reprehenderit vitae optio officiis error eaque aliquam illum fuga necessitatibus, esse eum vel debitis earum quidem ipsum? Numquam dolore quos iure mollitia corrupti, ab facere quidem placeat molestiae in ipsum quo aliquid magni hic asperiores non laudantium nisi.</p>
+                    </div>
+
+                    <div class="subtitle">
+                        <h2 id="lucideIcon">lucide Icon</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Beautiful & consistent icons Made by the community.</p>
+                        <div class="wrap-icon-grid">
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#plusIcon"></use>
+                                </svg>
+                                <span>plusIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#cancelIcon"></use>
+                                </svg>
+                                <span>cancelIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#checkIcon"></use>
+                                </svg>
+                                <span>checkIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#searchIcon"></use>
+                                </svg>
+                                <span>searchIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#chevronUpIcon"></use>
+                                </svg>
+                                <span>chevronUpIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#chevronDownIcon"></use>
+                                </svg>
+                                <span>chevronDownIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#chevronLeftIcon"></use>
+                                </svg>
+                                <span>chevronLeftIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#chevronRightIcon"></use>
+                                </svg>
+                                <span>chevronRightIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#infoCircleIcon"></use>
+                                </svg>
+                                <span>infoCircleIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#userIcon"></use>
+                                </svg>
+                                <span>userIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#arrowRightIcon"></use>
+                                </svg>
+                                <span>arrowRightIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#homeIcon"></use>
+                                </svg>
+                                <span>homeIcon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#Icon"></use>
+                                </svg>
+                                <span>Icon</span>
+                            </div>
+                            <div class="icon-item">
+                                <svg class="cr-icon icon-lg">
+                                    <use href="/asstes/icons/master-lucide-icon.svg#Icon"></use>
+                                </svg>
+                                <span>Icon</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                    <!-- <div class="subtitle">
+                        <h2 id="tablerIcon">tabler Icon</h2>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Suka ukuran tombol yang lebih kecil? atau yang lebih besar? Cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran tombol.
+                        </p>
+                    </div> -->
+                    
+                    <!-- <div class="subtitle">
+                        <h2 id="hugeIcon">huge Icon</h2>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Suka ukuran tombol yang lebih kecil? atau yang lebih besar? Cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran tombol.
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/asstes/script/darkmode.js"></script>
+    <script src="/master/master-crumbs.js"></script>
+    <!-- prism js -->
+    <script src="/asstes/script/prism.js"></script>
+</body>
+</html>

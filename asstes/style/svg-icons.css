@@ -1,0 +1,29 @@
+
+.wrap-icon-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    .icon-item {
+        display: grid;
+        place-items: center;
+        gap: .25rem;
+        text-align: center;
+        opacity: .75;
+        transition: .25s ease;
+    }
+    .icon-item:hover {
+        opacity: 1;
+    }
+    svg {
+        color: var(--pr-500);
+    }
+    span {
+        font-size: .75rem;
+        text-align: center;
+    }
+}

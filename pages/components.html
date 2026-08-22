@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.andwar22.my.id/Workspace/crumbslogo.png">
+    <link rel="stylesheet" href="/master/master-crumbs.css">
+    <link rel="stylesheet" href="/asstes/style/main.css">
+    <link rel="stylesheet" href="/asstes/style/components.css">
+    <link rel="stylesheet" href="/asstes/style/darkmode.css">
+    <link rel="stylesheet" href="/asstes/icons/crumbsicon.css">
+    <!-- prism js -->
+    <link href="/asstes/style/prism.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="logo">
+                <img src="https://cdn.andwar22.my.id/Workspace/crumbslogo.png" alt="logo">
+                <h2>Crumbs UI</h2>
+            </div>
+
+            <!-- TOGGLE DARK MODE -->
+            <label class="cr-darkmode">
+                <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode" />
+            </label>
+        </div>
+
+        <div class="side-page-wrapper">
+            <div class="navigation">
+                <div class="home">
+                    <a href="/"><i class="ci-home-01"></i> Back to Home</a>
+                </div>
+
+                <div class="wrap-items">
+                    <div class="nav-btn">
+                        <a href="#buttonsArea" class="nav-item">Buttons</a>
+                        <ul>
+                            <li><a href="#buttonSize">button size</a></li>
+                            <li><a href="#buttonDisabled">button disabled</a></li>
+                            <li><a href="#buttonIcon">button icon</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#inputTextArea" class="nav-item">Inputs</a>
+                        <ul>
+                            <li><a href="#inputPrAp">prepend & append</a></li>
+                            <li><a href="#inputSize">input size</a></li>
+                            <li><a href="#inputDisabled">input disabled</a></li>
+                            <li><a href="#inputTextarea">textarea</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#selectArea" class="nav-item">Select</a>
+                        <ul>
+                            <li><a href="#selectPrAp">prepend & append</a></li>
+                            <li><a href="#selectSize">select size</a></li>
+                            <li><a href="#selectDisabled">select disabled</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#checkRadioArea" class="nav-item">Checkbox & Radio</a>
+                        <ul>
+                            <li><a href="#checkInline">Checkbox & Radio inline</a></li>
+                            <li><a href="#checkSize">Checkbox & Radio size</a></li>
+                            <li><a href="#checkDisabled">Checkbox & Radio disabled</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#dropdownArea" class="nav-item">Dropdown</a>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#switchArea" class="nav-item">Switch</a>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#columnArea" class="nav-item">column</a>
+                        <ul>
+                            <li><a href="#colBreakpoint">column Breakpoint</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-btn">
+                        <a href="#carouselArea" class="nav-item">Carousel</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section-area" id="buttonsArea">
+                    <div class="section-title">
+                        <h1>Buttons</h1>
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Kumpulan tombol klasik dengan style tombol standar, outline dan link. terdapat juga pilihan semantik warna untuk kebutuhan website.
+                        </p>
+                        <ul>
+                            <li>Untuk menggunakan style outline, cukup tambahkan <span>-outline</span> di akhir class warna.</li>
+                            <li>Style outline tidak tersedia untuk <span>cr-link</span>, karena tombol link secara default tanpa border.</li>
+                        </ul>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary">secondary</button>
+                                <button type="button" class="cr-btn cr-info">Info</button>
+                                <button type="button" class="cr-btn cr-success">Success</button>
+                                <button type="button" class="cr-btn cr-danger">Danger</button>
+                                <button type="button" class="cr-btn cr-warning">Warning</button>
+                                <button type="button" class="cr-btn cr-link">Link</button>
+                            </div>
+
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary-outline">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline">secondary</button>
+                                <button type="button" class="cr-btn cr-info-outline">Info</button>
+                                <button type="button" class="cr-btn cr-success-outline">Success</button>
+                                <button type="button" class="cr-btn cr-danger-outline">Danger</button>
+                                <button type="button" class="cr-btn cr-warning-outline">Warning</button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- tombol standar -->
+                            <button type="button" class="cr-btn cr-primary">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary">secondary</button>
+                            <button type="button" class="cr-btn cr-info">Info</button>
+                            <button type="button" class="cr-btn cr-success">Success</button>
+                            <button type="button" class="cr-btn cr-danger">Danger</button>
+                            <button type="button" class="cr-btn cr-warning">Warning</button>
+
+                            <!-- tombol link -->
+                            <button type="button" class="cr-btn cr-link">Link</button>
+
+                            <!-- tombol outline -->
+                            <button type="button" class="cr-btn cr-primary-outline">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline">secondary</button>
+                            <button type="button" class="cr-btn cr-info-outline">Info</button>
+                            <button type="button" class="cr-btn cr-success-outline">Success</button>
+                            <button type="button" class="cr-btn cr-danger-outline">Danger</button>
+                            <button type="button" class="cr-btn cr-warning-outline">Warning</button>
+                        </script>
+
+                        <div class="desc">
+                            <p>
+                                Style tombol diatas ditujukan untuk tag <span>&#60;button&#62;</span>, namun bisa juga dipakai untuk tag <span>&#60;a&#62;</span> ataupun <span>&#60;input&#62;</span>
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <a class="cr-btn cr-primary" href="#" role="button">href</a>
+                                <button class="cr-btn cr-primary" type="submit">Button submit</button>
+                                <input class="cr-btn cr-primary" type="button" value="Input button">
+                                <input class="cr-btn cr-primary" type="submit" value="input Submit">
+                                <input class="cr-btn cr-primary" type="reset" value="input Reset">
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <a class="cr-btn cr-primary" href="#" role="button">href</a>
+                            <button class="cr-btn cr-primary" type="submit">Button submit</button>
+                            <input class="cr-btn cr-primary" type="button" value="Input button">
+                            <input class="cr-btn cr-primary" type="submit" value="input Submit">
+                            <input class="cr-btn cr-primary" type="reset" value="input Reset">
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="buttonSize">Button Size</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Suka ukuran tombol yang lebih kecil? atau yang lebih besar? Cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran tombol.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-sm">Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-sm">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary cr-sm">secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-sm">secondary</button>
+                            </div>
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-lg">Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-lg">Primary</button>
+                                <button type="button" class="cr-btn cr-secondary cr-lg">secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-lg">secondary</button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- tombol small -->
+                            <button type="button" class="cr-btn cr-primary cr-sm">Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-sm">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary cr-sm">secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-sm">secondary</button>
+
+                            <!-- tombol large -->
+                            <button type="button" class="cr-btn cr-primary cr-lg">Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-lg">Primary</button>
+                            <button type="button" class="cr-btn cr-secondary cr-lg">secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-lg">secondary</button>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="buttonDisabled">button disabled</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Ubah tombol menjadi seperti inactive dengan menambahkan atribut <span>disabled</span> ke dalam tombol. Tombol yang memiliki atribut <span>disabled</span> tidak bisa di klik, hover atau tindakan lainnya.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary" disabled>Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline" disabled>Primary</button>
+                                <button type="button" class="cr-btn cr-secondary" disabled>secondary</button>
+                                <button type="button" class="cr-btn cr-secondary-outline" disabled>secondary</button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary" disabled>Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline" disabled>Primary</button>
+                            <button type="button" class="cr-btn cr-secondary" disabled>secondary</button>
+                            <button type="button" class="cr-btn cr-secondary-outline" disabled>secondary</button>
+                        </script>
+                        
+                        <div class="subtitle">
+                            <h2 id="buttonIcon">button icon</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Style tombol ini dibuat agar tetap konsisten saat di sisipkan icon. Cukup masukkan font icon sebelum atau sesudah teks tombol.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary"><i class="ci-star"></i>Primary</button>
+                                <button type="button" class="cr-btn cr-primary-outline"><i class="ci-star"></i>Primary</button>
+                                <button type="button" class="cr-btn cr-secondary">Primary<i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary-outline">Primary<i class="ci-star"></i></button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary"><i class="ci-star"></i>Primary</button>
+                            <button type="button" class="cr-btn cr-primary-outline"><i class="ci-star"></i>Primary</button>
+                            <button type="button" class="cr-btn cr-secondary">Primary<i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary-outline">Primary<i class="ci-star"></i></button>
+                        </script>
+
+                        <div class="desc">
+                            <p>
+                                Jika ingin tombol dengan icon saja, tambahkan class <span>cr-icon</span> untuk membuat tombol ikon dengan ukuran 1:1.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <button type="button" class="cr-btn cr-primary cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-primary-outline cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary cr-icon"><i class="ci-star"></i></button>
+                                <button type="button" class="cr-btn cr-secondary-outline cr-icon"><i class="ci-star"></i></button>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <button type="button" class="cr-btn cr-primary cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-primary-outline cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary cr-icon"><i class="ci-star"></i></button>
+                            <button type="button" class="cr-btn cr-secondary-outline cr-icon"><i class="ci-star"></i></button>
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="section-area" id="inputTextArea">
+                    <div class="section-title">
+                        <h1>Inputs</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at! Susunan input disarankan menggunakan <span>.cr-form-group</span> agar ada spacing di tiap input. namun <span>.cr-input</span> dan <span>.cr-label</span> bisa digunakan secara mandiri tanpa <span>.cr-form-group</span></p>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">input label</label>
+                                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="cr-form-group">
+                                <label class="cr-label">input label</label>
+                                <input type="text" class="cr-input" placeholder="Tulis disini...">
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="inputPrAp">append & prepend</h2>
+                        </div>
+                        <div class="desc">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam assumenda non labore temporibus quasi aliquam praesentium tempora obcaecati quas perspiciatis porro omnis quo quaerat neque natus unde, nostrum dolorum odit incidunt officia voluptatum similique laudantium accusamus facilis! Nobis, harum fuga.</p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">label input prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend">@</span>
+                                        <input type="text" class="cr-input" placeholder="Tulis disini...">
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">label input append</label>
+                                    <div class="cr-input-group">
+                                        <input type="text" class="cr-input" placeholder="Tulis disini...">
+                                        <span class="cr-append">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- prepend -->
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal input prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend">@</span>
+                                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                                </div>
+                            </div>
+
+                            <!-- append -->
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal input append</label>
+                                <div class="cr-input-group">
+                                    <input type="text" class="cr-input" placeholder="Tulis disini...">
+                                    <span class="cr-append">.com</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="inputSize">input Size</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Sama seperti tombol, input jula memiliki ukuran small dan large, cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran label dan input.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">Small input</label>
+                                    <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">Small input prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend cr-sm">@</span>
+                                        <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">Small input append</label>
+                                    <div class="cr-input-group">
+                                        <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                                        <span class="cr-append cr-sm">.com</span>
+                                    </div>
+                                </div>
+
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large input</label>
+                                    <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large input prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend cr-lg">@</span>
+                                        <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large input append</label>
+                                    <div class="cr-input-group">
+                                        <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                                        <span class="cr-append cr-lg">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- input small -->
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">Small input</label>
+                                <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">Small input prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend cr-sm">@</span>
+                                    <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                                </div>
+                            </div>                            
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">Small input append</label>
+                                <div class="cr-input-group">
+                                    <input type="text" class="cr-input cr-sm" placeholder="Tulis disini...">
+                                    <span class="cr-append cr-sm">.com</span>
+                                </div>
+                            </div>
+
+                            <!-- input large -->
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large input</label>
+                                <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large input prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend cr-lg">@</span>
+                                    <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                                </div>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large input append</label>
+                                <div class="cr-input-group">
+                                    <input type="text" class="cr-input cr-lg" placeholder="Tulis disini...">
+                                    <span class="cr-append cr-lg">.com</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="inputDisabled">input disabled</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Sama seperti tombol, ubah input menjadi seperti inactive dengan menambahkan atribut <span>disabled</span>. Input yang memiliki atribut disabled tidak bisa di klik, hover atau tindakan lainnya.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">input disabled</label>
+                                    <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">input prepend disabled</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend">@</span>
+                                        <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">input append disabled</label>
+                                    <div class="cr-input-group">
+                                        <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                                        <span class="cr-append">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="cr-form-group">
+                                <label class="cr-label">input disabled</label>
+                                <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                            </div>
+
+                            <div class="cr-form-group">
+                                <label class="cr-label">input prepend disabled</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend">@</span>
+                                    <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                                </div>
+                            </div>
+
+                            <div class="cr-form-group">
+                                <label class="cr-label">input append disabled</label>
+                                <div class="cr-input-group">
+                                    <input type="text" class="cr-input" placeholder="Tulis disini..." disabled>
+                                    <span class="cr-append">.com</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="inputTextarea">textarea</h2>
+                        </div>
+                        <div class="desc">
+                            <p>textarea menggunakan susunan dan style class yang sama dengan <span>&#60;input&#62;</span> untuk ukuran dan disabled. Textarea tidak mendukung class <span>.prepend</span> dan <span>.append</span></p>
+                        </div>
+                        <div class="component-view">
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">small textarea</label>
+                                <textarea class="cr-input cr-sm" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal textarea</label>
+                                <textarea class="cr-input" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large textarea</label>
+                                <textarea class="cr-input cr-lg" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">small textarea</label>
+                                <textarea class="cr-input cr-sm" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal textarea</label>
+                                <textarea class="cr-input" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large textarea</label>
+                                <textarea class="cr-input cr-lg" rows="2" placeholder="Ini adalah textarea..."></textarea>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+
+                <div class="section-area" id="selectArea">
+                    <div class="section-title">
+                        <h1>Select</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita fuga adipisci pariatur doloremque laudantium, autem ad! Voluptatibus repellat voluptates doloremque facere distinctio corrupti nobis suscipit debitis. Quos id corporis ipsam! Architecto ratione distinctio ipsam harum voluptatibus vitae eaque necessitatibus fugit.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">select label</label>
+                                    <select class="cr-select">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="cr-form-group">
+                                <label class="cr-label">select label</label>
+                                <select class="cr-select">
+                                    <option value="one">One</option>
+                                    <option value="two">Two</option>
+                                    <option value="three">Three</option>
+                                </select>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="selectPrAp">append & prepend</h2>
+                        </div>
+                        <div class="desc">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam assumenda non labore temporibus quasi aliquam praesentium tempora obcaecati quas perspiciatis porro omnis quo quaerat neque natus unde, nostrum dolorum odit incidunt officia voluptatum similique laudantium accusamus facilis! Nobis, harum fuga.</p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">label input prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend">@</span>
+                                        <select class="cr-select">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">label select append</label>
+                                    <div class="cr-input-group">
+                                        <select class="cr-select">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                        <span class="cr-append">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- prepend -->
+                            <div class="cr-form-group">
+                                <label class="cr-label">label select prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend">@</span>
+                                    <select class="cr-select">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- append -->
+                            <div class="cr-form-group">
+                                <label class="cr-label">label select append</label>
+                                <div class="cr-input-group">
+                                    <select class="cr-select">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                    <span class="cr-append">.com</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="selectSize">select Size</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Sama seperti input, select juga memiliki ukuran small dan large, cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran label dan input.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">small select</label>
+                                    <select class="cr-select cr-sm">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">small select prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend cr-sm">@</span>
+                                        <select class="cr-select cr-sm">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-sm">small select append</label>
+                                    <div class="cr-input-group">
+                                        <select class="cr-select cr-sm">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                        <span class="cr-append cr-sm">.com</span>
+                                    </div>
+                                </div>
+
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large select</label>
+                                    <select class="cr-select cr-lg">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large select prepend</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend cr-lg">@</span>
+                                        <select class="cr-select cr-lg">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label cr-lg">large select append</label>
+                                    <div class="cr-input-group">
+                                        <select class="cr-select cr-lg">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                        <span class="cr-append cr-lg">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- select small -->
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">small select</label>
+                                <select class="cr-select cr-sm">
+                                    <option value="one">One</option>
+                                    <option value="two">Two</option>
+                                    <option value="three">Three</option>
+                                </select>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">small select prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend cr-sm">@</span>
+                                    <select class="cr-select cr-sm">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-sm">small select append</label>
+                                <div class="cr-input-group">
+                                    <select class="cr-select cr-sm">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                    <span class="cr-append cr-sm">.com</span>
+                                </div>
+                            </div>
+
+                            <!-- select large -->
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large select</label>
+                                <select class="cr-select cr-lg">
+                                    <option value="one">One</option>
+                                    <option value="two">Two</option>
+                                    <option value="three">Three</option>
+                                </select>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large select prepend</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend cr-lg">@</span>
+                                    <select class="cr-select cr-lg">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label cr-lg">large select append</label>
+                                <div class="cr-input-group">
+                                    <select class="cr-select cr-lg">
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                    <span class="cr-append cr-lg">.com</span>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="selectDisabled">select disabled</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Sama seperti input, ubah select menjadi seperti inactive dengan menambahkan atribut <span>disabled</span>. Input yang memiliki atribut disabled tidak bisa di klik, hover atau tindakan lainnya.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div class="wrap-input-grid">
+                                <div class="cr-form-group">
+                                    <label class="cr-label">normal select disabled</label>
+                                    <select class="cr-select" disabled>
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">normal select prepend disabled</label>
+                                    <div class="cr-input-group">
+                                        <span class="cr-prepend">@</span>
+                                        <select class="cr-select" disabled>
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cr-form-group">
+                                    <label class="cr-label">normal select append disabled</label>
+                                    <div class="cr-input-group">
+                                        <select class="cr-select" disabled>
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                            <option value="three">Three</option>
+                                        </select>
+                                        <span class="cr-append">.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal select disabled</label>
+                                <select class="cr-select" disabled>
+                                    <option value="one">One</option>
+                                    <option value="two">Two</option>
+                                    <option value="three">Three</option>
+                                </select>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal select prepend disabled</label>
+                                <div class="cr-input-group">
+                                    <span class="cr-prepend">@</span>
+                                    <select class="cr-select" disabled>
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cr-form-group">
+                                <label class="cr-label">normal select append disabled</label>
+                                <div class="cr-input-group">
+                                    <select class="cr-select" disabled>
+                                        <option value="one">One</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                    </select>
+                                    <span class="cr-append">.com</span>
+                                </div>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+
+                <div class="section-area" id="checkRadioArea">
+                    <div class="section-title">
+                        <h1>Checkbox & Radio</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Komponen checkbox dan radio dibungkus dengan <span>.cr-check-group</span> dan <span>cr-radio-group</span> dengan default display: block;</p>
+                        <ul>
+                            <li>Untuk penggunaan lebih dari 1 radio dalam 1 group, wajib menambahkan atribut <span>name</span> dengan text yang unik untuk membedakan setiap group radio.</li>
+                            <li>Tiap group radio harus memiliki <span>name</span> yang berbeda agar tidak saling bersinggungan.</li>
+                        </ul>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div>
+                                <div class="cr-check-group">
+                                    <input type="checkbox" id="check2" class="cr-check">
+                                    <label for="check2" class="cr-label">Checkbox label</label>
+                                </div>
+                                <div class="cr-radio-group">
+                                    <input type="radio" id="radio2" name="radios1" class="cr-radio">
+                                    <label for="radio2" class="cr-label">radio label</label>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- checkbox -->
+                            <div class="cr-check-group">
+                                <input type="checkbox" id="check2" class="cr-check">
+                                <label for="check2" class="cr-label">Checkbox label</label>
+                            </div>
+
+                            <!-- radio -->
+                            <div class="cr-radio-group">
+                                <input type="radio" id="radio2" name="radios1" class="cr-radio">
+                                <label for="radio2" class="cr-label">radio label</label>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="checkInline">Checkbox & Radio inline</h2>
+                        </div>
+                        <div class="desc">
+                            <p>Untuk membuat menjadi inline atau dalam 1 garis lurus, tambahkan class <span>.inline</span> setelah class <span>.cr-check-group</span> dan <span>cr-radio-group</span>.</p>
+                        </div>
+                        <div class="component-view">
+                            <div>
+                                <div class="cr-check-group inline">
+                                    <input type="checkbox" id="check11" class="cr-check">
+                                    <label for="check11" class="cr-label">Checkbox label 1</label>
+                                </div>
+                                <div class="cr-check-group inline">
+                                    <input type="checkbox" id="check22" class="cr-check">
+                                    <label for="check22" class="cr-label">Checkbox label 2</label>
+                                </div>
+                                <div class="cr-check-group inline">
+                                    <input type="checkbox" id="check33" class="cr-check">
+                                    <label for="check33" class="cr-label">Checkbox label 3</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="cr-radio-group inline">
+                                    <input type="radio" id="radio11" name="radios11" class="cr-radio">
+                                    <label for="radio11" class="cr-label">radio label 1</label>
+                                </div>
+                                <div class="cr-radio-group inline">
+                                    <input type="radio" id="radio22" name="radios11" class="cr-radio">
+                                    <label for="radio22" class="cr-label">radio label 2</label>
+                                </div>
+                                <div class="cr-radio-group inline">
+                                    <input type="radio" id="radio33" name="radios11" class="cr-radio">
+                                    <label for="radio33" class="cr-label">radio label 2</label>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- checkbox inline -->
+                            <div class="cr-check-group inline">
+                                <input type="checkbox" id="check11" class="cr-check">
+                                <label for="check11" class="cr-label">Checkbox label 1</label>
+                            </div>
+                            <div class="cr-check-group inline">
+                                <input type="checkbox" id="check22" class="cr-check">
+                                <label for="check22" class="cr-label">Checkbox label 2</label>
+                            </div>
+                            <div class="cr-check-group inline">
+                                <input type="checkbox" id="check33" class="cr-check">
+                                <label for="check33" class="cr-label">Checkbox label 3</label>
+                            </div>
+
+                            <!-- radio inline -->
+                            <div class="cr-radio-group inline">
+                                <input type="radio" id="radio11" name="radios11" class="cr-radio">
+                                <label for="radio11" class="cr-label">radio label 1</label>
+                            </div>
+                            <div class="cr-radio-group inline">
+                                <input type="radio" id="radio22" name="radios11" class="cr-radio">
+                                <label for="radio22" class="cr-label">radio label 2</label>
+                            </div>
+                            <div class="cr-radio-group inline">
+                                <input type="radio" id="radio33" name="radios11" class="cr-radio">
+                                <label for="radio33" class="cr-label">radio label 2</label>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="checkSize">Checkbox & Radio Size</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Checkbox dan radio juga memiliki ukuran small dan large, cukup tambahkan class <span>cr-sm</span> atau <span>cr-lg</span> untuk merubah ukuran label dan input.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div>
+                                <div class="cr-check-group">
+                                    <input type="checkbox" id="check1" class="cr-check cr-sm">
+                                    <label for="check1" class="cr-label cr-sm">Checkbox small</label>
+                                </div>                                
+                                <div class="cr-check-group">
+                                    <input type="checkbox" id="check2" class="cr-check cr-lg">
+                                    <label for="check2" class="cr-label cr-lg">Checkbox large</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="cr-radio-group">
+                                    <input type="radio" id="radio1" name="radios1" class="cr-radio cr-sm">
+                                    <label for="radio1" class="cr-label cr-sm">radio small</label>
+                                </div>                                
+                                <div class="cr-radio-group">
+                                    <input type="radio" id="radio2" name="radios1" class="cr-radio cr-lg">
+                                    <label for="radio2" class="cr-label cr-lg">radio large</label>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- checkbok small & large -->
+                            <div class="cr-check-group">
+                                <input type="checkbox" id="check1" class="cr-check cr-sm">
+                                <label for="check1" class="cr-label cr-sm">Checkbox small</label>
+                            </div>
+                            
+                            <div class="cr-check-group">
+                                <input type="checkbox" id="check2" class="cr-check cr-lg">
+                                <label for="check2" class="cr-label cr-lg">Checkbox large</label>
+                            </div>
+
+                            <!-- radio small & large -->
+                            <div class="cr-radio-group">
+                                <input type="radio" id="radio1" name="radios1" class="cr-radio cr-sm">
+                                <label for="radio1" class="cr-label cr-sm">radio small</label>
+                            </div>
+                            
+                            <div class="cr-radio-group">
+                                <input type="radio" id="radio2" name="radios1" class="cr-radio cr-lg">
+                                <label for="radio2" class="cr-label cr-lg">radio large</label>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="checkDisabled">Checkbox & Radio disabled</h2>
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Nonaktifkan checkbox dan radio dengan menambahkan atribut disabled. Checkbox dan radio yang memiliki atribut disabled tidak bisa di klik, hover atau tindakan lainnya.
+                            </p>
+                        </div>
+                        <div class="component-view">
+                            <div>
+                                <div class="cr-check-group">
+                                    <input type="checkbox" id="check3" class="cr-check cr-sm" disabled>
+                                    <label for="check3" class="cr-label cr-sm">Checkbox small</label>
+                                </div>                                
+                                <div class="cr-check-group">
+                                    <input type="checkbox" id="check4" class="cr-check cr-lg" disabled>
+                                    <label for="check4" class="cr-label cr-lg">Checkbox large</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="cr-radio-group">
+                                    <input type="radio" id="radio3" name="radios2" class="cr-radio cr-sm" disabled>
+                                    <label for="radio3" class="cr-label cr-sm">radio small</label>
+                                </div>                                
+                                <div class="cr-radio-group">
+                                    <input type="radio" id="radio4" name="radios2" class="cr-radio cr-lg" disabled>
+                                    <label for="radio4" class="cr-label cr-lg">radio large</label>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- checkbok small & large -->
+                            <div class="cr-check-group">
+                                <input type="checkbox" id="check3" class="cr-check cr-sm" disabled>
+                                <label for="check3" class="cr-label cr-sm">Checkbox small</label>
+                            </div>
+                            
+                            <div class="cr-check-group">
+                                <input type="checkbox" id="check4" class="cr-check cr-lg" disabled>
+                                <label for="check4" class="cr-label cr-lg">Checkbox large</label>
+                            </div>
+
+                            <!-- radio small & large -->
+                            <div class="cr-radio-group">
+                                <input type="radio" id="radio3" name="radios2" class="cr-radio cr-sm" disabled>
+                                <label for="radio3" class="cr-label cr-sm">radio small</label>
+                            </div>
+                            
+                            <div class="cr-radio-group">
+                                <input type="radio" id="radio4" name="radios2" class="cr-radio cr-lg" disabled>
+                                <label for="radio4" class="cr-label cr-lg">radio large</label>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="section-area" id="dropdownArea">
+                    <div class="section-title">
+                        <h1>Dropdown</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Ada 2 jenis dropdown, dropdown standar dan dropdown icon. Untuk menggunakan dropdown icon, cukup tambahkan class <span>.cr-icon</span> setelah class <span>.cr-drop-toggle</span> untuk membuat tombol dropdown menjadi kotak 1:1 dan menghilangkan tanda icon panah.</p>
+                        <ul>
+                            <li>Untuk penggunaan dropdown lebih dari 1, pastikan membuat <span>ID</span> berbeda untuk tiap dropdown. ID ini bertujuan agar dropdown dapat bekerja secara mandiri dan tidak saling mengganggu.</li>
+                            <li>Tag <span>&#60;a&#62;</span> di dalam <span>.cr-drop-menu</span> bisa diganti dengan <span>&#60;button&#62;</span> dan pastikan tetap menggunakan class <span>.cr-drop-item</span>.</li>
+                        </ul>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <div>
+                                    <div class="cr-dropdown">
+                                        <button id="crDropdownProfileToggle" class="cr-btn cr-primary cr-drop-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownProfileMenu">
+                                            Dropdown
+                                        </button>
+                                        <ul id="crDropdownProfileMenu" class="cr-drop-menu" aria-labelledby="crDropdownProfileToggle" aria-hidden="true">
+                                            <li><a class="cr-drop-item" href="#">Profile</a></li>
+                                            <li><a class="cr-drop-item" href="#">Settings</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="cr-dropdown">
+                                        <button id="crDropdownActionsToggle" class="cr-btn cr-primary cr-drop-toggle cr-icon" type="button" aria-label="More options" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownActionsMenu">
+                                            <i class="ci-more-horizontal-square-02-1" aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="crDropdownActionsMenu" class="cr-drop-menu" aria-labelledby="crDropdownActionsToggle" aria-hidden="true">
+                                            <li><a class="cr-drop-item" href="#"><i class="ci-edit-02" aria-hidden="true"></i>Edit</a></li>
+                                            <li><a class="cr-drop-item delete" href="#"><i class="ci-delete-03" aria-hidden="true"></i>Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- dropdown standar -->
+                            <div class="cr-dropdown">
+                                <button id="crDropdownProfileToggle" class="cr-btn cr-primary cr-drop-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownProfileMenu">
+                                    Dropdown
+                                </button>
+                                <ul id="crDropdownProfileMenu" class="cr-drop-menu" aria-labelledby="crDropdownProfileToggle" aria-hidden="true">
+                                    <li><a class="cr-drop-item" href="#">Profile</a></li>
+                                    <li><a class="cr-drop-item" href="#">Settings</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- dropdown icon -->
+                            <div class="cr-dropdown">
+                                <button id="crDropdownActionsToggle" class="cr-btn cr-primary cr-drop-toggle cr-icon" type="button" aria-label="More options" aria-haspopup="true" aria-expanded="false" aria-controls="crDropdownActionsMenu">
+                                    <i class="ci-more-horizontal-square-02-1" aria-hidden="true"></i>
+                                </button>
+                                <ul id="crDropdownActionsMenu" class="cr-drop-menu" aria-labelledby="crDropdownActionsToggle" aria-hidden="true">
+                                    <li><a class="cr-drop-item" href="#"><i class="ci-edit-02" aria-hidden="true"></i>Edit</a></li>
+                                    <li><a class="cr-drop-item delete" href="#"><i class="ci-delete-03" aria-hidden="true"></i>Delete</a></li>
+                                </ul>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="section-area" id="switchArea">
+                    <div class="section-title">
+                        <h1>Switch</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Ada 2 pilihan switch, switch tanpa label dan menggunakan label. Switch bisa berdiri sendiri tanpa perlu menambahkan <span>ID</span>, karena input dibungkus langsung oleh tag <span>&#60;label&#62;</span>.</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="wrap-btn-grid">
+                                <div>
+                                    <label class="cr-switch">
+                                        <input type="checkbox" />
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="cr-switch">
+                                        <input type="checkbox" />
+                                        <span>Switch with label</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- tanpa label -->
+                            <label class="cr-switch">
+                                <input type="checkbox" />
+                            </label>
+                            
+                            <!-- dengan label -->
+                            <label class="cr-switch">
+                                <input type="checkbox" />
+                                <span>Switch with label</span>
+                            </label>
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="section-area" id="columnArea">
+                    <div class="section-title">
+                        <h1>Column</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Ada 12 bagian dalam 1 kolom, dan semua terbagi dalam masing-masing class. Kolom wajib dibungkus dengan class <span>.cr-row</span> untuk mengaktifkan CSS flexbox.</p>
+                        <ul>
+                            <li>Class kolom dimulai dari <span>.col-1</span> sampai <span>.col-12</span></li>
+                            <li>Bebas mengkombinasikan semua class kolom dengan total maksimal 12 kolom per baris</li>
+                            <li>Contoh kombinasi : <span>.col-8</span> dan <span>.col-4</span> atau <span>.col-6</span> dan <span>.col-6</span></li>
+                        </ul>
+                    </div>
+                    <div class="section-content">
+                        <div class="component-view">
+                            <div class="cr-row" style="margin-bottom: 1rem;">
+                                <div class="col-8">
+                                    <div class="your-class">I'am col-8</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="your-class">I'am col-4</div>
+                                </div>
+                            </div>                            
+                            <div class="cr-row">
+                                <div class="col-6">
+                                    <div class="your-class">I'am col-6</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="your-class">I'am col-6</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <!-- kombinasi col-8 dan col-4 -->
+                            <div class="cr-row">
+                                <div class="col-8">
+                                    <div class="your-class">I'am col-8</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="your-class">I'am col-4</div>
+                                </div>
+                            </div>
+                            
+                            <!-- kombinasi col-6 dan col-6 -->
+                            <div class="cr-row">
+                                <div class="col-6">
+                                    <div class="your-class">I'am col-6</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="your-class">I'am col-6</div>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="subtitle">
+                            <h2 id="colBreakpoint">column Breakpoint</h2>
+                        </div>
+                        <div class="desc">
+                            <p>Untuk mengatur ukuran pada layar tertentu, tambahkan <span>md</span> atau <span>lg</span> setelah tulisan <span>.col-</span></p>
+                            <ul>
+                                <li>Contoh : menggunakan class <span>.col-12 .col-md-6 .col-lg-3</span> secara bersamaan akan membuat kolom menjadi full saat layar kecil dan membuat kolom menjadi 2 bagian saat layar sedang dan membuat kolom menjadi 4 bagian saat layar besar (resize layar untuk cek hasilnya).</li>
+                            </ul>
+                        </div>
+                        <div class="component-view" style="padding-bottom:0.25rem;">
+                            <div class="cr-row">
+                                <div class="col-12 col-md-6 col-lg-3" style="margin-bottom:1rem;">
+                                    <div class="your-class">I'am column</div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3" style="margin-bottom:1rem;">
+                                    <div class="your-class">I'am column</div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3" style="margin-bottom:1rem;">
+                                    <div class="your-class">I'am column</div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3" style="margin-bottom:1rem;">
+                                    <div class="your-class">I'am column</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/plain" class="language-html line-numbers">
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="your-class">I'am column</div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="your-class">I'am column</div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="your-class">I'am column</div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="your-class">I'am column</div>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+
+                <div class="section-area" id="carouselArea">
+                    <div class="section-title">
+                        <h1>carousel</h1>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, at!</p>
+                    </div>
+                    <div class="section-content" style="max-width: 700px;">
+                        <div class="cr-carousel" data-carousel data-auto="true" data-duration="5000" data-indicator-thumbnail="true" data-lightbox-info="true">
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track">
+                                    <div class="carousel-slide active" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/10/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/11/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/12/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/13/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/14/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/15/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/16/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/17/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/18/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/19/300/200" alt="" loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide" data-title="Ini judulnya" data-description="ini adalah tempat deskripsinya">
+                                        <img src="https://picsum.photos/id/20/300/200" alt="" loading="lazy">
+                                    </div>
+                                </div>
+
+                                <button class="carousel-btn prev" data-prev title="Sebelumnya">&#10094;</button>
+                                <button class="carousel-btn next" data-next title="Selanjutnya">&#10095;</button>
+                            </div>
+
+                            <div class="carousel-indicators" data-indicators></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/asstes/script/darkmode.js"></script>
+    <script src="/master/master-crumbs.js"></script>
+    <!-- prism js -->
+    <script src="/asstes/script/prism.js"></script>
+</body>
+</html>
